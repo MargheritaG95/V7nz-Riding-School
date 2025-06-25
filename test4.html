@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Big Dreamers</title>
+  <link href="stilecorsi.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: "poppins", sans-serif;
+      background: #121212;
+      color: #fff;
+      min-height: 100vh;
+      padding: 0 1rem 3rem;
+    }
+
+    /* Nav & Header styles left unchanged */
+
+    .packages-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      max-width: 1500px;
+      margin: auto;
+      padding-bottom: 3rem;
+    }
+
+    @media (min-width: 900px) {
+      .packages-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .card {
+      background: #fff;
+      color: #121212;
+      border-radius: 20px;
+      border: 3px solid #ffdd00;
+      padding: 1.5rem 1.2rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 0 20px #ffdd0044;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-height: 320px;
+      position: relative;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 45px #ffdd00cc;
+    }
+
+    .card h2 {
+      font-size: 1.6rem;
+      margin: 0.3rem 0 0.8rem;
+      border-bottom: 2px solid #ffdd00;
+      padding-bottom: 0.3rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    .card p.emphasis {
+      font-style: italic;
+      font-size: 1rem;
+      margin: 0 0 1rem 0;
+      text-align: center;
+      color: #444;
+    }
+
+    .section-title {
+      font-weight: 700;
+      margin: 0.7rem 0 0.4rem 0;
+      color: #ffbb00;
+      font-size: 1.05rem;
+      text-align: left;
+      width: 100%;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1.3rem;
+      margin: 0 0 1rem 0;
+      color: #333;
+      text-align: left;
+      width: 100%;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 28px;
+      margin-bottom: 0.45rem;
+      color: #121212;
+      font-size: 0.95rem;
+      line-height: 1.3;
+    }
+
+    /* Icone personalizzate per bullet */
+    ul li::before {
+      content: "⚡"; /* icona personalizzata: fulmine */
+      position: absolute;
+      left: 0;
+      top: 2px;
+      color: #ffdd00;
+      font-weight: bold;
+      font-size: 1.1rem;
+      line-height: 1;
+    }
+
+    /* Rientro per liste annidate */
+    ul ul {
+      padding-left: 1.5rem;
+    }
+
+    ul ul li::before {
+      content: "•"; /* punto normale per sotto-lista */
+      color: #ffbb00;
+      font-size: 1.2rem;
+      left: 8px;
+      top: 4px;
+    }
+
+    .btn-package {
+      background: #ffdd00;
+      border: none;
+      border-radius: 25px;
+      padding: 0.7rem 1.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: #121212;
+      transition: all 0.3s ease;
+      width: 100%;
+      max-width: 220px;
+      margin-top: auto;
+    }
+
+    .btn-package:hover {
+      background: #fff;
+      color: #ffdd00;
+      box-shadow: 0 0 10px #ffdd00aa;
+    }
+
+    /* Badge personalizzabile */
+    .badge-customizable {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: #ffdd00;
+      color: #121212;
+      font-weight: 700;
+      padding: 5px 10px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      box-shadow: 0 0 10px #ffdd00cc;
+      user-select: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="pill-nav">
+    <a href="index.html">Home</a>
+    <a href="Corsi.html">Corsi</a>
+    <a href="Team.html" class="active">Team</a>
+    <a href="Piloti.html">Piloti</a>
+    <a href="risultati.html">Risultati</a>
+    <a href="Galleria.html">Galleria</a>
+    <a href="Contatti.html">Contattaci</a>
+  </nav>
+
+  <header>
+    <h1>The Big Dreamers</h1>
+    <p> Dalla passione di <strong> Vincenzo Butera </strong>, istruttore esperto, e <strong> Giuseppe Toscano </strong>, genitore e appassionato delle due ruote, nasce il Team <strong> "The Big Dreamers" ASD </strong>: un’associazione sportiva dedicata a rendere il motociclismo accessibile a tutti, adulti e bambini.
+
+      Il team nasce da un sogno condiviso: quello di avvicinare chiunque al mondo delle due ruote, superando barriere e limiti. L’obiettivo è semplice ma ambizioso: offrire esperienze di qualità, formazione e divertimento a costi sostenibili, creando un ambiente inclusivo dove ogni appassionato possa crescere, imparare e vivere la magia del motociclismo.
+      
+      Con dedizione e spirito di squadra, The Big Dreamers vuole diventare un punto di riferimento per tutti coloro che desiderano trasformare un sogno in realtà, salire in sella e condividere emozioni indimenticabili.
+    </p>
+  </header>
+
+  <!-- PACKAGES -->
+  <section class="packages-container">
+    <!-- LIGHT PACKAGE -->
+    <div class="card">
+      <div class="badge-customizable">Personalizzabile</div>
+      <h2>PACCHETTO LIGHT “Start & Learn”</h2>
+      <p class="emphasis">Per chi desidera vivere la gara con supporto essenziale e un ambiente ben organizzato.</p>
+      <p class="section-title">Include:</p>
+      <ul>
+        <li>Analisi dati e coaching: acquisizione e analisi dei dati telemetrici</li>
+        <li>Briefing e de-briefing con il coach per migliorare le prestazioni</li>
+        <li>Iscrizione come socio al team</li>
+        <li>Accesso area team e box: gazebo, tavoli, sedie, illuminazione e box condiviso</li>
+      </ul>
+      <p class="section-title">Non include:</p>
+      <ul>
+        <li>Iscrizione gara e prove libere</li>
+        <li>Tessera licenza ASI obbligatoria</li>
+        <li>Manutenzione moto</li>
+        <li>Materiale di consumo (gomme, benzina)</li>
+        <li>Servizio trasporto attrezzature</li>
+      </ul>
+      <button class="btn-package" onclick="downloadPDF('light')">Scarica PDF dettagliato</button>
+    </div>
+
+    <!-- BASE PACKAGE -->
+    <div class="card">
+      <div class="badge-customizable">Personalizzabile</div>
+      <h2>PACCHETTO BASE “Ready to Ride”</h2>
+      <p class="emphasis">Per chi cerca l’equilibrio ideale tra assistenza tecnica e autonomia in pista.</p>
+      <p class="section-title">Include:</p>
+      <ul>
+        <li>Tutti i servizi del Pacchetto LIGHT</li>
+        <li>Manutenzione ordinaria moto (PRE-GARA):
+          <ul>
+            <li>Tagliando con cambio olio e filtro</li>
+            <li>Pulizia e controllo trasmissione e pinze freni</li>
+            <li>Preparazione e legature per verifica tecnica</li>
+          </ul>
+        </li>
+        <li>Assistenza meccanica di base in pista</li>
+      </ul>
+      <p class="section-title">Non include:</p>
+      <ul>
+        <li>Materiali di consumo (gomme, benzina)</li>
+        <li>Servizio trasporto e logistica estesa</li>
+        <li>Iscrizione gara e prove libere</li>
+      </ul>
+      <button class="btn-package" onclick="downloadPDF('base')">Scarica PDF dettagliato</button>
+    </div>
+
+    <!-- PRO PACKAGE -->
+    <div class="card">
+      <div class="badge-customizable">Personalizzabile</div>
+      <h2>PACCHETTO PRO “Race & Perform”</h2>
+      <p class="emphasis">Per chi vuole arrivare in pista con la moto pronta e concentrarsi solo sulla guida.</p>
+      <p class="section-title">Include:</p>
+      <ul>
+        <li>Tutti i servizi del Pacchetto BASE</li>
+        <li>Materiali di consumo inclusi:
+          <ul>
+            <li>1 treno gomme PMT mescola “S” con montaggio</li>
+            <li>Benzina 100 ottani per prove libere e gara</li>
+          </ul>
+        </li>
+        <li>Gestione completa dei materiali: fornitura, sostituzione e controllo in pista</li>
+      </ul>
+      <p class="section-title">Non include:</p>
+      <ul>
+        <li>Servizio trasporto e logistica da/per il circuito</li>
+        <li>Iscrizione gara e prove libere</li>
+      </ul>
+      <button class="btn-package" onclick="downloadPDF('pro')">Scarica PDF dettagliato</button>
+    </div>
+
+    <!-- FULL PACKAGE -->
+    <div class="card">
+      <div class="badge-customizable">Personalizzabile</div>
+      <h2>PACCHETTO FULL “Dream & Race”</h2>
+      <p class="emphasis">Per chi cerca un’esperienza completa, senza pensieri, con tutto gestito dal team.</p>
+      <p class="section-title">Include:</p>
+      <ul>
+        <li>Tutti i servizi del Pacchetto PRO</li>
+        <li>Logistica e trasporto completi:
+          <ul>
+            <li>Trasporto attrezzature da e per il circuito</li>
+            <li>Allestimento completo del box con postazione tecnica dedicata</li>
+            <li>Gestione dell’infrastruttura per l’intero evento</li>
+            <li>Iscrizione gara e prove libere</li>
+          </ul>
+        </li>
+      </ul>
+      <button class="btn-package" onclick="downloadPDF('full')">Scarica PDF dettagliato</button>
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    const { jsPDF } = window.jspdf;
+
+    function downloadPDF(type) {
+      const doc = new jsPDF();
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor("#121212");
+      doc.setFillColor(255, 221, 0); // Gold color for headers
+      doc.setDrawColor(255, 221, 0);
+      
+      // Utility function for adding bullet lists with indentation
+      function addList(items, x, y, indent=10, lineHeight=8) {
+        let yPos = y;
+        items.forEach(item => {
+          if (typeof item === 'string') {
+            doc.text(`• ${item}`, x + indent, yPos);
+            yPos += lineHeight;
+          } else if (typeof item === 'object' && item.sublist) {
+            doc.text(`• ${item.title}`, x + indent, yPos);
+            yPos += lineHeight;
+            item.sublist.forEach(subitem => {
+              doc.text(`  - ${subitem}`, x + indent + 7, yPos);
+              yPos += lineHeight;
+            });
+          }
+        });
+        return yPos;
+      }
+
+      if (type === 'light') {
+        doc.setFontSize(18);
+        doc.setTextColor("#ffdd00");
+        doc.text("PACCHETTO LIGHT “Start & Learn”", 10, 20);
+
+        doc.setFontSize(11);
+        doc.setTextColor("#121212");
+        doc.text("Per chi desidera vivere la gara con supporto essenziale e un ambiente ben organizzato.", 10, 30);
+
+        doc.setFontSize(14);
+        doc.setTextColor("#ffbb00");
+        doc.text("Include:", 10, 40);
+
+        let y = 47;
+        y = addList([
+          "Analisi dati e coaching: acquisizione e analisi dei dati telemetrici",
+          "Briefing e de-briefing con il coach per migliorare le prestazioni",
+          "Iscrizione come socio al team: 25,00 €",
+          "Accesso area team e box: gazebo, tavoli, sedie, illuminazione e box condiviso"
+        ], 10, y);
+
+        doc.setTextColor("#ffbb00");
+        doc.text("Non include:", 10, y + 5);
+
+        y = y + 12;
+        y = addList([
+          "Iscrizione gara e prove libere",
+          "Tessera licenza ASI obbligatoria",
+          "Manutenzione moto",
+          "Materiale di consumo (gomme, benzina)",
+          "Servizio trasporto attrezzature"
+        ], 10, y);
+
+        doc.setTextColor("#121212");
+        doc.text("Prezzo pacchetto base: 350,00 €", 10, y + 15);
+
+      } else if (type === 'base') {
+        doc.setFontSize(18);
+        doc.setTextColor("#ffdd00");
+        doc.text("PACCHETTO BASE “Ready to Ride”", 10, 20);
+
+        doc.setFontSize(11);
+        doc.setTextColor("#121212");
+        doc.text("Per chi cerca l’equilibrio ideale tra assistenza tecnica e autonomia in pista.", 10, 30);
+
+        doc.setFontSize(14);
+        doc.setTextColor("#ffbb00");
+        doc.text("Include:", 10, 40);
+
+        let y = 47;
+        y = addList([
+          "Tutti i servizi del Pacchetto LIGHT",
+          {title: "Manutenzione ordinaria moto (PRE-GARA):", sublist:[
+            "Tagliando con cambio olio e filtro",
+            "Pulizia e controllo trasmissione e pinze freni",
+            "Preparazione e legature per verifica tecnica"
+          ]},
+          "Assistenza meccanica di base in pista"
+        ], 10, y);
+
+        doc.setTextColor("#ffbb00");
+        doc.text("Non include:", 10, y + 5);
+
+        y = y + 12;
+        y = addList([
+          "Materiali di consumo (gomme, benzina)",
+          "Servizio trasporto e logistica estesa",
+          "Iscrizione gara e prove libere"
+        ], 10, y);
+
+        doc.setTextColor("#121212");
+        doc.text("Prezzo pacchetto base: 690,00 €", 10, y + 15);
+
+      } else if (type === 'pro') {
+        doc.setFontSize(18);
+        doc.setTextColor("#ffdd00");
+        doc.text("PACCHETTO PRO “Race & Perform”", 10, 20);
+
+        doc.setFontSize(11);
+        doc.setTextColor("#121212");
+        doc.text("Per chi vuole arrivare in pista con la moto pronta e concentrarsi solo sulla guida.", 10, 30);
+
+        doc.setFontSize(14);
+        doc.setTextColor("#ffbb00");
+        doc.text("Include:", 10, 40);
+
+        let y = 47;
+        y = addList([
+          "Tutti i servizi del Pacchetto BASE",
+          {title: "Materiali di consumo inclusi:", sublist:[
+            "1 treno gomme PMT mescola “S” con montaggio",
+            "Benzina 100 ottani per prove libere e gara"
+          ]},
+          "Gestione completa dei materiali: fornitura, sostituzione e controllo in pista"
+        ], 10, y);
+
+        doc.setTextColor("#ffbb00");
+        doc.text("Non include:", 10, y + 5);
+
+        y = y + 12;
+        y = addList([
+          "Servizio trasporto e logistica da/per il circuito",
+          "Iscrizione gara e prove libere"
+        ], 10, y);
+
+        doc.setTextColor("#121212");
+        doc.text("Prezzo pacchetto base: 1.200,00 €", 10, y + 15);
+
+      } else if (type === 'full') {
+        doc.setFontSize(18);
+        doc.setTextColor("#ffdd00");
+        doc.text("PACCHETTO FULL “Dream & Race”", 10, 20);
+
+        doc.setFontSize(11);
+        doc.setTextColor("#121212");
+        doc.text("Per chi cerca un’esperienza completa, senza pensieri, con tutto gestito dal team.", 10, 30);
+
+        doc.setFontSize(14);
+        doc.setTextColor("#ffbb00");
+        doc.text("Include:", 10, 40);
+
+        let y = 47;
+        y = addList([
+          "Tutti i servizi del Pacchetto PRO",
+          {title: "Logistica e trasporto completi:", sublist:[
+            "Trasporto attrezzature da e per il circuito",
+            "Allestimento completo del box con postazione tecnica dedicata",
+            "Gestione dell’infrastruttura per l’intero evento",
+            "Iscrizione gara e prove libere"
+          ]}
+        ], 10, y);
+
+        doc.setTextColor("#121212");
+        doc.text("Prezzo pacchetto base: 1.500,00 €", 10, y + 15);
+      }
+
+      doc.save(`pacchetto-${type}.pdf`);
+    }
+  </script>
+</body>
+</html>

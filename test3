@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>V7NZ Coaching</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --dark: #0a0a0a;
+      --light: #f5f5f5;
+      --accent: #ffdd00;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--dark);
+      color: var(--light);
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR (manteniamo il tuo stile attuale qui) */
+    .pill-nav {
+      display: flex;
+      justify-content: center;
+      background-color: #222;
+      padding: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill-nav > a,
+    .pill-nav > .dropdown > .dropbtn {
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      background-color: #333;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      transition: 0.3s;
+      height: 40px;
+    }
+
+    .pill-nav > a:hover,
+    .pill-nav > a.active,
+    .pill-nav > .dropdown > .dropbtn:hover {
+      background-color: var(--accent);
+      color: #111;
+    }
+
+    .pill-nav > .dropdown {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 160px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.7);
+      top: 100%;
+      left: 0;
+      z-index: 10;
+      flex-direction: column;
+    }
+
+    .dropdown-content a {
+      color: #fff;
+      padding: 10px 20px;
+      text-decoration: none;
+      display: block;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: var(--accent);
+      color: #111;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      position: relative;
+      height: 100vh;
+      background: url(v7nz\ moto\ piega.jpg) center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border-bottom: 6px solid var(--accent);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 1rem;
+      color: var(--light);
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .hero-content p {
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .hero-button {
+      background: var(--accent);
+      color: #111;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px var(--accent);
+    }
+
+    .hero-button:hover {
+      background: #fff;
+      color: var(--accent);
+      box-shadow: 0 0 25px var(--accent);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #111;
+      color: #777;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="pill-nav">
+    <a href="index.html" class="active">Home</a>
+    <div class="dropdown">
+      <a href="Corsi.html" class="dropbtn">Corsi ▾</a>
+      <div class="dropdown-content">
+        <a href="principiante.html">Principianti</a>
+        <a href="amatore.html">Amatori</a>
+        <a href="pilota.html">Piloti</a>
+      </div>
+    </div>
+    <a href="Team.html">Team</a>
+    <a href="Piloti.html">Piloti</a>
+    <a href="risultati.html">Risultati</a>
+    <a href="Galleria.html">Galleria</a>
+    <a href="Contatti.html">Contattaci</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Benvenuto in V7NZ Coaching</h1>
+      <p>Passione. Velocità. Tecnica. Vivi l’esperienza unica del coaching su due ruote, in pista e fuori.</p>
+      <a href="Corsi.html" class="hero-button">Scopri i nostri Corsi</a>
+      <a href="Team.html" class="hero-button">Corri con il nostro Team </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 V7NZ Coaching. Tutti i diritti riservati.
+  </footer>
+
+</body>
+</html>

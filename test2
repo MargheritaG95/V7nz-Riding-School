@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Test Icone Social</title>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+<style>
+  body {
+    background: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 3rem;
+  }
+  .social-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    text-decoration: none;
+    box-shadow:
+      3px 3px 8px rgba(0, 0, 0, 0.3),
+      inset 2px 2px 5px rgba(255, 255, 255, 0.2),
+      inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin: 0 12px;
+  }
+  .social-icon.instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  }
+  .social-icon.facebook {
+    background: linear-gradient(145deg, #1877f2, #145dbf);
+  }
+  .social-icon:hover {
+    transform: translateY(-4px);
+    box-shadow:
+      6px 6px 12px rgba(0, 0, 0, 0.4),
+      inset 3px 3px 6px rgba(255, 255, 255, 0.3),
+      inset -3px -3px 6px rgba(0, 0, 0, 0.4);
+  }
+</style>
+</head>
+<body>
+
+<h2 style="color: gold; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+  Contatti Diretti
+</h2>
+<p><strong>Vincenzo Butera:</strong> <a href="tel:+393288862136" style="color: #ffdd00;">+39 328 886 2136</a></p>
+<p><strong>Giuseppe Toscano:</strong> <a href="tel:+393388221291" style="color: #ffdd00;">+39 338 822 1291</a></p>
+
+<div style="margin-top: 1.5rem;">
+  <a href="https://www.instagram.com/tuo_profilo_instagram" target="_blank" aria-label="Instagram" class="social-icon instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+  <a href="https://www.facebook.com/tuo_profilo_facebook" target="_blank" aria-label="Facebook" class="social-icon facebook">
+    <i class="fab fa-facebook-f"></i>
+  </a>
+</div>
+
+</body>
+</html>

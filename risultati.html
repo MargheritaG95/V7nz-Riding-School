@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>V7NZ Coaching - Risultati</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Poppins, sans-serif;
+      background: #121212;
+      color: #fff;
+      min-height: 100vh;
+    }
+   /* Font solo per navbar e titoli */
+   .pill-nav a,
+.pill-nav .dropbtn,
+header h1,
+h2,
+
+.section-content h2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+    .pill-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #222;
+      padding: 1rem;
+    }
+
+    .pill-nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .pill-nav li {
+      position: relative;
+    }
+
+    .pill-nav a {
+      color: #fff;
+      background-color: #444;
+      padding: 0.7rem 1.2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+      display: inline-block;
+      white-space: nowrap;
+    }
+
+    .pill-nav a:hover,
+    .pill-nav a.active {
+      background-color: #ffdd00;
+      color: #121212;
+    }
+
+    /* Dropdown menu */
+    .pill-nav li:hover > ul.dropdown-menu {
+      display: block;
+    }
+
+    ul.dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #444;
+      border-radius: 12px;
+      padding: 0.3rem 0;
+      min-width: 160px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      z-index: 1000;
+    }
+
+    ul.dropdown-menu li {
+      width: 100%;
+    }
+
+    ul.dropdown-menu a {
+      padding: 0.6rem 1rem;
+      display: block;
+      border-radius: 0;
+      font-weight: 500;
+      background-color: transparent;
+    }
+
+    ul.dropdown-menu a:hover {
+      background-color: #ffdd00;
+      color: #121212;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: gold;
+      border-bottom: 4px solid #ffdd00;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.25rem;
+      color: white;
+    }
+
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .gallery {
+      background: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 3px solid #ffdd00;
+      box-shadow: 0 0 20px #ffdd0044;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 0 45px #ffdd00cc;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .desc {
+      padding: 1rem;
+      text-align: center;
+      color: #121212;
+      background: #ffdd00;
+      font-weight: 600;
+    }
+
+    @media (max-width: 500px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+      .pill-nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      ul.dropdown-menu {
+        position: static;
+        box-shadow: none;
+        padding-left: 1rem;
+        background-color: transparent;
+      }
+      ul.dropdown-menu a:hover {
+        background-color: transparent;
+        color: #ffdd00;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="pill-nav">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+
+      <li>
+        <a href="Corsi.html">Corsi</a>
+        <ul class="dropdown-menu">
+          <li><a href="principiante.html"> Principiante</a></li>
+          <li><a href="amatore.html">Amatori</a></li>
+          <li><a href="pilota.html">Piloti</a></li>
+        </ul>
+      </li>
+      <li><a href="Team.html">Team</a></li>
+      <li><a href="Piloti.html">Piloti</a></li>
+      <li><a class="active" href="risultati.html">Risultati</a></li>
+      <li><a href= "galleria.html"> Galleria </a></li>
+      <li><a href="Contatti.html">Contattaci</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>I Risultati</h1>
+    <p>In soli 2 anni di gare e partecipando a 16 gare abbiamo già portato a casa 14 podi!</p>
+  </header>
+
+  <main class="gallery-container">
+    <div class="gallery">
+      <img src="domy podio limatola.jpeg" alt="Podio GP2" />
+      <div class="desc">3° GP3 PromoRace Cup MiniGP 160 Leggeri - 2025</div>
+    </div>
+    <div class="gallery">
+      <img src="Scarano podio 2.jpeg" alt="Podio GP2" />
+      <div class="desc">2° GP3 PromoRace Cup MiniGP 160 Rookie- 2025</div>
+    </div>
+    <div class="gallery">
+      <img src="domy 2 latina.jpg" alt="Podio GP2" />
+      <div class="desc">2° GP2 PromoRace Cup MiniGP 160- 2025</div>
+    </div>
+    <div class="gallery">
+      <img src="domy ortona podio.jpg" alt="Podio GP1" />
+      <div class="desc">2° GP1 PromoRace Cup MiniGP 160 - 2025</div>
+    </div>
+    <div class="gallery">
+      <img src="io fiche motoasi.jpg" alt="Campionessa MotoASI" />
+      <div class="desc">Campionessa Nazionale MotoASI - 2024</div>
+    </div>
+    <div class="gallery">
+      <img src="domy asi.jpg" alt="Terzo MotoASI" />
+      <div class="desc">3° Nazionale MotoASI - 2024</div>
+    </div>
+    <div class="gallery">
+      <img src="io podio.jpg" alt="PromoRace Cup" />
+      <div class="desc">1° GP5 PromoRace Cup MiniGP 160 - 2024</div>
+    </div>
+    <div class="gallery">
+      <img src="rocco coppa 2.jpg" alt="Rocco GP5" />
+      <div class="desc">3° GP5 PromoRace Cup MiniGP 110 - 2024</div>
+    </div>
+    <div class="gallery">
+      <img src="rocco podio.jpg" alt="Trofeo GP4" />
+      <div class="desc">3° GP4 PromoRace Cup MiniGP 110 - 2024</div>
+    </div>
+    <div class="gallery">
+      <img src="io 4.jpg" alt="12 Pollici Lady" />
+      <div class="desc">4° Campionato 12 Pollici Lady - 2023</div>
+    </div>
+    <div class="gallery">
+      <img src="io 1.jpg" alt="GP1 Winner" />
+      <div class="desc">1° GP1 PromoRace Cup MiniGP 160 - 2024</div>
+    </div>
+    <div class="gallery">
+      <img src="Nico.jpg" alt="Trofeo dei Campioni 2024" />
+      <div class="desc">1° Trofeo dei Campioni - 2024</div>
+    </div>
+    <div class="gallery">
+      <img src="Rocco coppa.jpg" alt="Trofeo dei Campioni 3°" />
+      <div class="desc">3° Trofeo dei Campioni - 2024</div>
+    </div>
+    <div class="gallery">
+      <img src="nico coppa 3.jpg" alt="GP5 2023" />
+      <div class="desc">3° GP5 PromoRace Cup MiniGP 160 -2023</div>
+    </div>
+    <div class="gallery">
+      <img src="domy primo podio.jpg" alt="Prime Pieghe" />
+      <div class="desc">Campione Prime Pieghe - 2023</div>
+    </div>
+    <div class="gallery">
+      <img src="bimbo coppa.jpg" alt="Secondo Prime Pieghe" />
+      <div class="desc">2° Campionato Prime Pieghe - 2023</div>
+    </div>
+  </main>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 V7NZ Coaching. Tutti i diritti riservati. </p>
+  </footer>
+</body>
+</html>
+

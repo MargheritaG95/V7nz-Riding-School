@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Corsi Amatori</title>
+  <link href="amatoristyle.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #121212;
+      color: #fff;
+      min-height: 100vh;
+    }
+   /* Font solo per navbar e titoli */
+   .pill-nav a,
+.pill-nav .dropbtn,
+header h1,
+h2,
+
+.section-content h2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+    .pill-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #222;
+      padding: 1rem;
+      gap: 0.3rem;
+    }
+
+    /* Link base e dropdown button */
+    .pill-nav > a,
+    .pill-nav > .dropdown > .dropbtn {
+      color: #fff;
+      background-color: #444;
+      padding: 0.7rem 1.2rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      transition: background 0.3s;
+    }
+
+    .pill-nav > a:hover,
+    .pill-nav > a.active,
+    .pill-nav > .dropdown > .dropbtn:hover {
+      background-color: #ffdd00;
+      color: #121212;
+    }
+
+    /* Dropdown container */
+    .pill-nav > .dropdown {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* Dropdown content nascosto */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #444;
+      min-width: 160px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #ffdd00aa;
+      top: 100%;
+      left: 0;
+      z-index: 10;
+      flex-direction: column;
+    }
+
+    /* Link dropdown */
+    .dropdown-content a {
+      color: #fff;
+      padding: 0.7rem 1.2rem;
+      text-decoration: none;
+      display: block;
+      font-weight: 600;
+      white-space: nowrap;
+      border-radius: 0 0 15px 15px;
+      transition: background 0.3s;
+    }
+
+    .dropdown-content a:hover,
+    .dropdown-content a.active {
+      background-color: #ffdd00;
+      color: #121212;
+    }
+
+    /* Mostra dropdown al passaggio del mouse */
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #ffdd00;
+      border-bottom: 4px solid #ffdd00;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: white;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 3rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+      align-items: center;
+    }
+
+    .section-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .section-content h2 {
+      font-size: 2rem;
+      color: #ffdd00;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid #ffdd00;
+      padding-bottom: 0.3rem;
+    }
+
+    .section-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .section-image img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #ffdd0066;
+    }
+
+    @media (min-width: 768px) {
+      .section {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .section.reverse {
+        flex-direction: row-reverse;
+      }
+
+      .section-content, .section-image {
+        flex: 1;
+        padding: 0 1rem;
+      }
+    }
+
+    footer {
+      text-align: center;
+      background-color: #222;
+      color: #aaa;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="pill-nav">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <a href="principiante.html" class="dropbtn">Corsi ▾</a>
+      <div class="dropdown-content">
+        <a href="principiante.html">Principianti</a>
+        <a href="amatore.html">Amatori</a>
+        <a href="pilota.html">Piloti</a>
+      </div>
+    </div>
+    <a href="Piloti.html">Piloti</a>
+    <a href="risultati.html">Risultati</a>
+    <a href="Team.html">Team</a>
+    <a href="Contatti.html">Contatti</a>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Primi Passi/Principianti </h1>
+    <p>Se il tuo sogno è salire in moto per la prima volta...
+      Non importa quanti anni hai, da dove parti o quale sia il tuo livello: se hai passione, noi siamo pronti ad accompagnarti. Realizza il tuo sogno con noi. Inizia oggi il tuo viaggio in moto.
+            </p>
+  </header>
+
+  <!-- Corso di Tecnica Base -->
+  <section class="section">
+    <div class="section-image">
+      <img src="bimbo pista.jpg" alt="Corso Base">
+    </div>
+    <div class="section-content">
+      <h2> Primi Passi </h2>
+      <p>
+        Non hai mai messo le mani sul manubrio? Nessun problema! Offriamo corsi per chi vuole imparare a guidare la moto, dai bambini di 3 anni fino agli over 70. Ogni percorso è studiato su misura per l’età, le capacità e le esigenze di ciascuno, con un approccio sicuro, graduale e divertente. Ti aiuteremo a scoprire la gioia della guida, insegnandoti le basi in modo chiaro e supportandoti in ogni passo, perché la passione per la moto non ha età.
+      </p>
+    </div>
+  </section>
+
+  <!-- Corso/ Giornata in Pista -->
+  <section class="section reverse">
+    <div class="section-image">
+      <img src="mamma esercizi pistaJPG.JPG" alt="Corso Intermedio">
+    </div>
+    <div class="section-content">
+      <h2>Corsi Patente</h2>
+      <p>
+        Se vuoi ottenere la patente della moto, ti offriamo un percorso completo e personalizzato per prepararti al meglio. Con il supporto di un istruttore esperto, imparerai tutte le nozioni teoriche e pratiche necessarie, dalla sicurezza alla guida su strada, passando per le manovre fondamentali. Ti guideremo passo dopo passo per affrontare con sicurezza l’esame e salire in sella con consapevolezza.
+      </p>
+    </div>
+  </section>
+
+  <!-- Scendi in Griglia -->
+  <section class="section">
+    <div class="section-image">
+      <img src="cordolo vinz io .jpg" alt="Corso Avanzato">
+    </div>
+    <div class="section-content">
+      <h2>Corso/ Giornata in Pista</h2>
+      <p>Se sogni di andare in pista per la prima volta ti accompagneremo in ogni fase di questa nuova avventura. Ti guideremo nell’apprendere le basi della guida in pista: dalla postura corretta alla gestione di curve e frenate, fino a farti prendere piena confidenza con la moto e il tracciato. Insieme costruiremo le fondamenta per divertirti, migliorare e far crescere la tua passione, proponendoti la pista più adatta al tuo livello, con il massimo della sicurezza.
+      
+      </p>
+    </div>
+  </section>
+
+   <!-- Corso/ Giornata in Pista -->
+   <section class="section reverse">
+    <div class="section-image">
+      <img src="gabri allenamento.jpg" alt="Corso Intermedio">
+    </div>
+    <div class="section-content">
+      <h2>Alimentazione e Preparazione Fisica </h2>
+      <p>
+        La tua preparazione inizia anche fuori dalla pista, Non importa quale percorso vuoi intraprendere: uno stile di vita sano è fondamentale per ogni pilota, amatore o principiante per crescere in sella. Noi ti seguiamo anche fuori dal circuito, con supporto su alimentazione e preparazione fisica, per aiutarti a migliorare costantemente e vivere al massimo la tua passione — dentro e fuori la pista.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 V7NZ Coaching. Tutti i diritti riservati.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Corsi Piloti</title>
+  <link href="amatoristyle.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #121212;
+      color: #fff;
+      min-height: 100vh;
+    }
+   /* Font solo per navbar e titoli */
+   .pill-nav a,
+.pill-nav .dropbtn,
+header h1,
+h2,
+
+.section-content h2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+    .pill-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #222;
+      padding: 1rem;
+      position: relative;
+    }
+
+    .pill-nav a {
+      color: #fff;
+      background-color: #444;
+      padding: 0.7rem 1.2rem;
+      margin: 0.3rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+      display: inline-block;
+    }
+
+    .pill-nav a:hover,
+    .pill-nav a.active {
+      background-color: #ffdd00;
+      color: #121212;
+    }
+
+    /* Dropdown container */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    /* Dropdown content hidden by default */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #444;
+      min-width: 180px;
+      border-radius: 10px;
+      margin-top: 0.3rem;
+      z-index: 10;
+      flex-direction: column;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+    /* Dropdown links styling */
+    .dropdown-content a {
+      padding: 0.6rem 1rem;
+      margin: 0.2rem 0;
+      display: block;
+      border-radius: 15px;
+      white-space: nowrap;
+    }
+
+    /* Show dropdown on hover */
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+
+    /* Dropdown links hover */
+    .dropdown-content a:hover {
+      background-color: #ffdd00;
+      color: #121212;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: #ffdd00;
+      border-bottom: 4px solid #ffdd00;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: white;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 3rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+      align-items: center;
+    }
+
+    .section-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .section-content h2 {
+      font-size: 2rem;
+      color: #ffdd00;
+      margin-bottom: 0.5rem;
+      border-bottom: 2px solid #ffdd00;
+      padding-bottom: 0.3rem;
+    }
+
+    .section-content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .section-image img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 0 25px #ffdd0066;
+    }
+
+    @media (min-width: 768px) {
+      .section {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .section.reverse {
+        flex-direction: row-reverse;
+      }
+
+      .section-content,
+      .section-image {
+        flex: 1;
+        padding: 0 1rem;
+      }
+    }
+
+    footer {
+      text-align: center;
+      background-color: #222;
+      color: #aaa;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="pill-nav">
+    <a href="index.html">Home</a>
+    <div class="dropdown">
+      <a href="pilota.html" class="active">Corsi Piloti ▾</a>
+      <div class="dropdown-content">
+        <a href="principiante.html">Principianti</a>
+        <a href="amatore.html">Amatori</a>
+        <a href="pilota.html">Piloti</a>
+      </div>
+    </div>
+    <a href="Piloti.html">Piloti</a>
+    <a href="risultati.html">Risultati</a>
+    <a href="Team.html">Team</a>
+    <a href="Contatti.html">Contatti</a>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    <h1>Corsi Piloti</h1>
+    <p>Corsi dedicati ai piloti che vogliono iniziare, perfezionarsi o portare la propria guida al livello successivo. Che tu sia agli inizi o già in gara, costruiamo insieme un percorso su misura per i tuoi obiettivi in pista.</p>
+  </header>
+
+  <!-- Corso di Tecnica Base -->
+  <section class="section">
+    <div class="section-image">
+      <img src="Gomito Meg.jpg" alt="Corso Base" />
+    </div>
+    <div class="section-content">
+      <h2>Migliora la tua Tecnica</h2>
+      <p>
+        Se sei un pilota professionista determinato a perfezionare ogni dettaglio della tua guida, possiamo offrirti un supporto altamente specializzato. Lavorerai direttamente con un istruttore esperto che analizzerà il tuo stile e ti proporrà esercizi avanzati, studiati per ottimizzare performance, precisione e controllo in pista. Dalla gestione delle traiettorie all’assetto in curva, fino al miglioramento della postura e alla preparazione mentale, ti aiuteremo a spingerti oltre i tuoi limiti, mantenendo sempre la massima sicurezza e efficienza.
+      </p>
+    </div>
+  </section>
+
+  <!-- Corso/ Giornata in Pista -->
+  <section class="section reverse">
+    <div class="section-image">
+      <img src="team logo.jpg" alt="Corso Intermedio" />
+    </div>
+    <div class="section-content">
+      <h2>Ti serve un Team?</h2>
+      <p>
+        Se hai bisogno di un team affidabile per la tua prossima gara, The Big Dreamers sono pronti a supportarti in ogni fase del tuo weekend di gara. Con meccanico esperto e istruttore dedicato, ti offriamo assistenza tecnica, preparazione della moto, coaching strategico e gestione in pista. Il nostro supporto completo ti permette di concentrarti solo sul risultato. Con noi al tuo fianco, potrai affrontare la gara con sicurezza e la certezza di avere un team dedicato al tuo successo.
+        <br /><br />
+        Clicca qui sotto per scoprire tutti i nostri pacchetti gara ed entrare nella nostra famiglia.
+      </p>
+      <div style="text-align: center; margin: 2rem 0;">
+        <a href="Team.html" class="btn-scopri">Scopri di più sul nostro Team</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Corso/ Giornata in Pista -->
+  <section class="section">
+    <div class="section-image">
+      <img src="nico solo moto.jpg" alt="Corso Intermedio" />
+    </div>
+    <div class="section-content">
+      <h2>Allenati in Pista con noi</h2>
+      <p>
+        Organizziamo giornate in pista dedicate a piloti di ogni livello, pensate per affinare traiettorie, tecniche di guida e mentalità da gara. Che sia in sessioni di gruppo o in programmi personalizzati one-to-one, ti alleniamo a lottare per ogni secondo insieme a piloti professionisti. Dai circuiti tecnici come Aprilia alle curve veloci del Mugello, scegliamo i tracciati migliori per trasformare ogni giro in un’occasione di crescita reale.
+      </p>
+    </div>
+  </section>
+
+  <!-- Corso/ Giornata in Pista -->
+  <section class="section reverse">
+    <div class="section-image">
+      <img src="gabri allenamento 2.jpg" alt="Corso Intermedio" />
+    </div>
+    <div class="section-content">
+      <h2>Alimentazione e Preparazione Fisica</h2>
+      <p>
+        Se vuoi cambiare mentalità e diventare un pilota a 360°, anche fuori dalla pista, possiamo supportarti nella preparazione fisica e nell’alimentazione. Un corpo allenato e una dieta equilibrata sono fondamentali per migliorare la concentrazione, la resistenza e la performance in sella. Ti guideremo con programmi personalizzati per farti arrivare più forte, più veloce e con la giusta carica mentale a ogni giro.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 V7NZ Coaching. Tutti i diritti riservati.</p>
+  </footer>
+  
+</body>
+</html>
+

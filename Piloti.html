@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>V7NZ Coaching - Piloti</title>
+  <link href="stylepiloti.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: poppins, sans-serif;
+      background: #121212;
+      color: #fff;
+      min-height: 100vh;
+      padding: 0;
+    }
+
+    /* Font solo per navbar e titoli */
+.pill-nav a,
+.pill-nav .dropbtn,
+header h1,
+h2,
+
+.section-content h2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border: #121212;
+}
+
+    .pill-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #222;
+      padding: 1rem;
+    }
+
+    .pill-nav a {
+      color: #fff;
+      background-color: #444;
+      padding: 0.7rem 1.2rem;
+      margin: 0.3rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .pill-nav a:hover,
+    .pill-nav a.active {
+      background-color: #ffdd00;
+      color: #121212;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+    
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: gold;
+      border-bottom: 4px solid #ffdd00;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.25rem;
+      color: white;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 2rem 1rem;
+      max-width: 1500px;
+      margin: auto;
+    }
+
+    @media (min-width: 700px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1100px) {
+      .container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .card {
+      background: #fff;
+      color: #121212;
+      border-radius: 20px;
+      border: 3px solid #ffdd00;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 0 20px #ffdd0044;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-height: 430px;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      box-shadow: 0 0 45px #ffdd00cc;
+    }
+
+    .card img {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      border: 4px solid #ffdd00;
+      object-fit: cover;
+      margin-bottom: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px #ffdd00;
+    }
+
+    .card h2 {
+      font-size: 1.5rem;
+      margin: 0.5rem 0;
+      border-bottom: 2px solid #ffdd00;
+      padding-bottom: 0.3rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      text-align: center;
+      flex-grow: 1;
+      padding: 0 1rem;
+      overflow-y: auto;
+      max-height: 180px;
+    }
+
+    .btn-sponsor {
+      background: #ffdd00;
+      border: none;
+      border-radius: 25px;
+      padding: 0.6rem 1.5rem;
+      font-weight: bold;
+      margin-top: 1.2rem;
+      cursor: pointer;
+      color: #121212;
+      transition: all 0.3s ease;
+    }
+
+    .btn-sponsor:hover {
+      background: #fff;
+      color: #ffdd00;
+      box-shadow: 0 0 10px #ffdd00aa;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="pill-nav">
+    <a href="index.html">Home</a>
+    <a href="Corsi.html">Corsi</a>
+    <a href="Team.html">Team</a>
+    <a href="Piloti.html"class="active">Piloti</a>
+    <a href="risultati.html">Risultati</a>
+    <a href="Galleria.html">Galleria</a>
+    <a href="Contatti.html" >Contattaci</a>
+  </nav>
+
+  <header>
+    <h1>I nostri Piloti</h1>
+    <p>Aiutaci a realizzare il nostro sogno. Diventa Sponsor!</p>
+  </header>
+
+  <main class="container">
+
+   <!-- Card 1 -->
+   <section class="card">
+    <img src="barresi.jpg" alt="Alessandro Barresi" />
+    <h2>Alessandro Barresi </h2>
+    <p>Alessandro Barresi, classe 2014, si prepara a vivere la sua prima gara ufficiale a settembre. Nonostante la giovane età, dimostra già una grande determinazione e la voglia di confrontarsi con piloti più esperti. Ogni allenamento è un passo avanti, ogni giro in pista un’occasione per crescere. Alessandro affronta questa nuova avventura con entusiasmo, coraggio e una passione che promette grandi emozioni.</p>
+    <button class="btn-sponsor" onclick="window.open('https://wa.me/393388221291?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto', '_blank')"> Diventa Sponsor! Contattaci su WhatsApp</button>
+  </section>
+
+  <!-- Card 4 -->
+  <section class="card">
+    <img src="scarano abbraccio vinz.jpg" alt="Angelo Scarano" />
+    <h2>Angelo Scarano</h2>
+    <p>Angelo Scarano, classe 2010, ha fatto il suo debutto nella Promorace Cup a giugno 2025 lasciando subito il segno: conquista la pole position e si piazza al secondo posto, dimostrando un talento naturale che brilla fin dai primi giri. La sua determinazione e la voglia di emergere lo spingono oltre ogni limite, regalando emozioni intense in pista. E questo è solo l'inizio: Angelo è pronto a spingere sempre più forte, a crescere e a sorprendere, portando con sé la freschezza e la gioia di un ragazzo solare che non perde mai il sorriso, dentro e fuori dal paddock.</p>
+    <button class="btn-sponsor" onclick="window.open('https://wa.me/393388221291?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto', '_blank')"> Diventa Sponsor! Contattaci su WhatsApp</button>
+  </section>
+
+
+    <!-- Card 3 -->
+    <section class="card">
+      <img src="domy esulto.jpg" alt="Domenico Toscano" />
+      <h2>Domenico Toscano</h2>
+      <p>Domenico Toscano, classe 2010, ha iniziato a correre nel 2021 e già nel 2023 ha conquistato il Campionato Prime Pieghe. Nel 2024 si è classificato terzo nel Campionato Nazionale MotoASI. Nel 2025 è un volto fisso sul podio della Promorace, dimostrando grande costanza e talento, classificandosi secondo con il campionato ancora aperto. Con la sua mentalità competitiva e il suo carattere solare, Domenico è diventato un vero punto di riferimento in pista e il ragazzo più adorato nei paddock.</p>
+      <button class="btn-sponsor" onclick="window.open('https://wa.me/393388221291?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto', '_blank')"> Diventa Sponsor! Contattaci su WhatsApp</button>
+    </section>
+
+
+   <!-- Card 1 -->
+   <section class="card">
+    <img src="io podio.jpg" alt="Margherita Giannotti" />
+    <h2> Margherita Giannotti </h2>
+    <p>Margherita Giannotti, classe 1995, è la dimostrazione che la passione può nascere all’improvviso e a qualsiasi età. Sale per la prima volta in moto nel 2022, quasi per gioco, e inizia a correre ufficialmente solo un anno dopo. Conquista grandi risultati: nel 2024 è Campionessa Nazionale MotoASI e Vice Campionessa della Promorace Cup. Con coraggio ha affrontato anche una wild card nel CIV Femminile a Magione e ha preso parte all’Europeo 12 Pollici.Per Margherita correre è iniziato quasi come un gioco, ma si è trasformato in una passione molto forte che coltiva ogni giorno, affrontando ogni sfida sempre con il sorriso e tanta determinazione.</p>
+    <button class="btn-sponsor" onclick="window.open('https://wa.me/393388221291?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto', '_blank')"> Diventa Sponsor! Contattaci su WhatsApp</button>
+  </section>
+
+
+    <!-- Card 1 -->
+    <section class="card">
+      <img src="Nico.jpg" alt="Nicholas Bedoya" />
+      <h2>Nicholas Bedoya</h2>
+      <p>Nicholas Bedoya, classe 2009, ha iniziato a gareggiare nel 2024 e ha subito lasciato il segno, conquistando 3 podi nelle sue primissime competizioni. Nel 2025 affronta con coraggio e determinazione il suo primo Campionato GP7, misurandosi con avversari esperti e altamente competitivi. Ogni gara è una sfida, ogni curva una prova di maturità: Nicholas cresce gara dopo gara, spinto da una passione autentica e da una voglia instancabile di migliorare.</p>
+      <button class="btn-sponsor" onclick="window.open('https://wa.me/393388221291?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto', '_blank')"> Diventa Sponsor! Contattaci su WhatsApp</button>
+    </section>
+
+
+    <!-- Card 2 -->
+    <section class="card">
+      <img src="Rocco coppa.jpg" alt="Rocco Misiti" />
+      <h2>Rocco Misiti</h2>
+      <p>Rocco Misiti, classe 2009, al suo primo anno di gare ha conquistato un totale di 3 podi: 2 nella Promorace Cup e 1 nel Trofeo dei Campioni di Civitavecchia. Nel 2025, ogni sua gara è uno spettacolo da vedere: nelle prime tappe della Promorace Cup ha spesso lottato tra le prime posizioni, regalando duelli emozionanti e sorpassi decisi. Con la sua grinta, affronta ogni sfida a testa bassa, senza mai perdere il sorriso, e continua a martellare i suoi tempi con una determinazione contagiosa e un cuore gigante.</p>
+      <button class="btn-sponsor" onclick="window.open('https://wa.me/393388221291?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto', '_blank')"> Diventa Sponsor! Contattaci su WhatsApp</button>
+    </section>
+
+  </main>
+
+  <header>
+    <h1>I nostri Sponsor</h1>
+
+    <p>Unisciti anche tu!</p>
+
+    <div class="sponsor-logos">
+        <img src="garanzia.png" alt="Polaccheria Sponsor">
+        
+        <img src="polaccheria .jpeg" alt="Polaccheria Sponsor">
+        <img src="scarano service.webp" alt="Scarano Service Sponsor">
+        <img src="zigozago1.jpeg" alt="V7NZ Logo Sponsor">
+        <img src="logoproietti.png" alt="V7NZ Logo Sponsor">
+        <img src="therra logo.png" alt="V7NZ Logo Sponsor">
+
+        <!-- Aggiungi altri loghi qui se necessario -->
+      </div>
+    </section>
+    
+  </header>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 V7NZ Coaching. Tutti i diritti riservati. </p>
+  </footer>
+</body>
+</html>

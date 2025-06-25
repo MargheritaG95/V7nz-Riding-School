@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>V7NZ Coaching - Galleria </title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #121212;
+      color: #fff;
+      padding: 0 1rem 3rem;
+    }
+   /* Font solo per navbar e titoli */
+   .pill-nav a,
+.pill-nav .dropbtn,
+header h1,
+h2,
+
+.section-content h2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+    nav.pill-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #222;
+      padding: 1rem 0;
+      margin-bottom: 2rem;
+    }
+
+    nav.pill-nav a {
+      color: #fff;
+      background-color: #444;
+      padding: 0.7rem 1.2rem;
+      margin: 0 0.5rem;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    nav.pill-nav a:hover,
+    nav.pill-nav a.active {
+      background-color: #ffdd00;
+      color: #121212;
+    }
+
+    header {
+      text-align: center;
+      padding: 1.5rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: gold;
+      border-bottom: 4px solid #ffdd00;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      font-weight: 700;
+    }
+
+    header p {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+      color: #eee;
+    }
+
+    /* Masonry-style grid */
+    .grid-container {
+      column-count: 3;
+      column-gap: 1rem;
+      max-width: 1200px;
+      margin: auto;
+      padding: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .grid-container {
+        column-count: 2;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .grid-container {
+        column-count: 1;
+      }
+    }
+
+    .grid-item {
+      margin-bottom: 1rem;
+      break-inside: avoid;
+    }
+
+    .grid-item img {
+      width: 100%;
+      border-radius: 12px;
+      border: 3px solid #ffdd00;
+      box-shadow: 0 0 10px #ffdd0044;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .grid-item img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 0 25px #ffdd00cc;
+    }
+
+    /* Lightbox */
+    .lightbox-modal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.9);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .lightbox-modal.active {
+      display: flex;
+    }
+
+    .lightbox-modal img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 0 50px #ffdd00cc;
+    }
+
+    .lightbox-modal .close-btn {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      font-size: 2.5rem;
+      color: #ffdd00;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .lightbox-modal .close-btn:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <nav class="pill-nav">
+    <a href="index.html">Home</a>
+    <a href="Corsi.html">Corsi</a>
+    <a href="Team.html">Team</a>
+    <a href="Piloti.html">Piloti</a>
+    <a href="risultati.html">Risultati</a>
+    <a href="Galleria.html" class="active">Galleria</a>
+    <a href="Contatti.html">Contattaci</a>
+  </nav>
+
+  <header>
+    <h1>Galleria Fotografica</h1>
+    <p>Un mix dinamico dei nostri momenti più belli: fuori e dentro la pista.</p>
+  </header>
+
+  <section class="grid-container">
+    <div class="grid-item"><img src="V7nz &Meg.JPG" alt="Foto 1" /></div>
+    <div class="grid-item"><img src="3 coppe.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="amatori aprilia.jpg" alt="Foto 2" /></div>
+    <div class="grid-item"><img src="felpe.jpg" alt="Foto 3" /></div>
+    <div class="grid-item"><img src="vinz bordo pista.jpg" alt="Foto 4" /></div>
+    <div class="grid-item"><img src="vinz maglia civ.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="io r6 front.JPG" alt="Foto 5" /></div>
+    <div class="grid-item"><img src="griglia rocco fam.jpg" alt="Foto 6" /></div>
+    <div class="grid-item"><img src="prep.jpg" alt="Foto 7" /></div>
+    <div class="grid-item"><img src="bimbo motart.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="scarano con V7nz .jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="griglia vinz rocco.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="asi vinc.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="io e pako.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="vinz su cbr.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="io pitbike motart sinistra.JPG" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="domy front griglia.jpg" alt="Foto 9" /></div>
+    <div class="grid-item"><img src="moto fila.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="domy per entrare.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="limatolajpg.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="team spiega.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="nico vinz abbraccio.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="Domy testa.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="domy meg bagarre.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="io tecnica.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="mamma vinz spiega.JPG" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="domy rosso.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="nico vinz primo piano.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="vinz e bucci.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="Vinz & Domenico.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="abbraccio felpe.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="vinz su bucci.JPG" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="nel furgone.jpeg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="nico bastone.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="spiega fab.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="bimbo ocn cappello.jpg" alt="Foto 8" /></div>
+    <div class="grid-item"><img src="vinz ascolta me.jpg" alt="foto 14" /></div>
+    <div class="grid-item"><img src="domy esulto latina.jpeg" alt="Foto 15" /></div>
+    <div class="grid-item"><img src="mamma scarano.jpeg" alt="Foto 16" /></div>
+    <div class="grid-item"><img src="pranzo limatola .jpg" alt="Foto 15" /></div>
+    <div class="grid-item"><img src="rocco piazzale.jpg" alt="Foto 16" /></div>
+    <div class="grid-item"><img src="io e vinz mugello.jpg" alt="Foto 17" /></div>
+    <div class="grid-item"><img src= "domy fam prime.jpg" alt="Foto 17" /></div>
+    <div class="grid-item"><img src="Domy primo piano casco.jpg" alt="Foto 16" /></div>
+    <div class="grid-item"><img src="domy nico rocco civi.jpeg" alt="Foto 15" /></div>
+    <div class="grid-item"><img src="mamma avanti vinz dietro.JPG" alt="Foto 16" /></div>
+    <div class="grid-item"><img src="domy nico frenata.jpeg" alt="Foto 16" /></div>
+    <div class="grid-item"><img src="domy collage prime pieghe.jpeg" alt="Foto 17" /></div>
+    <div class="grid-item"><img src= "domy con gomma .jpeg" alt="Foto 17" /></div>
+    <div class="grid-item"><img src= "pako e vinz.jpeg" alt="Foto 17" /></div>
+    <div class="grid-item"><img src="vinz civ pista nico e domy.jpg" alt="Foto 18" /></div>
+    <div class="grid-item"><img src="mamma & vinz.JPG" alt="Foto 19" /></div>
+    <div class="grid-item"><img src="domy 2 latina.jpg" alt="Foto 20" /></div>
+    <div class="grid-item"><img src="io vinz su moto.jpg" alt="Foto 21" /></div>
+   
+  
+
+  </section>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox">
+    <span class="close-btn" id="lightbox-close">&times;</span>
+    <img src="" alt="Immagine Ingrandita" id="lightbox-img" />
+  </div>
+
+  <script>
+    const images = document.querySelectorAll('.grid-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('lightbox-close');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 V7NZ Coaching. Tutti i diritti riservati. </p>
+  </footer>
+</body>
+</html>

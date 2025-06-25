@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>V7NZ Coaching - Corsi</title>
+  <link href="stilecorsi.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #121212;
+      color: #fff;
+      min-height: 100vh;
+    }
+   /* Font solo per navbar e titoli */
+   .pill-nav a,
+.pill-nav .dropbtn,
+header h1,
+h2,
+
+.section-content h2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+    .pill-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #222;
+      padding: 1rem;
+      gap: 0.3rem;
+    }
+
+    /* Stile per tutti i link della navbar e bottone dropdown */
+    .pill-nav > a,
+    .pill-nav > .dropdown > .dropbtn {
+      color: #fff;
+      background-color: #444;
+      padding: 0.7rem 1.2rem;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      height: 40px;
+      transition: background 0.3s;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    /* Hover e active */
+    .pill-nav > a:hover,
+    .pill-nav > a.active,
+    .pill-nav > .dropdown > .dropbtn:hover {
+      background-color: #ffdd00;
+      color: #121212;
+    }
+
+    /* Dropdown container */
+    .pill-nav > .dropdown {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    /* Dropdown content nascosto */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #444;
+      min-width: 160px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      top: 100%;
+      left: 0;
+      z-index: 10;
+      flex-direction: column;
+    }
+
+    /* Link dropdown */
+    .dropdown-content a {
+      color: #fff;
+      padding: 0.7rem 1.2rem;
+      text-decoration: none;
+      display: block;
+      font-weight: 600;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ffdd00;
+      color: #121212;
+    }
+
+    /* Mostra dropdown al passaggio del mouse */
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1.5rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      color: gold;
+      border-bottom: 4px solid #ffdd00;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: white;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Nuove card livello */
+    .level-cards {
+      max-width: 1200px;
+      margin: 2rem auto;
+      display: grid;
+      gap: 2rem;
+      padding: 0 1rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 700px) {
+      .level-cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .level-card {
+      background: #fff;
+      color: #121212;
+      border-radius: 20px;
+      border: 3px solid #ffdd00;
+      box-shadow: 0 0 20px #ffdd0044;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .level-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 0 35px #ffdd00aa;
+    }
+
+    .level-card img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .level-card-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .level-card-content h2 {
+      font-size: 1.5rem;
+      color: #ffdd00;
+      margin: 0 0 0.5rem;
+      border-bottom: 2px solid #ffdd00;
+      padding-bottom: 0.3rem;
+    }
+
+    .level-card-content p {
+      font-size: 1rem;
+      color: #121212;
+      line-height: 1.5;
+      flex-grow: 1;
+      margin-bottom: 1rem;
+    }
+
+    .btn-scopri {
+      background-color: #ffdd00;
+      color: #121212;
+      padding: 0.6rem 1.2rem;
+      font-weight: 600;
+      text-align: center;
+      border-radius: 15px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      align-self: flex-start;
+      user-select: none;
+    }
+
+    .btn-scopri:hover {
+      background-color: #e6c800;
+    }
+
+    /* Container cards corsi originale */
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding: 2rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    @media (min-width: 700px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .course-card {
+      background: #fff;
+      color: #121212;
+      border-radius: 20px;
+      border: 3px solid #ffdd00;
+      overflow: hidden;
+      box-shadow: 0 0 20px #ffdd0044;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .course-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 0 35px #ffdd00aa;
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .course-card-content {
+      padding: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .course-card-content h2 {
+      font-size: 1.5rem;
+      color: #ffdd00;
+      margin: 0 0 0.5rem;
+      border-bottom: 2px solid #ffdd00;
+      padding-bottom: 0.3rem;
+    }
+
+    .course-card-content p {
+      font-size: 1rem;
+      color: #121212;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="pill-nav">
+    <a href="index.html">Home</a>
+
+    <div class="dropdown">
+      <a href="Corsi.html" class="dropbtn">Corsi ▾</a>
+      <div class="dropdown-content">
+        <a href="principiante.html">Principianti</a>
+        <a href="amatore.html">Amatori</a>
+        <a href="pilota.html">Piloti</a>
+      </div>
+    </div>
+
+    <a href="Team.html">Team</a>
+    <a href="Piloti.html">Piloti</a>
+    <a href="risultati.html">Risultati</a>
+    <a href="Galleria.html">Galleria</a>
+    <a href="Contatti.html" >Contattaci</a>
+  </nav>
+
+  <header>
+    <h1>Corsi</h1>
+    <p>Scopri i nostri corsi di motociclismo, progettati per ogni livello di esperienza. Che tu sia un principiante o un pilota esperto, abbiamo il corso giusto per te!</p>
+  </header>
+
+  <!-- NUOVI BLOCCHI LIVELLO -->
+  <section class="level-cards" aria-label="Livelli di corsi">
+    <article class="level-card">
+      <img src="mini rocco e nico.jpg" alt="Principiante / Primi Passi" class="spaced"/>
+      <div class="level-card-content">
+        <h2>Principiante / Primi Passi</h2>
+        <p>Scopri come muovere i primi passi e imparare le basi per iniziare con successo.</p>
+        <a href="principiante.html" class="btn-scopri" aria-label="Scopri di più Principiante">Scopri di più</a>
+      </div>
+    </article>
+    <article class="level-card">
+      <img src="su scrivania.jpg" alt="Amatore" class="spaced-later"/>
+      <div class="level-card-content">
+        <h2>Amatore</h2>
+        <p>Per chi vuole migliorare la tecnica e approfondire le proprie conoscenze.</p>
+        <a href="amatore.html" class="btn-scopri" aria-label="Scopri di più Amatore">Scopri di più</a>
+      </div>
+    </article>
+    <article class="level-card">
+      <img src="nico bagarre.jpg" alt="Pilota" />
+      <div class="level-card-content">
+        <h2>Pilota</h2>
+        <p>Sei pronto a dominare la pista? Strategie e consigli per piloti esperti.</p>
+        <a href="pilota.html" class="btn-scopri" aria-label="Scopri di più Pilota">Scopri di più</a>
+      </div>
+    </article>
+  </section>
+
+  <header>
+    <h1>Scegli il tuo percorso </h1>
+    <p>Clicca sul tuo livello qui sopra e scopri il percorso giusto per te!</p>
+  </header>
+
+  <main class="container">
+    <!-- Card 1 -->
+    <section class="course-card">
+      <img src="domy pista v7nz.jpg" alt="Corsi in pista" class="spaced"/>
+      <div class="course-card-content">
+        <h2>Corsi in pista</h2>
+        <p>Vivi l’adrenalina della pista con noi: corsi su misura per ogni livello, divertimento e sicurezza garantiti!</p>
+      </div>
+    </section>
+
+    <!-- Card 2 -->
+    <section class="course-card">
+      <img src="r6 alta.JPG" alt="Tecnica" />
+      <div class="course-card-content">
+        <h2>Tecnica</h2>
+        <p>Migliora la tua tecnica per guidare in sicurezza su strada e migliorare i tempi in pista.</p>
+      </div>
+    </section>
+
+    <!-- Card 3 -->
+    <section class="course-card">
+      <img src="Spiegazioni.jpg" alt="Patente" />
+      <div class="course-card-content">
+        <h2>Corsi per la Patente</h2>
+        <p>Realizza il sogno di guidare la tua moto: con i nostri corsi per la patente, impari a farlo in sicurezza e con fiducia.</p>
+      </div>
+    </section>
+
+    <!-- Card 4 -->
+    <section class="course-card">
+      <img src="gabri allenamento.jpg" alt="Allenamento" />
+      <div class="course-card-content">
+        <h2>Alimentazione & Preparazione Fisica</h2>
+        <p>Piloti sia dentro che fuori dalla pista con schede personalizzate per allenarti a casa e migliorare la tua alimentazione.</p>
+      </div>
+    </section>
+
+    <!-- Card 5 -->
+    <section class="course-card">
+      <img src="Vinz & Dom Pre Gara.jpg" alt="Scendi in Griglia" />
+      <div class="course-card-content">
+        <h2>Scendi in Griglia</h2>
+        <p>Sfida te stesso: allenati con noi per dare il meglio nella prossima gara.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 V7NZ Coaching. Tutti i diritti riservati. </p>
+  </footer>
+</body>
+</html>
