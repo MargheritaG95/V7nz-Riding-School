@@ -78,88 +78,49 @@
     font-display: swap;
     src: url(https://fonts.gstatic.com/s/poppins/v23/pxiByp8kv8JHgFVrLCz7Z1xlFd2JQEk.woff2) format('woff2');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-  }
-  .social-icons {
-    /* già gestito inline, puoi rimuovere se vuoi */
-  }
-  
-  .social-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 28px;
-    text-decoration: none;
-    box-shadow:
-      3px 3px 8px rgba(0, 0, 0, 0.3),
-      inset 2px 2px 5px rgba(255, 255, 255, 0.2),
-      inset -2px -2px 5px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-  }
-  
-  /* Colori e sfumature per Instagram */
-  .social-icon.instagram {
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-  }
-  
-  /* Colori e sfumature per Facebook */
-  .social-icon.facebook {
-    background: linear-gradient(145deg, #1877f2, #145dbf);
-  }
-  
-  .social-icon:hover {
-    transform: translateY(-4px);
-    box-shadow:
-      6px 6px 12px rgba(0, 0, 0, 0.4),
-      inset 3px 3px 6px rgba(255, 255, 255, 0.3),
-      inset -3px -3px 6px rgba(0, 0, 0, 0.4);
-  }
-  @media (max-width: 768px) {
-    .pill-nav {
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-      background-color: #222;
-    }
-  
-    .pill-nav a,
-    .pill-nav .dropbtn {
-      display: block;
-      width: 100%;
-      max-width: 320px;
-      justify-content: center;
-      text-align: center;
-      background-color: #444;
-      color: #fff;
-      padding: 0.7rem 1.2rem;
-      margin: 0.3rem 0;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
-    }
-  
-    .pill-nav a:hover,
-    .pill-nav a.active {
-      background-color: #ffdd00;
-      color: #121212;
-    }
-  
-    .dropdown-content {
-      position: static;
-      width: 100%;
-      border-radius: 0;
-      box-shadow: none;
-    }
-  }
-  .pill-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: #222;
-    padding: 1rem;
-  }
+
+    @media (max-width: 768px) {
+        .pill-nav {
+          flex-direction: column;
+          align-items: center;
+          padding: 1rem;
+          background-color: #222;
+        }
+      
+        .pill-nav a,
+        .pill-nav .dropbtn {
+          display: block;
+          width: 100%;
+          max-width: 320px;
+          justify-content: center;
+          text-align: center;
+          background-color: #444;
+          color: #fff;
+          padding: 0.7rem 1.2rem;
+          margin: 0.3rem 0;
+          border-radius: 25px;
+          text-decoration: none;
+          font-weight: 600;
+          transition: background 0.3s;
+        }
+      
+        .pill-nav a:hover,
+        .pill-nav a.active {
+          background-color: #ffdd00;
+          color: #121212;
+        }
+      
+        .dropdown-content {
+          position: static;
+          width: 100%;
+          border-radius: 0;
+          box-shadow: none;
+        }
+      }
+      .pill-nav {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        background-color: #222;
+        padding: 1rem;
+      }
