@@ -120,26 +120,27 @@
   }
   @media (max-width: 768px) {
     .pill-nav {
-      flex-direction: column;
-      align-items: center;
+      flex-direction: row;   /* da column a row */
+      flex-wrap: wrap;       /* per consentire avvolgimento su più righe */
+      justify-content: center;
       padding: 1rem;
       background-color: #222;
     }
   
     .pill-nav a,
     .pill-nav .dropbtn {
-      display: block;
-      width: 100%;
-      max-width: 320px;
-      justify-content: center;
+      display: inline-flex;      /* inline-flex per mantenere contenuto orizzontale */
+      width: auto;               /* togli larghezza piena */
+      padding: 0.7rem 1.2rem;
+      margin: 0.3rem;
       text-align: center;
       background-color: #444;
       color: #fff;
-      padding: 0.7rem 1.2rem;
-      margin: 0.3rem 0;
       border-radius: 25px;
-      text-decoration: none;
       font-weight: 600;
+      text-decoration: none;
+      justify-content: center;
+      align-items: center;
       transition: background 0.3s;
     }
   
@@ -150,16 +151,19 @@
     }
   
     .dropdown-content {
-      position: static;
-      width: 100%;
-      border-radius: 0;
-      box-shadow: none;
+      position: absolute;  /* torna absolute per dropdown */
+      width: auto;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      display: none;       /* dropdown nascosto, mostrato al hover */
+      flex-direction: column;
+      top: 100%;
+      left: 0;
+      z-index: 10;
+    }
+  
+    .dropdown:hover .dropdown-content {
+      display: flex;
     }
   }
-  .pill-nav {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    background-color: #222;
-    padding: 1rem;
-  }
+  
