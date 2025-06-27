@@ -143,4 +143,61 @@ body{
       2px 2px 0 #000;
   }
   
- 
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+      padding: 0 10px;
+    }
+  
+    .hero p {
+      font-size: 1.1rem;
+    }
+  
+    .cta-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .cta-button {
+      width: 100%;
+      max-width: 300px;
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .pill-nav {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .pill-nav a,
+    .pill-nav .dropbtn {
+      width: 100%;
+      max-width: 320px;
+      justify-content: center;
+      text-align: center;
+    }
+  
+    .dropdown-content {
+      position: static;
+      width: 100%;
+      border-radius: 0;
+      box-shadow: none;
+    }
+    .hero {
+      padding-bottom: 100px; /* più spazio su schermi piccoli */
+    }
+
+  }
+  .hero {
+    min-height: 100vh; /* era height: 100vh */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    padding: 0 20px;
+    padding-bottom: 60px; /* extra spazio per evitare sovrapposizioni */
+  }
