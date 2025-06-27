@@ -29,6 +29,7 @@ h2,
       flex-wrap: wrap;
       background-color: #222;
       padding: 1rem;
+      margin-bottom: 2rem;
     }
 
     .pill-nav ul {
@@ -48,12 +49,13 @@ h2,
       color: #fff;
       background-color: #444;
       padding: 0.7rem 1.2rem;
+      margin: 0.5rem;
       border-radius: 25px;
       text-decoration: none;
       font-weight: 600;
       transition: background 0.3s;
       display: inline-block;
-      white-space: nowrap;
+      text-decoration: none;
     }
 
     .pill-nav a:hover,
@@ -155,28 +157,6 @@ h2,
       font-weight: 600;
     }
 
-    @media (max-width: 500px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-      .pill-nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-      ul.dropdown-menu {
-        position: static;
-        box-shadow: none;
-        padding-left: 1rem;
-        background-color: transparent;
-      }
-      ul.dropdown-menu a:hover {
-        background-color: transparent;
-        color: #ffdd00;
-      }
-    }
   </style>
 </head>
 <body>
