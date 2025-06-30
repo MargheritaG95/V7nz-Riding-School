@@ -1,6 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6C1RVPC86"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G6C1RVPC86');
+  </script>
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>V7NZ Coaching - Risultati</title>
@@ -13,88 +22,38 @@
       color: #fff;
       min-height: 100vh;
     }
-   /* Font solo per navbar e titoli */
-   .pill-nav a,
-.pill-nav .dropbtn,
-header h1,
-h2,
 
-.section-content h2 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
+    /* Font solo per navbar e titoli */
+    .pill-nav a,
+    .pill-nav .dropbtn,
+    header h1,
+    h2,
+    .section-content h2 {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
 
-    .pill-nav {
+    nav.pill-nav {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       background-color: #222;
-      padding: 1rem;
+      padding: 1rem 0;
       margin-bottom: 2rem;
     }
 
-    .pill-nav ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
-
-    .pill-nav li {
-      position: relative;
-    }
-
-    .pill-nav a {
+    nav.pill-nav a {
       color: #fff;
       background-color: #444;
       padding: 0.7rem 1.2rem;
-      margin: 0.5rem;
+      margin: 0 0.5rem;
       border-radius: 25px;
       text-decoration: none;
       font-weight: 600;
       transition: background 0.3s;
-      display: inline-block;
-      text-decoration: none;
     }
 
-    .pill-nav a:hover,
-    .pill-nav a.active {
-      background-color: #ffdd00;
-      color: #121212;
-    }
-
-    /* Dropdown menu */
-    .pill-nav li:hover > ul.dropdown-menu {
-      display: block;
-    }
-
-    ul.dropdown-menu {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #444;
-      border-radius: 12px;
-      padding: 0.3rem 0;
-      min-width: 160px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
-      z-index: 1000;
-    }
-
-    ul.dropdown-menu li {
-      width: 100%;
-    }
-
-    ul.dropdown-menu a {
-      padding: 0.6rem 1rem;
-      display: block;
-      border-radius: 0;
-      font-weight: 500;
-      background-color: transparent;
-    }
-
-    ul.dropdown-menu a:hover {
+    nav.pill-nav a:hover,
+    nav.pill-nav a.active {
       background-color: #ffdd00;
       color: #121212;
     }
@@ -157,30 +116,29 @@ h2,
       font-weight: 600;
     }
 
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: #999;
+      font-size: 0.9rem;
+      padding-bottom: 2rem;
+    }
   </style>
 </head>
 <body>
 
+  <!-- Navbar corretta -->
   <nav class="pill-nav">
-    <ul>
-      <li><a href="index.html">Home</a></li>
-
-      <li>
-        <a href="corsi.html">Corsi</a>
-        <ul class="dropdown-menu">
-          <li><a href="principiante.html"> Principiante</a></li>
-          <li><a href="amatore.html">Amatori</a></li>
-          <li><a href="pilota.html">Piloti</a></li>
-        </ul>
-      </li>
-      <li><a href="team.html">Team</a></li>
-      <li><a href="piloti.html">Piloti</a></li>
-      <li><a class="active" href="risultati.html">Risultati</a></li>
-      <li><a href= "galleria.html"> Galleria </a></li>
-      <li><a href="contatti.html">Contattaci</a></li>
-    </ul>
+    <a href="index.html">Home</a>
+    <a href="corsi.html">Corsi</a>
+    <a href="team.html">Team</a>
+    <a href="piloti.html">Piloti</a>
+    <a href="risultati.html" class="active">Risultati</a>
+    <a href="galleria.html">Galleria</a>
+    <a href="contatti.html">Contattaci</a>
   </nav>
 
+ 
   <header>
     <h1>I Risultati</h1>
     <p>In soli 2 anni di gare e partecipando a 14 gare abbiamo già portato a casa 16 podi!</p>

@@ -135,6 +135,14 @@
     .dropdown:hover .dropdown-content {
       display: flex;
     }
-  }
+    nav.pill-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #222;
+      padding: 1rem 0;
+      margin-bottom: 2rem;
+    }
+    
   
   
