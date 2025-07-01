@@ -120,50 +120,49 @@
   }
   @media (max-width: 768px) {
     .pill-nav {
-      flex-direction: row;   /* da column a row */
-      flex-wrap: wrap;       /* per consentire avvolgimento su più righe */
+      flex-wrap: wrap;
       justify-content: center;
-      padding: 1rem;
-      background-color: #222;
     }
   
-    .pill-nav a,
-    .pill-nav .dropbtn {
-      display: inline-flex;      /* inline-flex per mantenere contenuto orizzontale */
-      width: auto;               /* togli larghezza piena */
-      padding: 0.7rem 1.2rem;
-      margin: 0.3rem;
+    .pill-nav > a,
+    .pill-nav > .dropdown > .dropbtn {
+      flex: 1 1 45%;
+      max-width: 45%;
+      margin: 0.5rem 0.5rem;
+      padding: 0.7rem 1rem;
+      white-space: normal;
+      line-height: 1.2em;
+      overflow-wrap: break-word;
       text-align: center;
-      background-color: #444;
-      color: #fff;
-      border-radius: 25px;
-      font-weight: 600;
-      text-decoration: none;
-      justify-content: center;
-      align-items: center;
-      transition: background 0.3s;
     }
   
-    .pill-nav a:hover,
-    .pill-nav a.active {
-      background-color: #ffdd00;
-      color: #121212;
-    }
-  
+    /* Dropdown container in pagina, non assoluto */
     .dropdown-content {
-      position: absolute;  /* torna absolute per dropdown */
-      width: auto;
+      position: static;
+      display: none;
+      background-color: #444;
+      box-shadow: none;
       border-radius: 10px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-      display: none;       /* dropdown nascosto, mostrato al hover */
-      flex-direction: column;
-      top: 100%;
-      left: 0;
-      z-index: 10;
+      margin-top: 0.5rem;
     }
   
-    .dropdown:hover .dropdown-content {
+    /* Mostra dropdown se attivo */
+    .dropdown-content.show {
       display: flex;
+      flex-direction: column;
+    }
+  
+    .dropdown-content a {
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      margin: 0.2rem 0;
+      font-weight: 600;
+      text-align: center;
+    }
+  
+    /* Disabilita hover dropdown su mobile */
+    .dropdown:hover .dropdown-content {
+      display: none;
     }
   }
   

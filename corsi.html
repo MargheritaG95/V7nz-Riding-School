@@ -266,12 +266,41 @@ h2,
       color: #121212;
       line-height: 1.5;
     }
+
+    /* Stile per il link "Corsi" nella navbar su mobile */
+    @media (max-width: 600px) {
+      .pill-nav > .dropdown > .dropbtn {
+        flex-direction: column;
+        white-space: normal;
+        padding: 0.5rem 1rem;
+        text-align: center;
+      }
+      /* Aggiunta di un link cliccabile diretto per "Corsi" */
+      .pill-nav > a.corsi-link {
+        display: block;
+        color: #fff;
+        background-color: #444;
+        padding: 0.7rem 1.2rem;
+        margin: 0 0.5rem 0 0.5rem;
+        border-radius: 25px;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+      }
+      .pill-nav > a.corsi-link:hover {
+        background-color: #ffdd00;
+        color: #121212;
+      }
+    }
   </style>
 </head>
 <body>
 
   <nav class="pill-nav">
     <a href="index.html">Home</a>
+
+    <!-- Link corsi diretto per mobile -->
+    <a href="corsi.html" class="corsi-link" aria-label="Pagina Corsi">Corsi</a>
 
     <div class="dropdown">
       <a href="corsi.html" class="dropbtn">Corsi ▾</a>
@@ -376,7 +405,26 @@ h2,
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 V7NZ Coaching. Tutti i diritti riservati. </p>
+    &copy; 2025 The Big Dreamers V7NZ — Created by Margherita Giannotti
+    <a href="cookie.html">Cookie Policy</a> ·
+    <a href="privacy.html">Privacy</a> ·
+    <a href="note-legali.html">Note Legali</a>
   </footer>
+
+  <script>
+    // Script per mostrare il link diretto "Corsi" su mobile
+    function handleResize() {
+      const directLink = document.querySelector('.pill-nav > a.corsi-link');
+      if(window.innerWidth <= 600) {
+        directLink.style.display = 'block';
+      } else {
+        directLink.style.display = 'none';
+      }
+    }
+
+    window.addEventListener('resize', handleResize);
+    window.addEventListener('load', handleResize);
+  </script>
+
 </body>
 </html>

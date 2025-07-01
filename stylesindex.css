@@ -144,19 +144,19 @@ body{
   }
   @media (max-width: 768px) {
     .pill-nav {
-      flex-direction: row;   /* da column a row */
-      flex-wrap: wrap;       /* per consentire avvolgimento su più righe */
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
+      gap: 0.5rem;
       padding: 1rem;
       background-color: #222;
     }
-  
+    
     .pill-nav a,
     .pill-nav .dropbtn {
-      display: inline-flex;      /* inline-flex per mantenere contenuto orizzontale */
-      width: auto;               /* togli larghezza piena */
+      display: inline-flex;
+      width: auto;
       padding: 0.7rem 1.2rem;
-      margin: 0.3rem;
       text-align: center;
       background-color: #444;
       color: #fff;
@@ -167,46 +167,10 @@ body{
       align-items: center;
       transition: background 0.3s;
     }
-  
+    
     .pill-nav a:hover,
     .pill-nav a.active {
       background-color: #ffdd00;
       color: #121212;
     }
-  
-    .dropdown-content {
-      position: absolute;  /* torna absolute per dropdown */
-      width: auto;
-      border-radius: 10px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-      display: none;       /* dropdown nascosto, mostrato al hover */
-      flex-direction: column;
-      top: 100%;
-      left: 0;
-      z-index: 10;
-    }
-  
-    .dropdown:hover .dropdown-content {
-      display: flex;
-    }
-  }
-  
-
-  
-    .hero {
-      padding-bottom: 100px; /* più spazio su schermi piccoli */
-    }
-
-  }
-  .hero {
-    min-height: 100vh; /* era height: 100vh */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    z-index: 1;
-    position: relative;
-    padding: 0 20px;
-    padding-bottom: 60px; /* extra spazio per evitare sovrapposizioni */
-  }
+    
