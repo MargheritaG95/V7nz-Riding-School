@@ -88,19 +88,63 @@
     text-align: left;
     margin-top: 20px;
   }
-  @media (max-width: 600px) {
-    nav.pill-nav {
+
+/* Style the pill navigation menu */
+/* Style the links inside the pill navigation menu */
+.pill-nav a {
+  display: inline-block;
+  color: gold;
+  text-align: left;
+  padding: 14px;
+  text-decoration: none;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 17px;
+  border-radius: 5px;
+  position: static;
+}
+
+/* Change the color of links on mouse-over */
+.pill-nav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.pill-nav a.active {
+  background-color: gold;
+  color: white;
+}
+
+/* Separatamente, fuori da qualsiasi altra regola */
+@media (max-width: 768px) {
+  .pill-nav {
+      display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 0.5rem 0.7rem;
-      padding: 1rem 0.5rem;
-    }
-  
-    nav.pill-nav a {
-      flex: 1 1 auto;
-      text-align: center;
-      padding: 0.6rem 0.7rem;
-      margin: 0.3rem;
-      min-width: calc(50% - 1rem); /* massimo due per riga */
-    }
+      gap: 0.5rem;
+      padding: 1rem;
+      background-color: #222;
   }
-  
+
+  .pill-nav a,
+  .pill-nav .dropbtn {
+      display: inline-flex;
+      width: auto;
+      padding: 0.7rem 1.2rem;
+      text-align: center;
+      background-color: #444;
+      color: #fff;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.3s;
+  }
+
+  .pill-nav a:hover,
+  .pill-nav a.active {
+      background-color: #ffdd00;
+      color: #121212;
+  }
+}

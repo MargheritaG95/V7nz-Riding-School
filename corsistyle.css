@@ -118,51 +118,64 @@
       inset 3px 3px 6px rgba(255, 255, 255, 0.3),
       inset -3px -3px 6px rgba(0, 0, 0, 0.4);
   }
+ 
   @media (max-width: 768px) {
     .pill-nav {
+      display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 0.5rem;
+      padding: 1rem;
+      background-color: #222;
     }
-  
-    .pill-nav > a,
-    .pill-nav > .dropdown > .dropbtn {
-      flex: 1 1 45%;
-      max-width: 45%;
-      margin: 0.5rem 0.5rem;
-      padding: 0.7rem 1rem;
-      white-space: normal;
-      line-height: 1.2em;
-      overflow-wrap: break-word;
+    
+    .pill-nav a,
+    .pill-nav .dropbtn {
+      display: inline-flex;
+      width: auto;
+      padding: 0.7rem 1.2rem;
       text-align: center;
-    }
-  
-    /* Dropdown container in pagina, non assoluto */
-    .dropdown-content {
-      position: static;
-      display: none;
       background-color: #444;
-      box-shadow: none;
-      border-radius: 10px;
-      margin-top: 0.5rem;
-    }
-  
-    /* Mostra dropdown se attivo */
-    .dropdown-content.show {
-      display: flex;
-      flex-direction: column;
-    }
-  
-    .dropdown-content a {
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-      margin: 0.2rem 0;
+      color: #fff;
+      border-radius: 25px;
       font-weight: 600;
-      text-align: center;
+      text-decoration: none;
+      justify-content: center;
+      align-items: center;
+      transition: background 0.3s;
     }
-  
-    /* Disabilita hover dropdown su mobile */
-    .dropdown:hover .dropdown-content {
-      display: none;
+    
+    .pill-nav a:hover,
+    .pill-nav a.active {
+      background-color: #ffdd00;
+      color: #121212;
     }
+
+
+
+
+  /* Style the pill navigation menu */
+/* Style the links inside the pill navigation menu */
+.pill-nav a{
+    display: inline-block;color:gold;
+    text-align: left;
+    padding: 14px;
+    text-decoration: none;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 17px;
+    border-radius: 5px;
+    position:static
+    
   }
   
+  /* Change the color of links on mouse-over */
+  .pill-nav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .pill-nav a.active {
+    background-color: gold;
+    color: white;
+
