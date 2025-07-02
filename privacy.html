@@ -4,17 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Privacy Policy - The Big Dreamers V7NZ</title>
-  <link href="stylepiloti.css" rel="stylesheet" />
+  <link href="stylesindex.css" rel="stylesheet">  
   <style>
     body {
       margin: 0;
-      font-family: poppins, sans-serif;
+      font-family: 'Poppins', sans-serif;
       background: #121212;
       color: #fff;
     }
 
     header, main, footer {
-      padding: 2rem 1rem;
+      padding: 1rem 1rem;
       text-align: center;
     }
 
@@ -40,6 +40,73 @@
       font-family: Impact, sans-serif;
     }
 
+    .pill-nav {
+      display: flex;
+      justify-content: center;
+      background-color: #222;
+      padding: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .pill-nav a,
+    .pill-nav .dropbtn {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 25px;
+      background-color: #333;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      transition: 0.3s;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
+    .pill-nav a:hover,
+    .pill-nav a.active,
+    .pill-nav .dropbtn:hover {
+      background-color: gold;
+      color: #111;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      flex-direction: column;
+      z-index: 1;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: flex;
+    }
+
+    .dropdown-content a {
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: gold;
+      color: black;
+    }
+
+
     footer {
       margin-top: 3rem;
       font-size: 0.9rem;
@@ -56,6 +123,31 @@
       text-decoration: underline;
     }
   </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="pill-nav">
+    <a href="index.html" class="active">Home</a>
+    <div class="dropdown">
+      <a href="corsi.html" class="dropbtn">Corsi ▾</a>
+      <div class="dropdown-content">
+        <a href="principiante.html">Principianti</a>
+        <a href="amatore.html">Amatori</a>
+        <a href="pilota.html">Piloti</a>
+      </div>
+    </div>
+    <a href="team.html">Team</a>
+    <a href="piloti.html">Piloti</a>
+    <a href="risultati.html">Risultati</a>
+    <a href="galleria.html">Galleria</a>
+    <a href="contatti.html">Contattaci</a>
+  </nav>
+
+</body>
+</html>
+
+</style>
 </head>
 <body>
 

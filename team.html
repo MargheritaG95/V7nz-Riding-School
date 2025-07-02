@@ -22,10 +22,12 @@
     }
 
     body, html {
-      height: 100%;
+      margin:0;
+      min-height: 100vh;
       font-family: 'Poppins', sans-serif;
       color: white;
-      overflow-x: hidden;
+      padding: 0;
+    
     }
      /* Navbar styles preserved */
      .pill-nav {
@@ -36,8 +38,8 @@
       flex-wrap: wrap;
       gap: 10px;
       z-index: 2;
-      position: relative;
-    }
+      position:relative;
+     }
 
     .pill-nav a,
     .pill-nav .dropbtn {
@@ -99,27 +101,25 @@
 
     header {
       text-align: center;
-      padding: 0 1rem 1.5rem;
-      max-width: 1500px;
-      margin: 0 auto 2rem;
+      padding: 2rem 1rem 3rem;
+
     }
 
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
       margin: 0;
       color: gold;
       border-bottom: 4px solid #ffdd00;
       display: inline-block;
       padding-bottom: 0.3rem;
-      padding-top: 0.5rem;
-    }
+      }
 
     header p {
-      margin-top: 1rem;
+      margin-top: 0.5rem;
       font-size: 1.25rem;
       color: #eee;
-      line-height: 1.5;
+     
     }
 
     .gallery-wrapper {
@@ -328,7 +328,8 @@
     <a href="contatti.html">Contattaci</a>
   </nav>
 
-    <header>
+ 
+  <header>
     <h1>The Big Dreamers</h1>
     <p> Dalla passione di <strong style="color:gold;"> Vincenzo Butera </strong>, istruttore esperto, e <strong style="color:gold;"> Giuseppe Toscano </strong>, genitore e appassionato delle due ruote, nasce il Team <strong style="color:gold;"> "The Big Dreamers" ASD </strong>: un’associazione sportiva dedicata a rendere il motociclismo accessibile a tutti, adulti e bambini.
 
@@ -337,6 +338,7 @@
       Con dedizione e spirito di squadra, The Big Dreamers vuole diventare un punto di riferimento per tutti coloro che desiderano trasformare un sogno in realtà, salire in sella e condividere emozioni indimenticabili.
     </p>
   </header>
+
 
   <!-- GALLERY CONTAINER -->
   <div class="gallery-wrapper">

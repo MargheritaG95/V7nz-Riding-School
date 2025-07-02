@@ -2,17 +2,18 @@
 <html lang="it">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6C1RVPC86"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6C1RVPC86"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-  gtag('config', 'G-G6C1RVPC86');
-</script>
+    gtag('config', 'G-G6C1RVPC86');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>V7NZ Riding School</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link href="stylesindex.css" rel="stylesheet">
   <style>
     * {
@@ -28,7 +29,12 @@
       overflow-x: hidden;
     }
 
-    /* Slideshow background */
+    p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem; /* ✅ FONT RIDOTTO */
+      color: white;
+    }
+
     .background-slideshow {
       position: fixed;
       top: 0;
@@ -51,7 +57,6 @@
       opacity: 1;
     }
 
-    /* Overlay dark for text readability */
     .overlay {
       position: fixed;
       top: 0;
@@ -62,7 +67,6 @@
       z-index: 0;
     }
 
-    /* Navbar styles preserved */
     .pill-nav {
       display: flex;
       justify-content: center;
@@ -129,7 +133,6 @@
       color: black;
     }
 
-    /* Centered content */
     .hero {
       height: 100vh;
       display: flex;
@@ -151,7 +154,7 @@
     }
 
     .hero p {
-      font-size: 1,5rem;
+      font-size: 1rem;
       max-width: 800px;
       margin-bottom: 30px;
     }
@@ -172,12 +175,87 @@
       text-decoration: none;
       transition: 0.3s;
       box-shadow: 0 0 10px gold;
+      border: 2px solid black;
+      font-family: poppins, sans-serif;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .cta-button:hover {
       background-color: white;
       color: gold;
       box-shadow: 0 0 15px gold;
+    }
+
+    .popup-btn {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      font-size: 1.1rem;
+      cursor: pointer;
+    }
+
+    .donate-popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 20;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .donate-popup.active {
+      display: flex;
+    }
+
+    .donate-content {
+      background-color: #111;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 20px gold;
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .donate-content h2 {
+      color: gold;
+      margin-bottom: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    #ibanInfo {
+      display: none;
+      margin-top: 15px;
+      color: white;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    #ibanInfo p {
+      margin: 5px 0;
+      font-size: 0.85rem; /* ✅ FONT RIDOTTO */
+    }
+
+    .copy-iban {
+      font-size: 0.5rem;
+      text-decoration: underline;
+      cursor: pointer;
+      color: white;
+    }
+
+    #ibanInfo p:last-child span {
+      font-size: 0.8rem;
+      text-decoration: underline;
+      cursor: pointer;
+      color: white;
+      display: inline-block;
+      margin-top: 10px;
     }
 
     footer {
@@ -190,17 +268,42 @@
     }
   </style>
 </head>
+
+<script>
+  function openDonatePopup() {
+    document.getElementById("donatePopup").classList.add("active");
+  }
+
+  function closeDonatePopup() {
+    document.getElementById("donatePopup").classList.remove("active");
+    document.getElementById("ibanInfo").style.display = "none";
+  }
+
+  function toggleIBAN() {
+    const iban = document.getElementById("ibanInfo");
+    iban.style.display = iban.style.display === "none" ? "block" : "none";
+  }
+
+  function copyIBAN() {
+    const ibanText = document.getElementById("ibanCode").textContent;
+    navigator.clipboard.writeText(ibanText).then(() => {
+      alert("IBAN copiato negli appunti!");
+    }, () => {
+      alert("Errore nella copia dell'IBAN");
+    });
+  }
+</script>
+
 <body>
 
-  <!-- Background slideshow -->
   <div class="background-slideshow" id="backgroundSlideshow">
     <img class="slide-bg active" src="v7nz moto piega.jpg" style="object-position: center center;">
-    <img class="slide-bg" src="V7nz Rocco.jpg" style="object-position: center 15%;"> <!-- più bassa -->
-    <img class="slide-bg" src="Vinz & Domenico.jpg" style="object-position: center 40%;"> <!-- più alta -->
+    <img class="slide-bg" src="V7nz Rocco.jpg" style="object-position: center 15%;"> 
+    <img class="slide-bg" src="Vinz & Domenico.jpg" style="object-position: center 40%;"> 
     <img class="slide-bg" src="io tecnica gomito post.JPG" style="object-position: center center;">
-    <img class="slide-bg" src="domy esulto.jpg" style="object-position: center 20%;"> <!-- più bassa -->
+    <img class="slide-bg" src="domy esulto.jpg" style="object-position: center 20%;"> 
     <img class="slide-bg" src="pio.jpg" style="object-position: center 15%;">
-    <img class="slide-bg" src="nico solo moto.jpg" style="object-position: center 30%;"> <!-- più centrata -->
+    <img class="slide-bg" src="nico solo moto.jpg" style="object-position: center 30%;"> 
     <img class="slide-bg" src="scarano bagarre.jpg" style="object-position: center 10%;">
     <img class="slide-bg" src="V7nz &Meg.JPG" style="object-position: center 80%;">
     <img class="slide-bg" src="2 coppe limatola.jpeg" style="object-position: center 5%;">
@@ -208,15 +311,14 @@
     <img class="slide-bg" src="io con bastone .jpg" style="object-position: center 10%;">
     <img class="slide-bg" src="rocco in piega.jpg" style="object-position: center center;">
     <img class="slide-bg" src="Gruppo.jpg" style="object-position: center 5%;">
-    <img class="slide-bg" src="meg rocco coppa.jpg" style="object-position: center 15%;"> <!-- ancora più bassa -->
-    <img class="slide-bg" src="peppe vinz abbraccio.jpg" style="object-position: center 20%;"> <!-- ancora più bassa -->
+    <img class="slide-bg" src="meg rocco coppa.jpg" style="object-position: center 15%;"> 
+    <img class="slide-bg" src="peppe vinz abbraccio.jpg" style="object-position: center 20%;"> 
     <img class="slide-bg" src="felpe.jpg" style="object-position: center 10%;">
     <img class="slide-bg" src="io r6 front.JPG" style="object-position: center 20%;">
   </div>
-  
+
   <div class="overlay"></div>
 
-  <!-- Navbar (unchanged) -->
   <nav class="pill-nav">
     <a href="index.html" class="active">Home</a>
     <div class="dropdown">
@@ -234,35 +336,51 @@
     <a href="contatti.html">Contattaci</a>
   </nav>
 
-  <!-- Hero Content -->
   <section class="hero">
     <h1 class="welcome-title">Benvenuti alla V7NZ Riding School</h1>
-
-    <p> <strong style= color:gold;> “Non c'è cielo troppo alto, né mare troppo in burrasca".  </strong> <br> Con V7nz Coaching School accendiamo passioni, nutriamo sogni e accompagniamo ogni persona a spingersi oltre i propri limiti.</p>
+    <p> <strong style="color:gold;"> “Non c'è cielo troppo alto, né mare troppo in burrasca".</strong> <br> Con V7nz Coaching School accendiamo passioni, nutriamo sogni e accompagniamo ogni persona a spingersi oltre i propri limiti.</p>
     <div class="cta-buttons">
       <a href="corsi.html" class="cta-button">Scopri i nostri Corsi</a>
       <a href="team.html" class="cta-button">Corri con il nostro Team</a>
+      <button class="cta-button" onclick="openDonatePopup()">Dona</button>
+    </div>
+
+    <div id="donatePopup" class="donate-popup">
+      <div class="donate-content">
+        <h2>Sostienici</h2>
+        <p style="font-size: smaller;"> Ogni contributo è un aiuto per far crescere lo sport e la passione dei nostri ragazzi.</p>
+        <a href="https://www.paypal.com/donate" target="_blank" class="cta-button popup-btn">Dona con PayPal</a>
+        <button class="cta-button popup-btn" onclick="toggleIBAN()">Dona con IBAN</button>
+
+        <div id="ibanInfo">
+          <p><strong>IBAN:</strong> <span id="ibanCode">IT00A0000000000000000000000</span></p>
+          <p><strong>Intestatario:</strong> The Big Dreamers V7NZ</p>
+          <p><strong>Banca:</strong> Nome della Banca</p>
+          <p><span class="copy-iban" onclick="copyIBAN()" title="Clicca per copiare">Copia IBAN</span></p>
+        </div>
+
+        <button onclick="closeDonatePopup()" class="cta-button" style="margin-top: 20px;">Chiudi</button>
+      </div>
     </div>
   </section>
 
-  <!-- Slideshow Script -->
-  <script>
-    let currentBg = 0;
-    const slides = document.querySelectorAll(".slide-bg");
-
-    setInterval(() => {
-      slides[currentBg].classList.remove("active");
-      currentBg = (currentBg + 1) % slides.length;
-      slides[currentBg].classList.add("active");
-    }, 4000);
-  </script>
-
-<footer>
-  &copy; 2025 The Big Dreamers V7NZ. Tutti i diritti riservati. — Created by Margherita Giannotti 
-  <a href="cookie.html">Cookie Policy</a> ·
-  <a href="privacy.html">Privacy</a> ·
-  <a href="note-legali.html">Note Legali</a>
-</footer>
-
+    <!-- Slideshow Script -->
+    <script>
+      let currentBg = 0;
+      const slides = document.querySelectorAll(".slide-bg");
+  
+      setInterval(() => {
+        slides[currentBg].classList.remove("active");
+        currentBg = (currentBg + 1) % slides.length;
+        slides[currentBg].classList.add("active");
+      }, 4000);
+    </script>
+  
+  <footer>
+    &copy; 2025 The Big Dreamers V7NZ. Tutti i diritti riservati. — Created by Margherita Giannotti 
+    <a href="cookie.html">Cookie Policy</a> ·
+    <a href="privacy.html">Privacy</a> ·
+    <a href="note-legali.html">Note Legali</a>
+  </footer>
 </body>
 </html>

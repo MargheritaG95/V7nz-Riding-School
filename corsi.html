@@ -13,7 +13,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>V7NZ Coaching - Corsi</title>
-  <link href="stilecorsi.css" rel="stylesheet">
+  <link href="stylesindex.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -37,13 +38,15 @@ h2,
       justify-content: center;
       flex-wrap: wrap;
       background-color: #222;
-      padding: 1rem;
-      margin bottom: 2rem;
+      padding: 15px;
+      gap: 10px;
+      z-index: 2;
+      position: relative;
     }
 
     /* Stile per tutti i link della navbar e bottone dropdown */
-    .pill-nav > a,
-    .pill-nav > .dropdown > .dropbtn {
+    .pill-nav a,
+    .pill-nav .dropdown > .dropbtn {
       color: #fff;
       background-color: #444;
       padding: 0.7rem 1.2rem;
@@ -118,8 +121,10 @@ h2,
       border-bottom: 4px solid #ffdd00;
       display: inline-block;
       padding-bottom: 0.3rem;
+      padding-top: 2rem;
     }
 
+  
     header p {
       margin-top: 0.5rem;
       font-size: 1.2rem;
@@ -179,7 +184,7 @@ h2,
     .level-card-content h2 {
       font-size: 1.5rem;
       color: #ffdd00;
-      margin: 0 0 0.5rem;
+     -margin: 0 0 0.5rem;
       border-bottom: 2px solid #ffdd00;
       padding-bottom: 0.3rem;
     }
@@ -199,6 +204,7 @@ h2,
       font-weight: 600;
       text-align: center;
       border-radius: 15px;
+      border-color: #111;
       text-decoration: none;
       transition: background-color 0.3s ease;
       align-self: flex-start;
