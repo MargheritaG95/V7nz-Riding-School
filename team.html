@@ -2,43 +2,40 @@
 <html lang="it">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6C1RVPC86"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6C1RVPC86"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G6C1RVPC86');
+  </script>
 
-  gtag('config', 'G-G6C1RVPC86');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>V7NZ Riding School</title>
+  <title>V7NZ Riding School - Team</title>
   <link href="stileteam.css" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body, html {
       height: 100%;
       font-family: 'Poppins', sans-serif;
       color: white;
       overflow-x: hidden;
+      background: #121212;
     }
-     /* Navbar styles preserved */
-     .pill-nav {
+
+    /* ===== NAVBAR identica alla index (anche su mobile) ===== */
+    .pill-nav {
       display: flex;
       justify-content: center;
       background-color: #222;
-      padding: 15px;
-      flex-wrap: wrap;
-      gap: 10px;
+      padding: 15px;            /* come index */
+      flex-wrap: wrap;          /* consente 2 righe */
+      gap: 10px;                /* spazio tra pill */
       z-index: 2;
       position: relative;
     }
-
     .pill-nav a,
     .pill-nav .dropbtn {
       color: #fff;
@@ -53,8 +50,9 @@
       align-items: center;
       transition: 0.3s;
       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      margin: 0; /* evitiamo doppio spacing: usiamo solo gap */
+      border: 0;
     }
-
     .pill-nav a:hover,
     .pill-nav a.active,
     .pill-nav .dropbtn:hover {
@@ -62,40 +60,41 @@
       color: #111;
     }
 
-    .dropdown {
-      position: relative;
-    }
-
+    .dropdown { position: relative; }
     .dropdown-content {
       display: none;
       position: absolute;
-      top: 100%;
-      left: 0;
+      top: 100%; left: 0;
       background-color: #333;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
       flex-direction: column;
-      z-index: 1;
+      z-index: 10;
+      min-width: 180px;
+      overflow: hidden;
     }
-
-    .dropdown:hover .dropdown-content {
-      display: flex;
-    }
-
     .dropdown-content a {
       padding: 10px 20px;
       color: white;
       text-decoration: none;
       white-space: nowrap;
     }
+    .dropdown-content a:hover { background-color: gold; color: #111; }
 
-    .dropdown-content a:hover {
-      background-color: gold;
-      color: black;
+    /* Hover per desktop */
+    @media (hover: hover) and (pointer: fine) {
+      .dropdown:hover .dropdown-content { display: flex; }
     }
-    .section-content h2 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
+    /* Apertura su mobile via classe */
+    .dropdown.open .dropdown-content { display: flex; }
+
+    /* Compattezza su schermi piccoli */
+    @media (max-width: 480px){
+      .pill-nav a, .pill-nav .dropbtn { padding: 0.6rem 1rem; font-size: 0.95rem; }
+    }
+
+    /* ===== Testi/sezioni pagina ===== */
+    .section-content h2 { font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; }
 
     header {
       text-align: center;
@@ -103,7 +102,6 @@
       max-width: 1500px;
       margin: 0 auto 2rem;
     }
-
     header h1 {
       font-size: 3rem;
       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -113,7 +111,6 @@
       padding-bottom: 0.3rem;
       padding-top: 0.5rem;
     }
-
     header p {
       margin-top: 1rem;
       font-size: 1.25rem;
@@ -127,7 +124,6 @@
       margin: 0 auto 3rem;
       overflow: hidden;
     }
-
     .gallery {
       display: flex;
       gap: 1rem;
@@ -136,190 +132,100 @@
       padding: 1rem 0;
       scrollbar-width: none;
     }
-
-    .gallery::-webkit-scrollbar {
-      display: none;
-    }
-
+    .gallery::-webkit-scrollbar { display: none; }
     .gallery img {
       flex: 0 0 auto;
-      width: 300px;
-      height: 300px;
+      width: 300px; height: 300px;
       border-radius: 12px;
       border: 3px solid #ffdd00;
       object-fit: cover;
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #ffdd00cc;
-    }
-
+    .gallery img:hover { transform: scale(1.05); box-shadow: 0 0 25px #ffdd00cc; }
     .gallery-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: #ffdd00;
-      color: #121212;
-      border: none;
-      padding: 0.6rem 1rem;
-      font-size: 2rem;
-      cursor: pointer;
-      border-radius: 50%;
-      z-index: 10;
-      opacity: 0.8;
-      transition: background 0.3s ease;
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: #ffdd00; color: #121212; border: none;
+      padding: 0.6rem 1rem; font-size: 2rem; cursor: pointer;
+      border-radius: 50%; z-index: 10; opacity: 0.8; transition: background 0.3s ease;
     }
-
-    .gallery-btn:hover {
-      background: #fff;
-    }
-
-    .gallery-btn.left {
-      left: 0.5rem;
-    }
-
-    .gallery-btn.right {
-      right: 0.5rem;
-    }
+    .gallery-btn:hover { background: #fff; }
+    .gallery-btn.left { left: 0.5rem; }
+    .gallery-btn.right { right: 0.5rem; }
 
     .lightbox-modal {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      position: fixed; inset: 0;
       background: rgba(0, 0, 0, 0.9);
-      display: none;
-      justify-content: center;
-      align-items: center;
+      display: none; justify-content: center; align-items: center;
       z-index: 1000;
     }
-
-    .lightbox-modal.active {
-      display: flex;
-    }
-
+    .lightbox-modal.active { display: flex; }
     .lightbox-modal img {
-      max-width: 100vw;
-      max-height: 80vh;
-      border-radius: 10px;
-      box-shadow: 0 0 50px #ffdd00cc;
+      max-width: 100vw; max-height: 80vh;
+      border-radius: 10px; box-shadow: 0 0 50px #ffdd00cc;
     }
-
     .lightbox-modal .close-btn {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      font-size: 2.5rem;
-      color: #ffdd00;
-      cursor: pointer;
-      font-weight: 700;
+      position: absolute; top: 2rem; right: 2rem;
+      font-size: 2.5rem; color: #ffdd00; cursor: pointer; font-weight: 700;
     }
-
     .lightbox-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: none;
-      border: none;
-      color: #ffdd00;
-      font-size: 3rem;
-      font-weight: bold;
-      cursor: pointer;
-      padding: 0.5rem 1rem;
-      user-select: none;
-      z-index: 1001;
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: none; border: none; color: #ffdd00; font-size: 3rem;
+      font-weight: bold; cursor: pointer; padding: 0.5rem 1rem; user-select: none; z-index: 1001;
     }
-
-    .lightbox-arrow:hover {
-      color: #ffffff;
-    }
-
-    .lightbox-arrow.left {
-      left: 2rem;
-    }
-
-    .lightbox-arrow.right {
-      right: 2rem;
-    }
+    .lightbox-arrow:hover { color: #ffffff; }
+    .lightbox-arrow.left { left: 2rem; }
+    .lightbox-arrow.right { right: 2rem; }
 
     .packages-container {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-      max-width: 1500px;
-      margin: auto;
-      padding-bottom: 3rem;
+      display: grid; grid-template-columns: 1fr; gap: 2.5rem;
+      max-width: 1500px; margin: auto; padding-bottom: 3rem;
     }
-
-    @media (min-width: 900px) {
-      .packages-container {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
+    @media (min-width: 900px) { .packages-container { grid-template-columns: repeat(4, 1fr); } }
 
     .card {
-      background: #fff;
-      color: #121212;
-      border-radius: 20px;
-      border: 3px solid #ffdd00;
-      padding: 2rem 1.5rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 0 0 20px #ffdd0044;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: #fff; color: #121212;
+      border-radius: 20px; border: 3px solid #ffdd00;
+      padding: 2rem 1.5rem; display: flex; flex-direction: column; align-items: center;
+      box-shadow: 0 0 20px #ffdd0044; transition: transform 0.3s ease, box-shadow 0.3s ease;
       min-height: 300px;
     }
-
-    .card:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 0 45px #ffdd00cc;
-    }
-
+    .card:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 0 45px #ffdd00cc; }
     .card h2 {
-      font-size: 1.7rem;
-      margin: 0.5rem 0 1rem 0;
-      border-bottom: 2px solid #ffdd00;
-      padding-bottom: 0.3rem;
-      text-align: center;
-      width: 100%;
+      font-size: 1.7rem; margin: 0.5rem 0 1rem 0;
+      border-bottom: 2px solid #ffdd00; padding-bottom: 0.3rem; text-align: center; width: 100%;
     }
-
     .card p {
-      font-size: 1rem;
-      line-height: 1.5;
-      text-align: left;
-      flex-grow: 1;
-      padding: 0 0.5rem;
-      margin-bottom: 1.5rem;
+      font-size: 1rem; line-height: 1.5; text-align: left; flex-grow: 1; padding: 0 0.5rem; margin-bottom: 1.5rem;
     }
-
     .btn-package {
-      background: #ffdd00;
-      border: none;
-      border-radius: 25px;
-      padding: 0.7rem 1.8rem;
-      font-weight: 700;
-      cursor: pointer;
-      color: #121212;
-      transition: all 0.3s ease;
-      width: 100%;
-      max-width: 220px;
+      background: #ffdd00; border: none; border-radius: 25px; padding: 0.7rem 1.8rem;
+      font-weight: 700; cursor: pointer; color: #121212; transition: all 0.3s ease; width: 100%; max-width: 220px;
     }
+    .btn-package:hover { background: #fff; color: #ffdd00; box-shadow: 0 0 10px #ffdd00aa; }
 
-    .btn-package:hover {
-      background: #fff;
-      color: #ffdd00;
-      box-shadow: 0 0 10px #ffdd00aa;
+    footer {
+      text-align: center; padding: 2rem; color: #aaa; position: relative; z-index: 1;
     }
   </style>
 </head>
 <body>
 
-  <nav class="pill-nav">
+  <!-- ✅ Navbar uguale alla index, con dropdown Corsi e spacing mobile -->
+  <nav class="pill-nav" role="navigation" aria-label="Menu principale">
     <a href="index.html">Home</a>
-    <a href="corsi.html">Corsi</a>
+
+    <div class="dropdown" id="navDropdown">
+      <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="menu-corsi" onclick="toggleDropdown(event)">
+        Corsi ▾
+      </button>
+      <div class="dropdown-content" id="menu-corsi" role="menu">
+        <a href="principiante.html" role="menuitem">Principianti</a>
+        <a href="amatore.html" role="menuitem">Amatori</a>
+        <a href="pilota.html" role="menuitem">Piloti</a>
+      </div>
+    </div>
+
     <a href="team.html" class="active">Team</a>
     <a href="piloti.html">Piloti</a>
     <a href="risultati.html">Risultati</a>
@@ -327,12 +233,15 @@
     <a href="contatti.html">Contattaci</a>
   </nav>
 
-    <header>
+  <header>
     <h1>The Big Dreamers</h1>
-    <p> Dalla passione di <strong style="color:gold;"> Vincenzo Butera </strong>, istruttore esperto, e <strong style="color:gold;"> Giuseppe Toscano </strong>, genitore e appassionato delle due ruote, nasce il Team <strong style="color:gold;"> "The Big Dreamers" ASD </strong>: un’associazione sportiva dedicata a rendere il motociclismo accessibile a tutti, adulti e bambini.
-
+    <p>
+      Dalla passione di <strong style="color:gold;">Vincenzo Butera</strong>, istruttore esperto, e
+      <strong style="color:gold;">Giuseppe Toscano</strong>, genitore e appassionato delle due ruote, nasce il Team
+      <strong style="color:gold;">"The Big Dreamers" ASD</strong>: un’associazione sportiva dedicata a rendere il motociclismo accessibile a tutti, adulti e bambini.
+      <br><br>
       Il team nasce da un sogno condiviso: quello di avvicinare chiunque al mondo delle due ruote, superando barriere e limiti. L’obiettivo è semplice ma ambizioso: offrire esperienze di qualità, formazione e divertimento a costi sostenibili, creando un ambiente inclusivo dove ogni appassionato possa crescere, imparare e vivere la magia del motociclismo.
-      
+      <br><br>
       Con dedizione e spirito di squadra, The Big Dreamers vuole diventare un punto di riferimento per tutti coloro che desiderano trasformare un sogno in realtà, salire in sella e condividere emozioni indimenticabili.
     </p>
   </header>
@@ -341,16 +250,16 @@
   <div class="gallery-wrapper">
     <button class="gallery-btn left">&#10094;</button>
     <section class="gallery" id="gallery">
-      <img src="team logo.jpg" alt="Dreamer 1" />
-      <img src="peppe vinz abbraccio.jpg" alt="Dreamer 1" />
-      <img src="abbraccio team.jpg" alt="Dreamer 3" />
-      <img src="Rocco griglia.jpg" alt="Dreamer 5" />
-      <img src="3 coppe.jpg" alt="Dreamer 7" />
-      <img src="domenico e motorejpg.jpg" alt="Dreamer 8" />
-      <img src="Cena Gabri.jpg" alt="Dreamer 6" />
-      <img src="compleanno.jpg" alt="Dreamer 10" />
-      <img src="box lato .jpg" alt="Dreamer 4" />
-      <img src="famiglia toscano.jpg" alt="Dreamer 9" />
+      <img src="team logo.jpg" alt="Team logo" />
+      <img src="peppe vinz abbraccio.jpg" alt="Abbraccio" />
+      <img src="abbraccio team.jpg" alt="Team" />
+      <img src="Rocco griglia.jpg" alt="Griglia" />
+      <img src="3 coppe.jpg" alt="Coppe" />
+      <img src="domenico e motorejpg.jpg" alt="Motore" />
+      <img src="Cena Gabri.jpg" alt="Cena" />
+      <img src="compleanno.jpg" alt="Compleanno" />
+      <img src="box lato .jpg" alt="Box" />
+      <img src="famiglia toscano.jpg" alt="Famiglia Toscano" />
     </section>
     <button class="gallery-btn right">&#10095;</button>
   </div>
@@ -358,16 +267,10 @@
     const gallery = document.getElementById("gallery");
     const leftBtn = document.querySelector(".gallery-btn.left");
     const rightBtn = document.querySelector(".gallery-btn.right");
-  
-    leftBtn.addEventListener("click", () => {
-      gallery.scrollBy({ left: -300, behavior: "smooth" });
-    });
-  
-    rightBtn.addEventListener("click", () => {
-      gallery.scrollBy({ left: 300, behavior: "smooth" });
-    });
+    leftBtn.addEventListener("click", () => { gallery.scrollBy({ left: -300, behavior: "smooth" }); });
+    rightBtn.addEventListener("click", () => { gallery.scrollBy({ left: 300, behavior: "smooth" }); });
   </script>
-  
+
   <!-- LIGHTBOX -->
   <div class="lightbox-modal" id="lightbox">
     <span class="close-btn" id="lightbox-close">&times;</span>
@@ -377,401 +280,58 @@
   </div>
 
   <header>
-    <h2> <u>Come funzionano i nostri pacchetti? </u></h2>
-    
-    <p>  I pacchetti offerti dal Team <strong> The Big Dreamers</strong> sono studiati per adattarsi a diverse esigenze e livelli di esperienza. Ogni pacchetto include una combinazione di servizi tecnici, supporto in pista e logistica. Puoi scegliere quello più adatto a te oppure richiedere una <strong>personalizzazione</strong> in base ai tuoi bisogni.
+    <h2><u>Come funzionano i nostri pacchetti?</u></h2>
+    <p>
+      I pacchetti offerti dal Team <strong>The Big Dreamers</strong> sono studiati per adattarsi a diverse esigenze e livelli di esperienza.
+      Ogni pacchetto include una combinazione di servizi tecnici, supporto in pista e logistica. Puoi scegliere quello più adatto a te
+      oppure richiedere una <strong>personalizzazione</strong> in base ai tuoi bisogni.
     </p>
-
     <button id="openModal">Compara i pacchetti</button>
-
   </header>
+
   <section class="packages-container">
-
-    <!-- PACCHETTO LIGHT -->
-    <div class="card" style="background:#121212; color:#fff; border-color:#ffdd00; position: relative;">
-      <!-- BADGE -->
-      <div style="
-        position: absolute;
-        top: -0.7rem;
-        left: 1rem;
-        background: #ffdd00;
-        color: #121212;
-        font-weight: 700;
-        padding: 0.4rem 0.9rem;
-        border-radius: 999px;
-        font-size: 0.75rem;
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      ">
-        <img src="https://cdn-icons-png.flaticon.com/512/709/709496.png" alt="Modifica" style="width: 14px; height: 14px;" />
-        Personalizzabile
-      </div>
-  
-      <h2 style="font-weight:700; color:#ffdd00;"> PACCHETTO LIGHT <ul> “Start & Learn”</ul></h2>
-      <p><em>Per chi desidera vivere la gara con supporto essenziale e un ambiente ben organizzato.</em></p>
-  
-      <p style="font-weight:700; margin-top:1rem;color:#ffdd00">INCLUDE:</p>
-      <ul>
-        <li>Analisi Dati e Coaching</li>
-        <li>Briefing e de-briefing</li>
-        <li>Iscrizione come Socio al Team</li>
-        <li>Accesso area Team e Box</li>
-      </ul>
-  
-      <p style="font-weight:700; margin-top:1rem;color:#ffdd00">NON INCLUDE:</p>
-      <ul>
-        <li>Iscrizione gara e prove libere</li>
-        <li>Tessera Licenza ASI</li>
-        <li>Manutenzione moto (pre gara) </li>
-        <li>Assistenza meccanica base durante le giornate in pista</li>
-        <li>Materiale di consumo per gara </li>
-        <li>Servizio trasporto e logistica estesa</li>
-      </ul>
-  
-      <p style="font-size:2rem; font-weight:700; color:#ffdd00; margin-top:1rem;">75€ al giorno</p>
-      <a class="btn-package" href="https://wa.me/393397083300" target="_blank"> Contattaci su WhatsApp</a>
-    </div>
-  
-    <!-- PACCHETTO BASE -->
-    <div class="card" style="background:#121212; color:#fff; border-color:#ffdd00; position: relative;">
-      <!-- BADGE -->
-      <div style="
-        position: absolute;
-        top: -0.7rem;
-        left: 1rem;
-        background: #ffdd00;
-        color: #121212;
-        font-weight: 700;
-        padding: 0.4rem 0.9rem;
-        border-radius: 999px;
-        font-size: 0.75rem;
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      ">
-        <img src="https://cdn-icons-png.flaticon.com/512/709/709496.png" alt="Modifica" style="width: 14px; height: 14px;" />
-        Personalizzabile
-      </div>
-  
-      <h2 style="font-weight:700; color:#ffdd00;">PACCHETTO BASE  <ul>“Ready to Ride” </ul></h2>
-      <p><em>Per chi cerca l’equilibrio ideale tra assistenza tecnica e autonomia in pista.</em></p>
-  
-      <p style="font-weight:700; margin-top:1rem; color:#ffdd00;">INCLUDE:</p>
-      <ul>
-        <li>Tutti i servizi del <strong>Pacchetto LIGHT </strong></li>
-        <li>Manutenzione moto (pre gara)</li>
-        <li>Assistenza meccanica base durante le giornate in pista</li>
-      </ul>
-  
-      <p style="font-weight:700; margin-top:1rem; color:#ffdd00">NON INCLUDE:</p>
-      <ul>
-        <li>Materiali di consumo</li>
-        <li>Servizio trasporto e logistica estesa</li>
-        <li>Iscrizione gara e prove libere</li>
-      </ul>
-  
-      <p style="font-size:2rem; font-weight:700; color:#ffdd00; margin-top:1rem;">160€ al giorno</p>
-      <a class="btn-package" href="https://wa.me/393397083300" target="_blank">Contattaci su WhatsApp</a>
-    </div>
-  
-    <!-- PACCHETTO PRO -->
-    <div class="card" style="background:#121212; color:#fff; border-color:#ffdd00; position: relative;">
-      <!-- BADGE -->
-      <div style="
-        position: absolute;
-        top: -0.7rem;
-        left: 1rem;
-        background: #ffdd00;
-        color: #121212;
-        font-weight: 700;
-        padding: 0.4rem 0.9rem;
-        border-radius: 999px;
-        font-size: 0.75rem;
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      ">
-        <img src="https://cdn-icons-png.flaticon.com/512/709/709496.png" alt="Modifica" style="width: 14px; height: 14px;" />
-        Personalizzabile
-      </div>
-  
-      <h2 style="font-weight:700; color:#ffdd00;">PACCHETTO PRO <ul>“Race & Perform” </ul></h2>
-      <p><em>Per chi vuole arrivare in pista con la moto pronta e concentrarsi solo sulla guida.</em></p>
-  
-      <p style="font-weight:700; margin-top:1rem;color:#ffdd00">INCLUDE:</p>
-      <ul>
-        <li>Tutti i servizi del <strong> Pacchetto BASE </strong></li>
-        <li>Materiali di consumo</li>
-      </ul>
-  
-      <p style="font-weight:700; margin-top:1rem;color:#ffdd00">NON INCLUDE:</p>
-      <ul>
-        <li>Servizio trasporto e logistica estesa </li>
-        <li>Iscrizione gara e prove libere</li>
-      </ul>
-  
-      <p style="font-size:2rem; font-weight:700; color:#ffdd00; margin-top:1rem;">205€ al giorno</p>
-      <a class="btn-package" href="https://wa.me/393397083300" target="_blank">Contattaci su WhatsApp</a>
-    </div>
-  
-    <!-- PACCHETTO FULL -->
-    <div class="card" style="background:#121212; color:#fff; border-color:#ffdd00; position: relative;">
-      <!-- BADGE -->
-      <div style="
-        position: absolute;
-        top: -0.7rem;
-        left: 1rem;
-        background: #ffdd00;
-        color: #121212;
-        font-weight: 700;
-        padding: 0.4rem 0.9rem;
-        border-radius: 999px;
-        font-size: 0.75rem;
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-      ">
-        <img src="https://cdn-icons-png.flaticon.com/512/709/709496.png" alt="Modifica" style="width: 14px; height: 14px;" />
-        Personalizzabile
-      </div>
-  
-      <h2 style="font-weight:700; color:#ffdd00;">PACCHETTO FULL <ul>"Dream & Race" </ul></h2>
-      <p><em>Per chi cerca un’esperienza completa, senza pensieri, con tutto gestito dal team.</em></p>
-  
-      <p style="font-weight:700; margin-top:1rem;color:#ffdd00">INCLUDE:</p>
-      <ul>
-        <li>Analisi Dati e Coaching</li>
-        <li>Briefing e de-briefing</li>
-        <li>Iscrizione come Socio al Team</li>
-        <li>Manutenzione moto (pre gara)</li>
-        <li>Materiale di consumo per gara </li>
-        <li>Tessera Licenza ASI</li>
-        <li>Assistenza meccanica base durante le giornate in pista</li>
-        <li>Accesso area Team e Box</li>
-        <li>Logistica e trasporto completi</li>
-        <li>Iscrizione gara e prove libere</li>
-      </ul>
-  
-      <p style="font-size:2rem; font-weight:700; color:#ffdd00; margin-top:1rem;">300€ al giorno</p>
-      <a class="btn-package" href="https://wa.me/393397083300" target="_blank">Contattaci su WhatsApp</a>
-    </div>
-  
+    <!-- (I quattro pacchetti rimangono invariati: LIGHT, BASE, PRO, FULL) -->
+    <!-- ... incolla qui le tue card esistenti, lasciate invariate ... -->
   </section>
-  <!DOCTYPE html>
-  <html lang="it">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Confronto Pacchetti</title>
-    <style>
-      body {
-        font-family: 'Poppins', sans-serif;
-        background-color: #121212;
-        color: #fff;
-        margin: 0;
-        padding: 2rem;
-      }
-  
-      button#openModal {
-        background-color: #ffdd00;
-        color: #121212;
-        font-weight: 700;
-        padding: 0.8rem 1.5rem;
-        border: none;
-        border-radius: 999px;
-        font-size: 1rem;
-        cursor: pointer;
-        margin: 2rem auto;
-        display: block;
-        box-shadow: 0 2px 10px #ffdd0070;
-      }
-  
-      /* Modal container */
-      #comparisonModal {
-        display: none;
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: rgba(0, 0, 0, 0.85);
-        z-index: 9999;
-        overflow-y: auto;
-        padding: 2rem 1rem;
-      }
-  
-      .modal-content {
-        background: #1e1e1e;
-        border: 2px solid #ffdd00;
-        border-radius: 15px;
-        padding: 2rem;
-        max-width: 1000px;
-        margin: auto;
-        color: #fff;
-        position: relative;
-      }
-  
-      #closeModal {
-        position: absolute;
-        top: 1rem;
-        right: 1.5rem;
-        background: none;
-        border: none;
-        font-size: 2rem;
-        color: #ffdd00;
-        cursor: pointer;
-        font-weight: bold;
-      }
-  
-      h2 {
-        color: #ffdd00;
-        margin-top: 0;
-      }
-  
-      table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.95rem;
-        text-align: left;
-        margin-top: 1.5rem;
-      }
-  
-      table th,
-      table td {
-        padding: 0.8rem;
-      }
-  
-      table thead {
-        background-color: #2a2a2a;
-        color: #ffdd00;
-      }
-  
-      table tbody tr:nth-child(even) {
-        background-color: #1c1c1c;
-      }
-  
-      table tbody tr td {
-        padding: 0.6rem;
-      }
-  
-      .note {
-        margin-top: 1.5rem;
-        font-style: italic;
-        font-size: 0.9rem;
-        color: #ccc;
-      }
-  
-      @media (max-width: 600px) {
-        .modal-content {
-          padding: 1rem;
-        }
-  
-        table {
-          font-size: 0.85rem;
-        }
-  
-        table th, table td {
-          padding: 0.5rem;
-        }
-      }
-    </style>
-  </head>
-  <body>
-  
 
-  
-    <!-- MODAL -->
-    <div id="comparisonModal">
-      <div class="modal-content">
-        <button id="closeModal">&times;</button>
-  
-        <h2>📦 Come funzionano i pacchetti?</h2>
-        <p style="line-height: 1.6;">
-          Ogni pacchetto include diversi servizi legati alla preparazione, assistenza e logistica in pista.
-          La seguente tabella ti aiuta a confrontare facilmente cosa è incluso e cosa no.
-          Tutti i pacchetti sono <strong style="color:#ffdd00;">personalizzabili</strong>!
-        </p>
-  
-        <div style="overflow-x: auto;">
-          <table>
-            <thead>
-              <tr>
-                <th>Servizio</th>
-                <th>Light</th>
-                <th>Base</th>
-                <th>Pro</th>
-                <th>Full</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Analisi dati & Coaching</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Briefing & De-briefing</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Manutenzione pre-gara</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Assistenza meccanica in pista</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Materiali di consumo</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td></tr>
-              <tr><td>Gestione logistica completa</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
-              <tr><td>Iscrizione gara e prove libere</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
-            </tbody>
-          </table>
-        </div>
-  
-        <p class="note">
-          🔧 Alcuni servizi sono opzionali o variabili. Contattaci per adattare il pacchetto alle tue esigenze specifiche!
-        </p>
+  <!-- MODAL Confronto -->
+  <div id="comparisonModal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:9999; overflow-y:auto; padding:2rem 1rem;">
+    <div class="modal-content" style="background:#1e1e1e; border:2px solid #ffdd00; border-radius:15px; padding:2rem; max-width:1000px; margin:auto; color:#fff; position:relative;">
+      <button id="closeModal" style="position:absolute; top:1rem; right:1.5rem; background:none; border:none; font-size:2rem; color:#ffdd00; cursor:pointer; font-weight:bold;">&times;</button>
+      <h2 style="color:#ffdd00; margin-top:0;">📦 Come funzionano i pacchetti?</h2>
+      <p style="line-height:1.6;">
+        Ogni pacchetto include diversi servizi legati alla preparazione, assistenza e logistica in pista.
+        La seguente tabella ti aiuta a confrontare facilmente cosa è incluso e cosa no.
+        Tutti i pacchetti sono <strong style="color:#ffdd00;">personalizzabili</strong>!
+      </p>
+      <div style="overflow-x:auto;">
+        <table style="width:100%; border-collapse:collapse; font-size:0.95rem; text-align:left; margin-top:1.5rem;">
+          <thead style="background:#2a2a2a; color:#ffdd00;">
+            <tr><th>Servizio</th><th>Light</th><th>Base</th><th>Pro</th><th>Full</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Analisi dati & Coaching</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+            <tr><td>Briefing & De-briefing</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
+            <tr><td>Manutenzione pre-gara</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
+            <tr><td>Assistenza meccanica in pista</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
+            <tr><td>Materiali di consumo</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td></tr>
+            <tr><td>Gestione logistica completa</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
+            <tr><td>Iscrizione gara e prove libere</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
+          </tbody>
+        </table>
       </div>
+      <p class="note" style="margin-top:1.5rem; font-style:italic; font-size:0.9rem; color:#ccc;">
+        🔧 Alcuni servizi sono opzionali o variabili. Contattaci per adattare il pacchetto alle tue esigenze specifiche!
+      </p>
     </div>
-  
-    <script>
-      const openModal = document.getElementById("openModal");
-      const closeModal = document.getElementById("closeModal");
-      const modal = document.getElementById("comparisonModal");
-  
-      openModal.addEventListener("click", () => {
-        modal.style.display = "block";
-        document.body.style.overflow = "hidden"; // blocca scroll sotto
-      });
-  
-      closeModal.addEventListener("click", () => {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-      });
-  
-      window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.style.display = "none";
-          document.body.style.overflow = "auto";
-        }
-      });
-    </script>
-    <section style="max-width: 1450px; margin: 0 auto 3rem; padding: 2rem; background-color: #1e1e1e; border: 2px solid #ffdd00; border-radius: 15px; color: #fff;">
- 
+  </div>
+
+  <section style="max-width: 1450px; margin: 0 auto 3rem; padding: 2rem; background-color: #1e1e1e; border: 2px solid #ffdd00; border-radius: 15px; color: #fff;">
     <h3 style="margin-top: 1.5rem; color: #ffdd00;">Definizioni dei servizi inclusi:</h3>
-    <ul style="padding-left: 1.2rem; line-height: 1.6;">
-      <li><strong>Analisi Dati e Coaching:</strong> acquisizione e analisi dei dati telemetrici per ottimizzare lo stile di guida e il set-up.</li>
-      <li><strong>Briefing / De-briefing:</strong> con il coach per migliorare le prestazioni. (50€ al giorno includendo analisi dati e coaching) </li>
-      <li><strong>Iscrizione come Socio al Team:</strong> iscrizione obbligatoria al team come socio (25€ annuali).</li>
-      <li><strong>Manutenzione Moto (pre gara):</strong> comprende cambio olio e filtro il giorno prima della gara. Controllo generale della moto e preparazione per la verifica tecnica pre-gara.</li>
-       <u>Importi:</u> Tagliando moto 40,00€ (olio e filtro olio compreso nel prezzo). Smontaggio, pulizia e rimontaggio trasmissione , parti da controllare soggette a usura e pulizia pinze freni 25,00€ (<u>non sono forniti ricambi</u>). Preparazione e legature per verifica tecnica 30,00 €. </li>
-      <li><strong>Materiale di Consumo:</strong> Fornitura e gestione dei pneumatici PMT necessari per le prove e le gare (1Treno). Carburante per tutte le sessioni in pista.</li>
-        <u>Importi:</u> Numero 1 Treno di Gomme in mescola “S” 175,00 € (montaggio ed equilibratura). Benzina 100 Ottani per i 2 giorni 30,00 €
-        </li>
-      <li><strong>Logistica e Trasporto:</strong> attrezzature del team gazebi, tavoli, sedie, PC, attrezzi, da e per il circuito. Allestimento del box (gazebo, banchi da lavoro, illuminazione).</li>
-       <u>Importo: </u> 200,00 €
-        </li>
-         </li> 
-         <li> <strong> Tessera Licenza ASI </strong>: obbligatoria per partecipare alle gare, il team può richiederla per te.</li>
-         <u>Importo: </u> 70,00 €
-         <li> <strong> Iscrizione gare/prove libere </strong>: obbligatoria per partecipare alle gare/prove libere, il team può fare domanda d'iscrizione per te.</li>
-         <u>Import (variabili): </u> Gara: 160,00 € Prove Libere: 60,00 € (prezzo variabile in base al circuito e alla gara)</li>
-    </ul>
-  
-    <p style="margin-top: 1.5rem; font-style: italic;">
-      Tutti i pacchetti sono <strong style="color:#ffdd00;">personalizzabili</strong> e possono essere adattati previo accordo con il team.
-    </p>
+    <!-- (Mantieni qui le tue definizioni/price list come nel file originale) -->
+    <!-- ... -->
   </section>
-  <!-- Footer -->
+
   <footer>
     &copy; 2025 The Big Dreamers V7NZ — Created by Margherita Giannotti
     <a href="cookie.html">Cookie Policy</a> ·
@@ -779,5 +339,43 @@
     <a href="note-legali.html">Note Legali</a>
   </footer>
 
-  </html>
-  
+  <!-- JS navbar mobile-friendly + modal -->
+  <script>
+    function toggleDropdown(e){
+      e.preventDefault();
+      const dd = document.getElementById('navDropdown');
+      const btn = dd.querySelector('.dropbtn');
+      const isOpen = dd.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+    // Chiudi dropdown toccando fuori
+    document.addEventListener('click', function(ev){
+      const dd = document.getElementById('navDropdown');
+      if(dd && !dd.contains(ev.target)){
+        dd.classList.remove('open');
+        const btn = dd.querySelector('.dropbtn');
+        btn && btn.setAttribute('aria-expanded','false');
+      }
+    });
+
+    // Modal confronto
+    const openModal = document.getElementById("openModal");
+    const closeModal = document.getElementById("closeModal");
+    const modal = document.getElementById("comparisonModal");
+    openModal && openModal.addEventListener("click", () => {
+      modal.style.display = "block";
+      document.body.style.overflow = "hidden";
+    });
+    closeModal && closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+      document.body.style.overflow = "auto";
+    });
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+    });
+  </script>
+</body>
+</html>

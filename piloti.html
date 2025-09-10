@@ -1,16 +1,15 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6C1RVPC86"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6C1RVPC86"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G6C1RVPC86');
+  </script>
 
-  gtag('config', 'G-G6C1RVPC86');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>V7NZ Coaching - Piloti</title>
@@ -18,7 +17,7 @@
   <style>
     body {
       margin: 0;
-      font-family: poppins, sans-serif;
+      font-family: Poppins, sans-serif;
       background: #121212;
       color: #fff;
       min-height: 100vh;
@@ -26,46 +25,95 @@
     }
 
     /* Font solo per navbar e titoli */
-.pill-nav a,
-.pill-nav .dropbtn,
-header h1,
-h2,
+    .pill-nav a,
+    .pill-nav .dropbtn,
+    header h1,
+    h2,
+    .section-content h2 {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
 
-.section-content h2 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  border: #121212;
-}
-
+    /* ===== Navbar come index (mobile-friendly) ===== */
     .pill-nav {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       background-color: #222;
-      padding: 1rem 0;
-      margin-bottom: 2rem;
+      padding: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
+      z-index: 2;
+      position: relative;
     }
 
-    .pill-nav a {
+    .pill-nav a,
+    .pill-nav .dropbtn {
       color: #fff;
-      background-color: #444;
-      padding: 0.7rem 1.2rem;
-      margin: 0 0.5rem;
-      border-radius: 25px;
       text-decoration: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 25px;
+      background-color: #333;
       font-weight: 600;
-      transition: background 0.3s;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      transition: 0.3s;
     }
 
     .pill-nav a:hover,
-    .pill-nav a.active {
-      background-color: #ffdd00;
-      color: #121212;
+    .pill-nav a.active,
+    .pill-nav .dropbtn:hover {
+      background-color: gold;
+      color: #111;
     }
 
+    .dropdown {
+      position: relative;
+    }
+
+    /* Contenuto del dropdown (chiuso di default) */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      flex-direction: column;
+      z-index: 10;
+      min-width: 180px;
+      overflow: hidden;
+    }
+
+    /* Mostra su hover (desktop) */
+    @media (hover: hover) and (pointer: fine) {
+      .dropdown:hover .dropdown-content {
+        display: flex;
+      }
+    }
+
+    .dropdown-content a {
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .dropdown-content a:hover {
+      background-color: gold;
+      color: black;
+    }
+
+    /* Apertura dropdown via classe (mobile) */
+    .dropdown.open .dropdown-content {
+      display: flex;
+    }
+
+    /* ===== Header ===== */
     header {
       text-align: center;
       padding: 2rem 1rem 1.5rem;
-    
     }
 
     header h1 {
@@ -83,6 +131,7 @@ h2,
       color: white;
     }
 
+    /* ===== Grid cards ===== */
     .container {
       display: grid;
       grid-template-columns: 1fr;
@@ -93,15 +142,11 @@ h2,
     }
 
     @media (min-width: 700px) {
-      .container {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .container { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (min-width: 1100px) {
-      .container {
-        grid-template-columns: repeat(4, 1fr);
-      }
+      .container { grid-template-columns: repeat(4, 1fr); }
     }
 
     .card {
@@ -144,6 +189,8 @@ h2,
       margin: 0.5rem 0;
       border-bottom: 2px solid #ffdd00;
       padding-bottom: 0.3rem;
+      text-align: center;
+      width: 100%;
     }
 
     .card p {
@@ -173,18 +220,37 @@ h2,
       color: #ffdd00;
       box-shadow: 0 0 10px #ffdd00aa;
     }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      color: #aaa;
+      padding: 2rem 1rem;
+    }
   </style>
 </head>
 <body>
 
-  <nav class="pill-nav">
+  <!-- ✅ Navbar identica alla index, con dropdown Corsi -->
+  <nav class="pill-nav" role="navigation" aria-label="Menu principale">
     <a href="index.html">Home</a>
-    <a href="corsi.html">Corsi</a>
+
+    <div class="dropdown" id="navDropdown">
+      <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="menu-corsi" onclick="toggleDropdown(event)">
+        Corsi ▾
+      </button>
+      <div class="dropdown-content" id="menu-corsi" role="menu">
+        <a href="principiante.html" role="menuitem">Principianti</a>
+        <a href="amatore.html" role="menuitem">Amatori</a>
+        <a href="pilota.html" role="menuitem">Piloti</a>
+      </div>
+    </div>
+
     <a href="team.html">Team</a>
-    <a href="piloti.html"class="active">Piloti</a>
+    <a href="piloti.html" class="active">Piloti</a>
     <a href="risultati.html">Risultati</a>
     <a href="galleria.html">Galleria</a>
-    <a href="contatti.html" >Contattaci</a>
+    <a href="contatti.html">Contattaci</a>
   </nav>
 
   <header>
@@ -194,80 +260,70 @@ h2,
 
   <main class="container">
 
-   <!-- Card 1 -->
-   <section class="card">
-    <img src="barresi.jpg" alt="Alessandro Barresi" />
-    <h2>Alessandro Barresi </h2>
-    <p>Alessandro Barresi, classe 2013, si prepara a vivere la sua prima gara ufficiale a settembre. Nonostante la giovane età, dimostra già una grande determinazione e la voglia di confrontarsi con piloti più esperti. Ogni allenamento è un passo avanti, ogni giro in pista un’occasione per crescere. Alessandro affronta questa nuova avventura con entusiasmo, coraggio e una passione che promette grandi emozioni.</p>
-    <button class="btn-sponsor" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto%20.%20Come%20posso%20fare?', '_blank')"> Diventa Sponsor! Contattaci su WhatsApp</button>
-  </section>
+    <!-- Card 1 -->
+    <section class="card">
+      <img src="barresi.jpg" alt="Alessandro Barresi" />
+      <h2>Alessandro Barresi</h2>
+      <p>Alessandro Barresi, classe 2013, si prepara a vivere la sua prima gara ufficiale a settembre. Nonostante la giovane età, dimostra già una grande determinazione e la voglia di confrontarsi con piloti più esperti. Ogni allenamento è un passo avanti, ogni giro in pista un’occasione per crescere. Alessandro affronta questa nuova avventura con entusiasmo, coraggio e una passione che promette grandi emozioni.</p>
+      <button class="btn-sponsor" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto%20.%20Come%20posso%20fare?', '_blank')">Diventa Sponsor! Contattaci su WhatsApp</button>
+    </section>
 
-  <!-- Card 4 -->
-  <section class="card">
-    <img src="scarano abbraccio vinz.jpg" alt="Angelo Scarano" />
-    <h2>Angelo Scarano</h2>
-    <p>Angelo Scarano, classe 2010, ha fatto il suo debutto nella Promorace Cup a giugno 2025 lasciando subito il segno: conquista la pole position e si piazza al secondo posto, dimostrando un talento naturale che brilla fin dai primi giri. La sua determinazione e la voglia di emergere lo spingono oltre ogni limite, regalando emozioni intense in pista. E questo è solo l'inizio: Angelo è pronto a spingere sempre più forte, a crescere e a sorprendere, portando con sé la freschezza e la gioia di un ragazzo solare che non perde mai il sorriso, dentro e fuori dal paddock.</p>
-    <button class="btn-sponsor" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto%20.%20Come%20posso%20fare?', '_blank')"> Diventa Sponsor! Contattaci su WhatsApp</button>
-  </section>
-
+    <!-- Card 2 -->
+    <section class="card">
+      <img src="scarano abbraccio vinz.jpg" alt="Angelo Scarano" />
+      <h2>Angelo Scarano</h2>
+      <p>Angelo Scarano, classe 2010, ha fatto il suo debutto nella Promorace Cup a giugno 2025 lasciando subito il segno: conquista la pole position e si piazza al secondo posto, dimostrando un talento naturale che brilla fin dai primi giri. La sua determinazione e la voglia di emergere lo spingono oltre ogni limite, regalando emozioni intense in pista. E questo è solo l'inizio: Angelo è pronto a spingere sempre più forte, a crescere e a sorprendere, portando con sé la freschezza e la gioia di un ragazzo solare che non perde mai il sorriso, dentro e fuori dal paddock.</p>
+      <button class="btn-sponsor" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto%20.%20Come%20posso%20fare?', '_blank')">Diventa Sponsor! Contattaci su WhatsApp</button>
+    </section>
 
     <!-- Card 3 -->
     <section class="card">
       <img src="domy esulto.jpg" alt="Domenico Toscano" />
       <h2>Domenico Toscano</h2>
       <p>Domenico Toscano, classe 2010, ha iniziato a correre nel 2022 e già nel 2023 ha conquistato il Campionato Prime Pieghe. Nel 2024 si è classificato terzo nel Campionato Nazionale MotoASI. Nel 2025 è un volto fisso sul podio della Promorace, dimostrando grande costanza e talento, classificandosi secondo con il campionato ancora aperto. Con la sua mentalità competitiva e il suo carattere solare, Domenico è diventato un vero punto di riferimento in pista e il ragazzo più adorato nei paddock.</p>
-      <button class="btn-sponsor" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto%20.%20Come%20posso%20fare?', '_blank')"> Diventa Sponsor! Contattaci su WhatsApp</button>
+      <button class="btn-sponsor" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto%20.%20Come%20posso%20fare?', '_blank')">Diventa Sponsor! Contattaci su WhatsApp</button>
     </section>
 
+    <!-- Card 4 -->
+    <section class="card">
+      <img src="io podio.jpg" alt="Margherita Giannotti" />
+      <h2>Margherita Giannotti</h2>
+      <p>Margherita Giannotti, classe 1995, è la dimostrazione che la passione può nascere all’improvviso e a qualsiasi età. Sale per la prima volta in moto nel 2022, quasi per gioco, e inizia a correre ufficialmente solo un anno dopo. Conquista grandi risultati: nel 2024 è Campionessa Nazionale MotoASI e Vice Campionessa della Promorace Cup. Con coraggio ha affrontato anche una wild card nel CIV Femminile a Magione e ha preso parte all’Europeo 12 Pollici.Per Margherita correre è iniziato quasi come un gioco, ma si è trasformato in una passione molto forte che coltiva ogni giorno, affrontando ogni sfida sempre con il sorriso e tanta determinazione.</p>
+      <button class="btn-sponsor" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto%20.%20Come%20posso%20fare?', '_blank')">Diventa Sponsor! Contattaci su WhatsApp</button>
+    </section>
 
-   <!-- Card 1 -->
-   <section class="card">
-    <img src="io podio.jpg" alt="Margherita Giannotti" />
-    <h2> Margherita Giannotti </h2>
-    <p>Margherita Giannotti, classe 1995, è la dimostrazione che la passione può nascere all’improvviso e a qualsiasi età. Sale per la prima volta in moto nel 2022, quasi per gioco, e inizia a correre ufficialmente solo un anno dopo. Conquista grandi risultati: nel 2024 è Campionessa Nazionale MotoASI e Vice Campionessa della Promorace Cup. Con coraggio ha affrontato anche una wild card nel CIV Femminile a Magione e ha preso parte all’Europeo 12 Pollici.Per Margherita correre è iniziato quasi come un gioco, ma si è trasformato in una passione molto forte che coltiva ogni giorno, affrontando ogni sfida sempre con il sorriso e tanta determinazione.</p>
-    <button class="btn-sponsor" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto%20.%20Come%20posso%20fare?', '_blank')"> Diventa Sponsor! Contattaci su WhatsApp</button>
-  </section>
-
-
-    <!-- Card 1 -->
+    <!-- Card 5 -->
     <section class="card">
       <img src="Nico.jpg" alt="Nicholas Bedoya" />
       <h2>Nicolàs Bedoya</h2>
       <p>Nicolàs Bedoya, classe 2009, ha iniziato a gareggiare nel 2023 e ha subito lasciato il segno, conquistando 3 podi nelle sue primissime competizioni. Nel 2025 affronta con coraggio e determinazione il suo primo Campionato GP7, misurandosi con avversari esperti e altamente competitivi. Ogni gara è una sfida, ogni curva una prova di maturità: Nicolàs cresce gara dopo gara, spinto da una passione autentica e da una voglia instancabile di migliorare.</p>
-      <button class="btn-sponsor" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto%20.%20Come%20posso%20fare?', '_blank')"> Diventa Sponsor! Contattaci su WhatsApp</button>
+      <button class="btn-sponsor" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto%20.%20Come%20posso%20fare?', '_blank')">Diventa Sponsor! Contattaci su WhatsApp</button>
     </section>
 
-
-    <!-- Card 2 -->
+    <!-- Card 6 -->
     <section class="card">
       <img src="Rocco coppa.jpg" alt="Rocco Misiti" />
       <h2>Rocco Misiti</h2>
       <p>Rocco Misiti, classe 2009, al suo primo anno di gare ha conquistato un totale di 3 podi: 2 nella Promorace Cup e 1 nel Trofeo dei Campioni di Civitavecchia. Nel 2025, ogni sua gara è uno spettacolo da vedere: nelle prime tappe della Promorace Cup ha spesso lottato tra le prime posizioni, regalando duelli emozionanti e sorpassi decisi. Con la sua grinta, affronta ogni sfida a testa bassa, senza mai perdere il sorriso, e continua a martellare i suoi tempi con una determinazione contagiosa e un cuore gigante.</p>
-      <button class="btn-sponsor" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto%20.%20Come%20posso%20fare?', '_blank')"> Diventa Sponsor! Contattaci su WhatsApp</button>
+      <button class="btn-sponsor" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto%20.%20Come%20posso%20fare?', '_blank')">Diventa Sponsor! Contattaci su WhatsApp</button>
     </section>
 
   </main>
 
   <header>
     <h1>I nostri Sponsor</h1>
-
     <p>Unisciti anche tu!</p>
 
-    <div class="sponsor-logos">
-        <img src="garanzia.png" alt="Polaccheria Sponsor">
-        
-        <img src="polaccheria .jpeg" alt="Polaccheria Sponsor">
-        <img src="scarano service.webp" alt="Scarano Service Sponsor">
-        <img src="zigozago1.jpeg" alt="V7NZ Logo Sponsor">
-        <img src="logoproietti.png" alt="V7NZ Logo Sponsor">
-        <img src="therra logo.png" alt="V7NZ Logo Sponsor">
-        <img src="logo eurogomme.jpg" alt="V7NZ Logo Sponsor">
-        <img src="logo taverna 31.jpg" alt="V7NZ Logo Sponsor">
-
-        <!-- Aggiungi altri loghi qui se necessario -->
-      </div>
-    </section>
-    
+    <div class="sponsor-logos" style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center;align-items:center;padding:0 1rem;">
+      <img src="garanzia.png" alt="Garanzia Sponsor" style="height:60px;object-fit:contain;">
+      <img src="polaccheria .jpeg" alt="Polaccheria Sponsor" style="height:60px;object-fit:contain;">
+      <img src="scarano service.webp" alt="Scarano Service Sponsor" style="height:60px;object-fit:contain;">
+      <img src="zigozago1.jpeg" alt="ZigoZago Sponsor" style="height:60px;object-fit:contain;">
+      <img src="logoproietti.png" alt="Proietti Sponsor" style="height:60px;object-fit:contain;">
+      <img src="therra logo.png" alt="Therra Sponsor" style="height:60px;object-fit:contain;">
+      <img src="logo eurogomme.jpg" alt="Eurogomme Sponsor" style="height:60px;object-fit:contain;">
+      <img src="logo taverna 31.jpg" alt="Taverna 31 Sponsor" style="height:60px;object-fit:contain;">
+    </div>
   </header>
 
   <!-- Footer -->
@@ -278,5 +334,26 @@ h2,
     <a href="note-legali.html">Note Legali</a>
   </footer>
 
+  <!-- JS: dropdown touch-friendly (mobile) -->
+  <script>
+    function toggleDropdown(e){
+      e.preventDefault();
+      const dd = document.getElementById('navDropdown');
+      const btn = dd.querySelector('.dropbtn');
+      const isOpen = dd.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+
+    // Chiudi il dropdown toccando fuori (mobile/desktop)
+    document.addEventListener('click', function(ev){
+      const dd = document.getElementById('navDropdown');
+      if(!dd.contains(ev.target)){
+        dd.classList.remove('open');
+        const btn = dd.querySelector('.dropbtn');
+        btn && btn.setAttribute('aria-expanded','false');
+      }
+    });
+  </script>
 </body>
 </html>
+

@@ -2,69 +2,121 @@
 <html lang="it">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6C1RVPC86"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6C1RVPC86"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G6C1RVPC86');
+  </script>
 
-  gtag('config', 'G-G6C1RVPC86');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>V7NZ Coaching - Galleria </title>
-  <link href="stylegalleria.css" rel="stylesheet" />
+  <title>V7NZ Coaching - Galleria</title>
+
+  <!-- (opzionale) tuo CSS esterno -->
+  <!-- <link href="stylegalleria.css" rel="stylesheet" /> -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
+    /* ===== Reset base ===== */
+    html, body { margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
       background: #121212;
       color: #fff;
       padding: 0 1rem 3rem;
     }
-   /* Font solo per navbar e titoli */
-   .pill-nav a,
-.pill-nav .dropbtn,
-header h1,
-h2,
 
-.section-content h2 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
+    /* ===== Font per titoli e navbar (come index) ===== */
+    .pill-nav a,
+    .pill-nav .dropbtn,
+    header h1,
+    h2,
+    .section-content h2 {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
 
-    nav.pill-nav {
+    /* ===== NAVBAR identica alla index ===== */
+    .pill-nav {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       background-color: #222;
-      padding: 1rem 0;
-      margin-bottom: 2rem;
+      padding: 15px;            /* identico alla index */
+      flex-wrap: wrap;          /* 2 righe su mobile */
+      gap: 10px;                /* spazio uniforme */
+      z-index: 2;
+      position: relative;
+      margin: 0;
     }
-
-    nav.pill-nav a {
+    .pill-nav a,
+    .pill-nav .dropbtn {
       color: #fff;
-      background-color: #444;
-      padding: 0.7rem 1.2rem;
-      margin: 0 0.5rem;
-      border-radius: 25px;
       text-decoration: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 25px;
+      background-color: #333;
       font-weight: 600;
-      transition: background 0.3s;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      transition: 0.3s;
+      border: 0;
+      margin: 0;                /* solo gap gestisce lo spazio */
+      font-size: 1rem;
+      line-height: 1;
+    }
+    .pill-nav a:hover,
+    .pill-nav a.active,
+    .pill-nav .dropbtn:hover {
+      background-color: gold;
+      color: #111;
     }
 
-    nav.pill-nav a:hover,
-    nav.pill-nav a.active {
-      background-color: #ffdd00;
-      color: #121212;
+    .dropdown { position: relative; }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0;
+      background-color: #333;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      flex-direction: column;
+      z-index: 10;
+      min-width: 180px;
+      overflow: hidden;
+    }
+    .dropdown-content a {
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      white-space: nowrap;
+      background: #333;
+      margin: 0;
+    }
+    .dropdown-content a:hover { background-color: gold; color: #111; }
+
+    /* Mostra su hover (desktop) */
+    @media (hover: hover) and (pointer: fine) {
+      .dropdown:hover .dropdown-content { display: flex; }
+    }
+    /* Apertura su mobile via classe .open (gestita da JS) */
+    .dropdown.open .dropdown-content { display: flex; }
+
+    /* Leggera compattazione su schermi molto piccoli (come index) */
+    @media (max-width: 480px){
+      .pill-nav a, .pill-nav .dropbtn { padding: 0.6rem 1rem; font-size: 0.95rem; }
     }
 
+    /* ===== Header ===== */
     header {
       text-align: center;
       padding: 1.5rem 1rem;
       max-width: 900px;
       margin: auto;
     }
-
     header h1 {
       font-size: 3rem;
       color: gold;
@@ -73,14 +125,13 @@ h2,
       padding-bottom: 0.3rem;
       font-weight: 700;
     }
-
     header p {
       margin-top: 1rem;
       font-size: 1.25rem;
       color: #eee;
     }
 
-    /* Masonry-style grid */
+    /* ===== Masonry-style grid ===== */
     .grid-container {
       column-count: 3;
       column-gap: 1rem;
@@ -88,24 +139,10 @@ h2,
       margin: auto;
       padding: 1rem;
     }
+    @media (max-width: 900px) { .grid-container { column-count: 2; } }
+    @media (max-width: 600px) { .grid-container { column-count: 1; } }
 
-    @media (max-width: 900px) {
-      .grid-container {
-        column-count: 2;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .grid-container {
-        column-count: 1;
-      }
-    }
-
-    .grid-item {
-      margin-bottom: 1rem;
-      break-inside: avoid;
-    }
-
+    .grid-item { margin-bottom: 1rem; break-inside: avoid; }
     .grid-item img {
       width: 100%;
       border-radius: 12px;
@@ -114,61 +151,59 @@ h2,
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
+    .grid-item img:hover { transform: scale(1.02); box-shadow: 0 0 25px #ffdd00cc; }
 
-    .grid-item img:hover {
-      transform: scale(1.02);
-      box-shadow: 0 0 25px #ffdd00cc;
-    }
-
-    /* Lightbox */
+    /* ===== Lightbox ===== */
     .lightbox-modal {
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
+      position: fixed; inset: 0;
       background: rgba(0, 0, 0, 0.9);
       display: none;
       justify-content: center;
       align-items: center;
       z-index: 1000;
     }
-
-    .lightbox-modal.active {
-      display: flex;
-    }
-
+    .lightbox-modal.active { display: flex; }
     .lightbox-modal img {
       max-width: 90vw;
       max-height: 80vh;
       border-radius: 10px;
       box-shadow: 0 0 50px #ffdd00cc;
     }
-
     .lightbox-modal .close-btn {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      font-size: 2.5rem;
-      color: #ffdd00;
-      cursor: pointer;
-      font-weight: 700;
+      position: absolute; top: 2rem; right: 2rem;
+      font-size: 2.5rem; color: #ffdd00; cursor: pointer; font-weight: 700;
     }
+    .lightbox-modal .close-btn:hover { color: #fff; }
 
-    .lightbox-modal .close-btn:hover {
-      color: #fff;
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      margin-top: 2rem;
+      color: #aaa;
     }
+    footer a { color: #aaa; margin-left: .4rem; }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <nav class="pill-nav">
+  <!-- ✅ Navbar identica alla index, con dropdown Corsi -->
+  <nav class="pill-nav" role="navigation" aria-label="Menu principale">
     <a href="index.html">Home</a>
-    <a href="corsi.html">Corsi</a>
+    <div class="dropdown">
+      <a href="corsi.html" class="dropbtn">Corsi ▾</a>
+      <div class="dropdown-content">
+        <a href="principiante.html">Principianti</a>
+        <a href="amatore.html">Amatori</a>
+        <a href="pilota.html">Piloti</a>
+      </div>
+    </div>
     <a href="team.html">Team</a>
     <a href="piloti.html">Piloti</a>
     <a href="risultati.html">Risultati</a>
-    <a href="galleria.html" class="active">Galleria</a>
+    <a href="galleria.html" class="active">Galleria</a> 
     <a href="contatti.html">Contattaci</a>
   </nav>
+  
 
   <header>
     <h1>Galleria Fotografica</h1>
@@ -218,21 +253,18 @@ h2,
     <div class="grid-item"><img src="pranzo limatola .jpg" alt="Foto 15" /></div>
     <div class="grid-item"><img src="rocco piazzale.jpg" alt="Foto 16" /></div>
     <div class="grid-item"><img src="io e vinz mugello.jpg" alt="Foto 17" /></div>
-    <div class="grid-item"><img src= "domy fam prime.jpg" alt="Foto 17" /></div>
+    <div class="grid-item"><img src="domy fam prime.jpg" alt="Foto 17" /></div>
     <div class="grid-item"><img src="Domy primo piano casco.jpg" alt="Foto 16" /></div>
     <div class="grid-item"><img src="domy nico rocco civi.jpeg" alt="Foto 15" /></div>
     <div class="grid-item"><img src="mamma avanti vinz dietro.JPG" alt="Foto 16" /></div>
     <div class="grid-item"><img src="domy nico frenata.jpeg" alt="Foto 16" /></div>
     <div class="grid-item"><img src="domy collage prime pieghe.jpeg" alt="Foto 17" /></div>
-    <div class="grid-item"><img src= "domy con gomma .jpeg" alt="Foto 17" /></div>
-    <div class="grid-item"><img src= "pako e vinz.jpeg" alt="Foto 17" /></div>
+    <div class="grid-item"><img src="domy con gomma .jpeg" alt="Foto 17" /></div>
+    <div class="grid-item"><img src="pako e vinz.jpeg" alt="Foto 17" /></div>
     <div class="grid-item"><img src="vinz civ pista nico e domy.jpg" alt="Foto 18" /></div>
     <div class="grid-item"><img src="mamma & vinz.JPG" alt="Foto 19" /></div>
     <div class="grid-item"><img src="griglia rocco.jpg" alt="Foto 20" /></div>
     <div class="grid-item"><img src="io vinz su moto.jpg" alt="Foto 21" /></div>
-   
-  
-
   </section>
 
   <!-- Lightbox Modal -->
@@ -242,6 +274,25 @@ h2,
   </div>
 
   <script>
+    /* Dropdown touch-friendly (mobile) */
+    function toggleDropdown(e){
+      e.preventDefault();
+      const dd = document.getElementById('navDropdown');
+      const btn = dd.querySelector('.dropbtn');
+      const isOpen = dd.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    }
+    // Chiudi il dropdown toccando/cliccando fuori
+    document.addEventListener('click', function(ev){
+      const dd = document.getElementById('navDropdown');
+      if(dd && !dd.contains(ev.target)){
+        dd.classList.remove('open');
+        const btn = dd.querySelector('.dropbtn');
+        btn && btn.setAttribute('aria-expanded','false');
+      }
+    });
+
+    // Lightbox
     const images = document.querySelectorAll('.grid-item img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
@@ -275,7 +326,6 @@ h2,
     });
   </script>
 
-  <!-- Footer -->
   <footer>
     &copy; 2025 The Big Dreamers V7NZ — Created by Margherita Giannotti
     <a href="cookie.html">Cookie Policy</a> ·
@@ -285,3 +335,92 @@ h2,
 
 </body>
 </html>
+<style>
+  /* NAVBAR IDENTICA ALLA INDEX — forzata e a prova di override */
+  .pill-nav{
+    display:flex;
+    justify-content:center;
+    background-color:#222;
+    padding:15px;
+    flex-wrap:wrap;         /* due righe su mobile, come index */
+    gap:10px;               /* spazi identici */
+    z-index:2;
+    position:relative;
+    margin:0;
+    width:100%;
+    box-sizing:border-box;
+  }
+  
+  .pill-nav a,
+  .pill-nav .dropbtn{
+    color:#fff;
+    text-decoration:none;
+    padding:0.7rem 1.2rem;
+    border-radius:25px;
+    background-color:#333;
+    font-weight:600;
+    cursor:pointer;
+    user-select:none;
+    display:flex;
+    align-items:center;
+    transition:0.3s;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size:1rem;         /* blocca differenze tra pagine */
+    line-height:1;
+    margin:0;               /* lo spazio lo dà “gap”, non i margin */
+    border:0;
+  }
+  
+  .pill-nav a:hover,
+  .pill-nav a.active,
+  .pill-nav .dropbtn:hover{
+    background-color:gold;
+    color:#111;
+  }
+  
+  /* Dropdown come nella index */
+  .dropdown{ position:relative; }
+  .dropdown-content{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background-color:#333;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.5);
+    flex-direction:column;
+    z-index:10;
+    min-width:180px;
+    overflow:hidden;
+  }
+  .dropdown-content a{
+    padding:10px 20px;
+    color:#fff;
+    text-decoration:none;
+    white-space:nowrap;
+    background:#333;
+    margin:0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  }
+  .dropdown-content a:hover{ background:gold; color:#111; }
+  
+  /* Hover su desktop, identico alla index */
+  @media (hover:hover) and (pointer:fine){
+    .dropdown:hover .dropdown-content{ display:flex; }
+  }
+  
+  /* ——— Anti-conflitto con vecchi CSS presenti nelle altre pagine ——— */
+  .pill-nav a{
+    background:#333 !important;
+    color:#fff !important;
+    border-radius:25px !important;
+    padding:0.7rem 1.2rem !important;
+    display:flex !important;
+    font-size:1rem !important;
+    font-weight:600 !important;
+    margin:0 !important;
+    text-decoration:none !important;
+  }
+  .pill-nav{ padding:15px !important; gap:10px !important; } /* blinda spazi e padding */
+  </style>
+  

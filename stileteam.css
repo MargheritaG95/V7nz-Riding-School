@@ -88,3 +88,40 @@
     text-align: left;
     margin-top: 20px;
   }
+/* stessa logica della index */
+.pill-nav{
+  display:flex;
+  justify-content:center;
+  background:#222;
+  padding:15px;         /* come index */
+  flex-wrap:wrap;       /* permette 2 righe */
+  gap:10px;             /* spazio tra i "pill" */
+  position:relative;
+  z-index:2;
+}
+
+/* niente margin: usiamo solo gap per lo spacing */
+.pill-nav a,
+.pill-nav .dropbtn{
+  margin:0;             /* evita doppi spazi rispetto alla index */
+}
+
+/* leggera ottimizzazione su schermi piccoli */
+@media (max-width: 480px){
+  .pill-nav a,
+  .pill-nav .dropbtn{
+    padding:0.6rem 1rem;   /* un filo più compatti */
+    font-size:0.95rem;
+  }
+}
+/* Fix spazio sopra la navbar */
+html, body { margin: 0 !important; padding: 0 !important; }
+
+.pill-nav {
+  margin-top: 0 !important;
+  padding-top: 15px;   /* stesso padding della index */
+}
+
+/* Evita che altri selettori generici mettano margini
+   su nav o sul primo elemento della pagina */
+nav.pill-nav { margin: 0 !important; }
