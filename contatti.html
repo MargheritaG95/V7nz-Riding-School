@@ -2,47 +2,42 @@
 <html lang="it">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6C1RVPC86"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6C1RVPC86"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G6C1RVPC86');
+  </script>
 
-  gtag('config', 'G-G6C1RVPC86');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title> V7NZ Coaching - Contattaci</title>
-  <link href="corsistyle.css" rel="stylesheet" />
+  <title>V7NZ Coaching - Contattaci</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Font Awesome CDN -->
-
   <style>
+    /* Base identica all'index */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      height: 100%;
+      overflow-x: hidden;
+    }
+
     body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
       background: #121212;
       color: #fff;
-      min-height: 100vh;
-      padding: 0 1rem 3rem;
+      font-family: 'Poppins', sans-serif;
     }
-   /* Font solo per navbar e titoli */
-   .pill-nav a,
-   .pill-nav .dropbtn,
-   header h1,
-   h2,
-   .section-content h2 {
-     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    }
-    /* Navbar styles preserved */
+
+    /* ===== NAVBAR — IDENTICA ALLA INDEX ===== */
     .pill-nav {
       display: flex;
       justify-content: center;
       background-color: #222;
       padding: 15px;
-      flex-wrap: wrap;
-      gap: 10px;
+      flex-wrap: wrap;          /* 2 righe su mobile */
+      gap: 10px;                /* stesso spacing */
       z-index: 2;
       position: relative;
     }
@@ -60,7 +55,7 @@
       display: flex;
       align-items: center;
       transition: 0.3s;
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; /* come index */
     }
 
     .pill-nav a:hover,
@@ -70,9 +65,7 @@
       color: #111;
     }
 
-    .dropdown {
-      position: relative;
-    }
+    .dropdown { position: relative; }
 
     .dropdown-content {
       display: none;
@@ -83,11 +76,9 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
       flex-direction: column;
-      z-index: 1;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: flex;
+      z-index: 10;
+      min-width: 180px;
+      overflow: hidden;
     }
 
     .dropdown-content a {
@@ -102,12 +93,27 @@
       color: black;
     }
 
+    /* Apertura su hover (come index) */
+    .dropdown:hover .dropdown-content { display: flex; }
 
+    /* Compattezza su schermi molto piccoli (opzionale ma coerente) */
+    @media (max-width: 480px){
+      .pill-nav a, .pill-nav .dropbtn { padding: 0.6rem 1rem; font-size: 0.95rem; }
+    }
+
+    /* ===== Contenuto pagina (padding che prima era sul body) ===== */
+    .content-wrap {
+      padding: 0 1rem 3rem;  /* spazi laterali e in basso, nav resta a filo */
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Titoli e testo come avevi */
     header {
       text-align: center;
       padding: 0 1rem 1.5rem;
-      max-width: 900px;
       margin: 0 auto 2rem;
+      max-width: 900px;
     }
 
     header h1 {
@@ -117,6 +123,7 @@
       border-bottom: 4px solid #ffdd00;
       display: inline-block;
       padding-bottom: 0.3rem;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
       font-weight: 700;
     }
 
@@ -169,6 +176,7 @@
       padding-bottom: 0.3rem;
       text-align: center;
       width: 100%;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     }
 
     .card p {
@@ -200,7 +208,7 @@
       box-shadow: 0 0 10px #ffdd00aa;
     }
 
-     /* --- SOCIAL ICONS STYLE --- */
+    /* Social */
     .social-icons {
       margin: 3rem auto 1rem;
       max-width: 240px;
@@ -255,84 +263,87 @@
 </head>
 <body>
 
-  <!-- Navigation Bar -->
+  <!-- NAVBAR identica alla index -->
   <nav class="pill-nav">
     <a href="index.html">Home</a>
-    <a href="corsi.html"> Corsi </a>
-    <a href="team.html">Team</a>
+
+    <div class="dropdown">
+      <a href="corsi.html" class="dropbtn">Corsi ▾</a>
+      <div class="dropdown-content">
+        <a href="principiante.html">Principianti</a>
+        <a href="amatore.html">Amatori</a>
+        <a href="pilota.html">Piloti</a>
+      </div>
+    </div>
+
+    <a href="teamv2.html">Team</a>
     <a href="piloti.html">Piloti</a>
     <a href="risultati.html">Risultati</a>
     <a href="galleria.html">Galleria</a>
     <a href="contatti.html" class="active">Contattaci</a>
   </nav>
 
-  <header>
-    <h1>Contattaci</h1><!-- HTML -->
-    <p>
-      Che si tratti di una curiosità, di una proposta o del desiderio di far parte della nostra famiglia, contattaci su WhatsApp e raccontaci tutto!
-    </p>
-  </header>   
+  <!-- Contenuto con padding laterale -->
+  <div class="content-wrap">
+    <header>
+      <h1>Contattaci</h1>
+      <p>
+        Che si tratti di una curiosità, di una proposta o del desiderio di far parte della nostra famiglia,
+        contattaci su WhatsApp e raccontaci tutto!
+      </p>
+    </header>
 
-  <section class="packages-container" aria-label="Contact Options">
-    <div class="card">
-      <img src="mini rocco e nico.jpg" alt="Corsi" style="width: 100%; height: 180px; object-fit:cover; object-position: center 15%; border-radius: 10px; border: 3px solid #ffdd00; margin-bottom: 1.2rem;" />
-      <h2>Scegli il corso giusto per te</h2>
-      <p>Hai dubbi su quale corso fa per te? Contattaci su WhatsApp per ricevere una consulenza personalizzata e iniziare il tuo percorso.</p>
-      <button class="btn-package" onclick="window.open('https://wa.me/393288862136?text=Ciao%20Vincenzo%2C%20vorrei%20informazioni%20sui%20corsi%20disponibili.', '_blank')">Contattaci su WhatsApp</button>
-    </div>
-  
-    <div class="card">
-      <img src="entrata pista.jpg" alt="Team" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; border: 3px solid #ffdd00; margin-bottom: 1.2rem;" />
-      <h2>Team per gara</h2>
-      <p>Vuoi partecipare a una gara con il nostro team? Scrivici su WhatsApp raccontandoci la tua esperienza e ti risponderemo al più presto.</p>
-      <button class="btn-package" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20sono%20interessato%20a%20correre%20con%20il%20vostro%20team', '_blank')">Contattaci su WhatsApp</button>
-    </div>
-  
-    <div class="card">
-      <img src="domy e vinz coppa jpg.jpg" alt="Sponsor" style="width: 100%; height: 180px; object-fit: cover; object-position: center 20%; border-radius: 10px; border: 3px solid #ffdd00; margin-bottom: 1.2rem;" />
-      <h2>Diventa Sponsor</h2>
-      <p>Supporta i nostri piloti e ottieni visibilità. Scrivici su WhatsApp per scoprire come tu o il tuo brand può crescere con noi.</p>
-      <button class="btn-package" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto', '_blank')">Contattaci su WhatsApp</button>
-    </div>
-  </section>
+    <section class="packages-container" aria-label="Contact Options">
+      <div class="card">
+        <img src="mini rocco e nico.jpg" alt="Corsi" style="width: 100%; height: 180px; object-fit:cover; object-position: center 15%; border-radius: 10px; border: 3px solid #ffdd00; margin-bottom: 1.2rem;" />
+        <h2>Scegli il corso giusto per te</h2>
+        <p>Hai dubbi su quale corso fa per te? Contattaci su WhatsApp per ricevere una consulenza personalizzata e iniziare il tuo percorso.</p>
+        <button class="btn-package" onclick="window.open('https://wa.me/393288862136?text=Ciao%20Vincenzo%2C%20vorrei%20informazioni%20sui%20corsi%20disponibili.', '_blank')">Contattaci su WhatsApp</button>
+      </div>
 
-  <!-- Social Icons -->
-   
-  <h2 style="text-align: center; margin-top: 3rem; color: #ffdd00;"> <u> Chiamaci o seguici sui social</u></h2>
-  <section class="social-icons" aria-label="Social Media Links">
-    
-    <a href="https://www.instagram.com/v7nz_coach/" target="_blank" aria-label="Instagram" class="social-icon instagram">
-      <i class="fab fa-instagram"></i>
-    </a>
-    <a href="https://www.facebook.com/share/1GQrr64sHW/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" class="social-icon facebook">
-      <i class="fab fa-facebook-f"></i>
-    </a>
-</section>
-<!-- Phone numbers below social icons -->
-<section class="phone-numbers" style="max-width: 300px; margin: 1rem auto; display: flex; flex-direction: column; gap: 0.5rem;">
- 
+      <div class="card">
+        <img src="entrata pista.jpg" alt="Team" style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; border: 3px solid #ffdd00; margin-bottom: 1.2rem;" />
+        <h2>Team per gara</h2>
+        <p>Vuoi partecipare a una gara con il nostro team? Scrivici su WhatsApp raccontandoci la tua esperienza e ti risponderemo al più presto.</p>
+        <button class="btn-package" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20sono%20interessato%20a%20correre%20con%20il%20vostro%20team', '_blank')">Contattaci su WhatsApp</button>
+      </div>
 
-    <div style="display: flex; justify-content: center; gap: 0.5rem; align-items: center; white-space: nowrap;">
-      <span style="color: #ffdd00; font-weight: 700;">Giuseppe Toscano</span>
-      <a href="tel:+393397083300" style="color: #fff; font-size: 1.1rem; text-decoration: none;">+39 339 708 3300</a>
-    </div>
-    
-    <div style="display: flex; justify-content: center; gap: 0.5rem; align-items: center; white-space: nowrap;">
-      <span style="color: #ffdd00; font-weight: 700;">Vincenzo Butera</span>
-      <a href="tel:+393288862136" style="color: #fff; font-size: 1.1rem; text-decoration: none;">+39 328 886 2136</a>
-    </div>
-    
-  </section>
+      <div class="card">
+        <img src="domy e vinz coppa jpg.jpg" alt="Sponsor" style="width: 100%; height: 180px; object-fit: cover; object-position: center 20%; border-radius: 10px; border: 3px solid #ffdd00; margin-bottom: 1.2rem;" />
+        <h2>Diventa Sponsor</h2>
+        <p>Supporta i nostri piloti e ottieni visibilità. Scrivici su WhatsApp per scoprire come tu o il tuo brand può crescere con noi.</p>
+        <button class="btn-package" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto', '_blank')">Contattaci su WhatsApp</button>
+      </div>
+    </section>
 
-</section>
+    <h2 style="text-align: center; margin-top: 3rem; color: #ffdd00;"><u>Chiamaci o seguici sui social</u></h2>
+    <section class="social-icons" aria-label="Social Media Links">
+      <a href="https://www.instagram.com/v7nz_coach/" target="_blank" aria-label="Instagram" class="social-icon instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/share/1GQrr64sHW/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" class="social-icon facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </section>
 
-  <!-- Footer -->
+    <!-- Numeri di telefono -->
+    <section class="phone-numbers" style="max-width: 300px; margin: 1rem auto; display: flex; flex-direction: column; gap: 0.5rem;">
+      <div style="display: flex; justify-content: center; gap: 0.5rem; align-items: center; white-space: nowrap;">
+        <span style="color: #ffdd00; font-weight: 700;">Giuseppe Toscano</span>
+        <a href="tel:+393397083300" style="color: #fff; font-size: 1.1rem; text-decoration: none;">+39 339 708 3300</a>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 0.5rem; align-items: center; white-space: nowrap;">
+        <span style="color: #ffdd00; font-weight: 700;">Vincenzo Butera</span>
+        <a href="tel:+393288862136" style="color: #fff; font-size: 1.1rem; text-decoration: none;">+39 328 886 2136</a>
+      </div>
+    </section>
+  </div>
+
   <footer>
     &copy; 2025 The Big Dreamers V7NZ — Created by Margherita Giannotti
     <a href="cookie.html">Cookie Policy</a> ·
     <a href="privacy.html">Privacy</a> ·
     <a href="note-legali.html">Note Legali</a>
   </footer>
-
 </body>
 </html>
