@@ -14,16 +14,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>V7NZ Coaching - Risultati</title>
   <link href="stylerisultati.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
   <style>
+    /* ===== Base ===== */
+    html, body { margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: Poppins, sans-serif;
       background: #121212;
       color: #fff;
       min-height: 100vh;
     }
 
-    /* Font solo per navbar e titoli */
+    /* ===== Font Impact solo per navbar e titoli ===== */
     .pill-nav a,
     .pill-nav .dropbtn,
     header h1,
@@ -32,37 +35,80 @@
       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     }
 
-    nav.pill-nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      background-color: #222;
-      padding: 1rem 0;
-      margin-bottom: 2rem;
+    /* ===== NAVBAR — IDENTICA ALL’INDEX ===== */
+    .pill-nav{
+      display:flex;
+      justify-content:center;
+      background-color:#222;
+      padding:15px;
+      flex-wrap:wrap;          /* 2 righe su mobile */
+      gap:10px;                /* spacing identico */
+      z-index:2;
+      position:relative;
+      margin:0;
+    }
+    .pill-nav a,
+    .pill-nav .dropbtn{
+      color:#fff;
+      text-decoration:none;
+      padding:0.7rem 1.2rem;
+      border-radius:25px;
+      background-color:#333;
+      font-weight:600;
+      cursor:pointer;
+      user-select:none;
+      display:flex;
+      align-items:center;
+      transition:0.3s;
+      border:0;
+      line-height:1;
+    }
+    .pill-nav a:hover,
+    .pill-nav a.active,
+    .pill-nav .dropbtn:hover{
+      background-color:gold;
+      color:#111;
     }
 
-    nav.pill-nav a {
-      color: #fff;
-      background-color: #444;
-      padding: 0.7rem 1.2rem;
-      margin: 0 0.5rem;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background 0.3s;
+    .dropdown{ position:relative; }
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      top:100%; left:0;
+      background-color:#333;
+      border-radius:10px;
+      box-shadow:0 0 10px rgba(0,0,0,0.5);
+      flex-direction:column;
+      z-index:10;
+      min-width:180px;
+      overflow:hidden;
+    }
+    .dropdown-content a{
+      padding:10px 20px;
+      color:#fff;
+      text-decoration:none;
+      white-space:nowrap;
+      background:#333;
+    }
+    .dropdown-content a:hover{ background:gold; color:#111; }
+
+    /* Desktop: apri su hover (come index) */
+    @media (hover:hover) and (pointer:fine){
+      .dropdown:hover .dropdown-content{ display:flex; }
+    }
+    /* Mobile: apertura via classe .open (JS sotto) */
+    .dropdown.open .dropdown-content{ display:flex; }
+
+    /* Compatta leggermente su schermi molto piccoli (come index) */
+    @media (max-width:480px){
+      .pill-nav a, .pill-nav .dropbtn{ padding:0.6rem 1rem; font-size:0.95rem; }
     }
 
-    nav.pill-nav a:hover,
-    nav.pill-nav a.active {
-      background-color: #ffdd00;
-      color: #121212;
-    }
-
+    /* ===== Header e contenuto (invariati) ===== */
     header {
       text-align: center;
       padding: 2rem 1rem 1.5rem;
     }
-
     header h1 {
       font-size: 3rem;
       margin: 0;
@@ -71,7 +117,6 @@
       display: inline-block;
       padding-bottom: 0.3rem;
     }
-
     header p {
       margin-top: 0.5rem;
       font-size: 1.25rem;
@@ -86,7 +131,6 @@
       max-width: 1400px;
       margin: auto;
     }
-
     .gallery {
       background: #fff;
       border-radius: 20px;
@@ -95,19 +139,16 @@
       box-shadow: 0 0 20px #ffdd0044;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .gallery:hover {
       transform: translateY(-8px) scale(1.03);
       box-shadow: 0 0 45px #ffdd00cc;
     }
-
     .gallery img {
       width: 100%;
       height: 400px;
       object-fit: cover;
       display: block;
     }
-
     .desc {
       padding: 1rem;
       text-align: center;
@@ -127,10 +168,19 @@
 </head>
 <body>
 
-  <!-- Navbar corretta -->
-  <nav class="pill-nav">
+  <!-- ===== Navbar identica all’index ===== -->
+  <nav class="pill-nav" role="navigation" aria-label="Menu principale">
     <a href="index.html">Home</a>
-    <a href="corsi.html">Corsi</a>
+
+    <div class="dropdown" id="navDropdown">
+      <a href="corsi.html" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="menu-corsi">Corsi ▾</a>
+      <div class="dropdown-content" id="menu-corsi" role="menu">
+        <a href="principiante.html" role="menuitem">Principianti</a>
+        <a href="amatore.html" role="menuitem">Amatori</a>
+        <a href="pilota.html" role="menuitem">Piloti</a>
+      </div>
+    </div>
+
     <a href="team.html">Team</a>
     <a href="piloti.html">Piloti</a>
     <a href="risultati.html" class="active">Risultati</a>
@@ -138,7 +188,6 @@
     <a href="contatti.html">Contattaci</a>
   </nav>
 
- 
   <header>
     <h1>I Risultati</h1>
     <p>In soli 2 anni di gare e partecipando a 14 gare abbiamo già portato a casa 16 podi!</p>
@@ -210,7 +259,7 @@
       <div class="desc">2° Campionato Prime Pieghe - 2023</div>
     </div>
   </main>
-  <!-- Footer -->
+
   <footer>
     &copy; 2025 The Big Dreamers V7NZ — Created by Margherita Giannotti
     <a href="cookie.html">Cookie Policy</a> ·
@@ -218,6 +267,26 @@
     <a href="note-legali.html">Note Legali</a>
   </footer>
 
+  <!-- JS: tap-friendly per aprire/chiudere il dropdown "Corsi" su mobile -->
+  <script>
+    (function(){
+      const dd = document.getElementById('navDropdown');
+      if(!dd) return;
+      const btn = dd.querySelector('.dropbtn');
+      btn.addEventListener('click', function(e){
+        if (window.matchMedia('(max-width: 600px)').matches){
+          e.preventDefault();
+          const isOpen = dd.classList.toggle('open');
+          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+      });
+      document.addEventListener('click', function(ev){
+        if(!dd.contains(ev.target)){
+          dd.classList.remove('open');
+          btn && btn.setAttribute('aria-expanded','false');
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
-

@@ -1,119 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G6C1RVPC86"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6C1RVPC86"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G6C1RVPC86');
+  </script>
 
-  gtag('config', 'G-G6C1RVPC86');
-</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>V7NZ Coaching - Corsi</title>
+
   <link href="stylesindex.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
+    /* ===== Base ===== */
+    html, body { margin: 0; padding: 0; }
     body {
-      margin: 0;
       font-family: 'Poppins', sans-serif;
       background: #121212;
       color: #fff;
       min-height: 100vh;
     }
-   /* Font solo per navbar e titoli */
-   .pill-nav a,
-.pill-nav .dropbtn,
-header h1,
-h2,
 
-.section-content h2 {
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-    .pill-nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      background-color: #222;
-      padding: 15px;
-      gap: 10px;
-      z-index: 2;
-      position: relative;
-    }
-
-    /* Stile per tutti i link della navbar e bottone dropdown */
+    /* ===== Font: Impact solo per navbar e titoli (h1,h2) ===== */
     .pill-nav a,
-    .pill-nav .dropdown > .dropbtn {
-      color: #fff;
-      background-color: #444;
-      padding: 0.7rem 1.2rem;
-      margin:0 0.5rem;
-      text-decoration: none;
-      border-radius: 25px;
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      transition: background 0.3s;
-      cursor: pointer;
-      user-select: none;
+    .pill-nav .dropbtn,
+    header h1,
+    h2,
+    .section-content h2 {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     }
 
-    /* Hover e active */
-    .pill-nav > a:hover,
-    .pill-nav > a.active,
-    .pill-nav > .dropdown > .dropbtn:hover {
-      background-color: #ffdd00;
-      color: #121212;
+    /* ===== NAVBAR — IDENTICA ALL’INDEX ===== */
+    .pill-nav{
+      display:flex;
+      justify-content:center;
+      background-color:#222;
+      padding:15px;
+      flex-wrap:wrap;          /* 2 righe su mobile */
+      gap:10px;                /* stesso spacing dell'index */
+      z-index:2;
+      position:relative;
+      margin:0;
+    }
+    .pill-nav a,
+    .pill-nav .dropbtn{
+      color:#fff;
+      text-decoration:none;
+      padding:0.7rem 1.2rem;
+      border-radius:25px;
+      background-color:#333;   /* nessun rilievo */
+      font-weight:600;
+      cursor:pointer;
+      user-select:none;
+      display:flex;
+      align-items:center;
+      transition:0.3s;
+      line-height:1;
+      border:0;
+    }
+    .pill-nav a:hover,
+    .pill-nav a.active,
+    .pill-nav .dropbtn:hover{
+      background-color:gold;
+      color:#111;
     }
 
-    /* Dropdown container */
-    .pill-nav > .dropdown {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
+    .dropdown{ position:relative; }
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      background-color:#333;
+      border-radius:10px;
+      box-shadow:0 0 10px rgba(0,0,0,0.5);
+      flex-direction:column;
+      z-index:10;
+      min-width:180px;
+      overflow:hidden;
     }
-
-    /* Dropdown content nascosto */
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #444;
-      min-width: 160px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      top: 100%;
-      left: 0;
-      z-index: 10;
-      flex-direction: column;
+    .dropdown-content a{
+      padding:10px 20px;
+      color:#fff;
+      text-decoration:none;
+      white-space:nowrap;
+      background:#333;
     }
+    .dropdown-content a:hover{ background-color:gold; color:#111; }
 
-    /* Link dropdown */
-    .dropdown-content a {
-      color: #fff;
-      padding: 0.7rem 1.2rem;
-      text-decoration: none;
-      display: block;
-      font-weight: 600;
+    /* Hover su desktop (come index) */
+    @media (hover:hover) and (pointer:fine){
+      .dropdown:hover .dropdown-content{ display:flex; }
     }
-
-    .dropdown-content a:hover {
-      background-color: #ffdd00;
-      color: #121212;
+    /* Compatta leggermente su schermi piccoli (come index) */
+    @media (max-width:480px){
+      .pill-nav a, .pill-nav .dropbtn{ padding:0.6rem 1rem; font-size:0.95rem; }
     }
+    /* Mobile: apertura via classe .open (gestita da JS) */
+    .dropdown.open .dropdown-content{ display:flex; }
 
-    /* Mostra dropdown al passaggio del mouse */
-    .dropdown:hover .dropdown-content {
-      display: flex;
-    }
-
+    /* ===== Header ===== */
     header {
       text-align: center;
       padding: 2rem 1rem 1.5rem;
     }
-
     header h1 {
       font-size: 2.5rem;
       margin: 0;
@@ -123,18 +119,16 @@ h2,
       padding-bottom: 0.3rem;
       padding-top: 2rem;
     }
-
-  
     header p {
       margin-top: 0.5rem;
       font-size: 1.2rem;
-      color: white;
+      color: #fff;
       max-width: 800px;
       margin-left: auto;
       margin-right: auto;
     }
 
-    /* Nuove card livello */
+    /* ===== Nuove card livello ===== */
     .level-cards {
       max-width: 1200px;
       margin: 2rem auto;
@@ -143,13 +137,9 @@ h2,
       padding: 0 1rem;
       grid-template-columns: 1fr;
     }
-
     @media (min-width: 700px) {
-      .level-cards {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      .level-cards { grid-template-columns: repeat(3, 1fr); }
     }
-
     .level-card {
       background: #fff;
       color: #121212;
@@ -161,18 +151,8 @@ h2,
       flex-direction: column;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
-    .level-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 0 35px #ffdd00aa;
-    }
-
-    .level-card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-    }
-
+    .level-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 0 35px #ffdd00aa; }
+    .level-card img { width: 100%; height: 300px; object-fit: cover; }
     .level-card-content {
       padding: 1.5rem;
       flex-grow: 1;
@@ -180,23 +160,21 @@ h2,
       flex-direction: column;
       justify-content: space-between;
     }
-
     .level-card-content h2 {
       font-size: 1.5rem;
       color: #ffdd00;
-     -margin: 0 0 0.5rem;
       border-bottom: 2px solid #ffdd00;
       padding-bottom: 0.3rem;
+      margin: 0 0 0.5rem;
     }
-
     .level-card-content p {
       font-size: 1rem;
       color: #121212;
       line-height: 1.5;
       flex-grow: 1;
       margin-bottom: 1rem;
+      font-family: 'Poppins', sans-serif; /* contenuto in Poppins */
     }
-
     .btn-scopri {
       background-color: #ffdd00;
       color: #121212;
@@ -210,12 +188,9 @@ h2,
       align-self: flex-start;
       user-select: none;
     }
+    .btn-scopri:hover { background-color: #e6c800; }
 
-    .btn-scopri:hover {
-      background-color: #e6c800;
-    }
-
-    /* Container cards corsi originale */
+    /* ===== Container cards corsi originale ===== */
     .container {
       display: grid;
       grid-template-columns: 1fr;
@@ -224,13 +199,9 @@ h2,
       max-width: 1200px;
       margin: auto;
     }
-
     @media (min-width: 700px) {
-      .container {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .container { grid-template-columns: repeat(2, 1fr); }
     }
-
     .course-card {
       background: #fff;
       color: #121212;
@@ -242,23 +213,9 @@ h2,
       display: flex;
       flex-direction: column;
     }
-
-    .course-card:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 0 35px #ffdd00aa;
-    }
-
-    .course-card img {
-      width: 100%;
-      height: 350px;
-      object-fit: cover;
-    }
-
-    .course-card-content {
-      padding: 1.5rem;
-      flex-grow: 1;
-    }
-
+    .course-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 0 35px #ffdd00aa; }
+    .course-card img { width: 100%; height: 350px; object-fit: cover; }
+    .course-card-content { padding: 1.5rem; flex-grow: 1; }
     .course-card-content h2 {
       font-size: 1.5rem;
       color: #ffdd00;
@@ -266,98 +223,34 @@ h2,
       border-bottom: 2px solid #ffdd00;
       padding-bottom: 0.3rem;
     }
-
     .course-card-content p {
       font-size: 1rem;
       color: #121212;
       line-height: 1.5;
+      font-family: 'Poppins', sans-serif; /* contenuto in Poppins */
     }
-
-    /* Navbar styles preserved */
-    .pill-nav {
-      display: flex;
-      justify-content: center;
-      background-color: #222;
-      padding: 15px;
-      flex-wrap: wrap;
-      gap: 10px;
-      z-index: 2;
-      position: relative;
-    }
-
-    .pill-nav a,
-    .pill-nav .dropbtn {
-      color: #fff;
-      text-decoration: none;
-      padding: 0.7rem 1.2rem;
-      border-radius: 25px;
-      background-color: #333;
-      font-weight: 600;
-      cursor: pointer;
-      user-select: none;
-      display: flex;
-      align-items: center;
-      transition: 0.3s;
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    }
-
-    .pill-nav a:hover,
-    .pill-nav a.active,
-    .pill-nav .dropbtn:hover {
-      background-color: gold;
-      color: #111;
-    }
-
-    .dropdown {
-      position: relative;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background-color: #333;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      flex-direction: column;
-      z-index: 1;
-    }
-
-    .dropdown:hover .dropdown-content {
-      display: flex;
-    }
-
-    .dropdown-content a {
-      padding: 10px 20px;
-      color: white;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .dropdown-content a:hover {
-      background-color: gold;
-      color: black;
-    }
-
   </style>
 </head>
 <body>
 
-  <nav class="pill-nav">
+  <!-- ===== NAVBAR identica all'index ===== -->
+  <nav class="pill-nav" role="navigation" aria-label="Menu principale">
     <a href="index.html">Home</a>
-      <a href="corsi.html" class=active class="dropbtn">Corsi ▾</a>
-      <div class="dropdown-content">
-        <a href="principiante.html">Principianti</a>
-        <a href="amatore.html">Amatori</a>
-        <a href="pilota.html">Piloti</a>
+
+    <div class="dropdown" id="navDropdown">
+      <a href="corsi.html" class="dropbtn active" aria-haspopup="true" aria-expanded="false" aria-controls="menu-corsi">Corsi ▾</a>
+      <div class="dropdown-content" id="menu-corsi" role="menu">
+        <a href="principiante.html" role="menuitem">Principianti</a>
+        <a href="amatore.html" role="menuitem">Amatori</a>
+        <a href="pilota.html" role="menuitem">Piloti</a>
       </div>
     </div>
+
     <a href="team.html">Team</a>
     <a href="piloti.html">Piloti</a>
     <a href="risultati.html">Risultati</a>
     <a href="galleria.html">Galleria</a>
-    <a href="contatti.html" >Contattaci</a>
+    <a href="contatti.html">Contattaci</a>
   </nav>
 
   <header>
@@ -394,7 +287,7 @@ h2,
   </section>
 
   <header>
-    <h1>Scegli il tuo percorso </h1>
+    <h1>Scegli il tuo percorso</h1>
     <p>Clicca sul tuo livello qui sopra e scopri il percorso giusto per te!</p>
   </header>
 
@@ -430,7 +323,7 @@ h2,
     <section class="course-card">
       <img src="gabri allenamento.jpg" alt="Allenamento" />
       <div class="course-card-content">
-        <h2>Alimentazione & Preparazione Fisica</h2>
+        <h2>Alimentazione &amp; Preparazione Fisica</h2>
         <p>Piloti sia dentro che fuori dalla pista con schede personalizzate per allenarti a casa e migliorare la tua alimentazione.</p>
       </div>
     </section>
@@ -445,7 +338,6 @@ h2,
     </section>
   </main>
 
-  <!-- Footer -->
   <footer>
     &copy; 2025 The Big Dreamers V7NZ — Created by Margherita Giannotti
     <a href="cookie.html">Cookie Policy</a> ·
@@ -454,19 +346,25 @@ h2,
   </footer>
 
   <script>
-    // Script per mostrare il link diretto "Corsi" su mobile
-    function handleResize() {
-      const directLink = document.querySelector('.pill-nav > a.corsi-link');
-      if(window.innerWidth <= 600) {
-        directLink.style.display = 'block';
-      } else {
-        directLink.style.display = 'none';
-      }
-    }
-
-    window.addEventListener('resize', handleResize);
-    window.addEventListener('load', handleResize);
+    // Dropdown touch-friendly su mobile: tocco su "Corsi ▾" apre/chiude il menu invece di navigare
+    (function(){
+      const dd = document.getElementById('navDropdown');
+      if(!dd) return;
+      const btn = dd.querySelector('.dropbtn');
+      btn.addEventListener('click', function(e){
+        if (window.matchMedia('(max-width: 600px)').matches){
+          e.preventDefault();
+          const isOpen = dd.classList.toggle('open');
+          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+      });
+      document.addEventListener('click', function(ev){
+        if(!dd.contains(ev.target)){
+          dd.classList.remove('open');
+          btn && btn.setAttribute('aria-expanded','false');
+        }
+      });
+    })();
   </script>
-
 </body>
 </html>
