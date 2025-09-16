@@ -14,9 +14,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>V7NZ Coaching - Galleria</title>
 
-  <!-- (opzionale) tuo CSS esterno -->
-  <!-- <link href="stylegalleria.css" rel="stylesheet" /> -->
-
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -29,27 +26,19 @@
       padding: 0 1rem 3rem;
     }
 
-    /* ===== Font per titoli e navbar (come index) ===== */
-    .pill-nav a,
-    .pill-nav .dropbtn,
-    header h1,
-    h2,
-    .section-content h2 {
-      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    }
-
-    /* ===== NAVBAR identica alla index ===== */
+    /* ===== NAVBAR — IDENTICA ALL’INDEX ===== */
     .pill-nav {
       display: flex;
       justify-content: center;
       background-color: #222;
-      padding: 15px;            /* identico alla index */
+      padding: 15px;
       flex-wrap: wrap;          /* 2 righe su mobile */
-      gap: 10px;                /* spazio uniforme */
+      gap: 10px;                /* stesso spacing dell'index */
       z-index: 2;
       position: relative;
       margin: 0;
     }
+
     .pill-nav a,
     .pill-nav .dropbtn {
       color: #fff;
@@ -63,9 +52,7 @@
       display: flex;
       align-items: center;
       transition: 0.3s;
-      border: 0;
-      margin: 0;                /* solo gap gestisce lo spazio */
-      font-size: 1rem;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
       line-height: 1;
     }
     .pill-nav a:hover,
@@ -90,22 +77,18 @@
     }
     .dropdown-content a {
       padding: 10px 20px;
-      color: #fff;
+      color: white;
       text-decoration: none;
       white-space: nowrap;
       background: #333;
-      margin: 0;
     }
     .dropdown-content a:hover { background-color: gold; color: #111; }
 
-    /* Mostra su hover (desktop) */
+    /* Hover su desktop (come index) */
     @media (hover: hover) and (pointer: fine) {
       .dropdown:hover .dropdown-content { display: flex; }
     }
-    /* Apertura su mobile via classe .open (gestita da JS) */
-    .dropdown.open .dropdown-content { display: flex; }
-
-    /* Leggera compattazione su schermi molto piccoli (come index) */
+    /* Su mobile: compattazione lieve */
     @media (max-width: 480px){
       .pill-nav a, .pill-nav .dropbtn { padding: 0.6rem 1rem; font-size: 0.95rem; }
     }
@@ -118,6 +101,7 @@
       margin: auto;
     }
     header h1 {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
       font-size: 3rem;
       color: gold;
       border-bottom: 4px solid #ffdd00;
@@ -186,10 +170,10 @@
 </head>
 <body>
 
-  <!-- ✅ Navbar identica alla index, con dropdown Corsi -->
+  <!-- ✅ Navbar identica all'index -->
   <nav class="pill-nav" role="navigation" aria-label="Menu principale">
     <a href="index.html">Home</a>
-    <div class="dropdown">
+    <div class="dropdown" id="navDropdown">
       <a href="corsi.html" class="dropbtn">Corsi ▾</a>
       <div class="dropdown-content">
         <a href="principiante.html">Principianti</a>
@@ -200,10 +184,9 @@
     <a href="team.html">Team</a>
     <a href="piloti.html">Piloti</a>
     <a href="risultati.html">Risultati</a>
-    <a href="galleria.html" class="active">Galleria</a> 
+    <a href="galleria.html" class="active">Galleria</a>
     <a href="contatti.html">Contattaci</a>
   </nav>
-  
 
   <header>
     <h1>Galleria Fotografica</h1>
@@ -274,25 +257,7 @@
   </div>
 
   <script>
-    /* Dropdown touch-friendly (mobile) */
-    function toggleDropdown(e){
-      e.preventDefault();
-      const dd = document.getElementById('navDropdown');
-      const btn = dd.querySelector('.dropbtn');
-      const isOpen = dd.classList.toggle('open');
-      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    }
-    // Chiudi il dropdown toccando/cliccando fuori
-    document.addEventListener('click', function(ev){
-      const dd = document.getElementById('navDropdown');
-      if(dd && !dd.contains(ev.target)){
-        dd.classList.remove('open');
-        const btn = dd.querySelector('.dropbtn');
-        btn && btn.setAttribute('aria-expanded','false');
-      }
-    });
-
-    // Lightbox
+    /* --- Lightbox --- */
     const images = document.querySelectorAll('.grid-item img');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
@@ -335,92 +300,3 @@
 
 </body>
 </html>
-<style>
-  /* NAVBAR IDENTICA ALLA INDEX — forzata e a prova di override */
-  .pill-nav{
-    display:flex;
-    justify-content:center;
-    background-color:#222;
-    padding:15px;
-    flex-wrap:wrap;         /* due righe su mobile, come index */
-    gap:10px;               /* spazi identici */
-    z-index:2;
-    position:relative;
-    margin:0;
-    width:100%;
-    box-sizing:border-box;
-  }
-  
-  .pill-nav a,
-  .pill-nav .dropbtn{
-    color:#fff;
-    text-decoration:none;
-    padding:0.7rem 1.2rem;
-    border-radius:25px;
-    background-color:#333;
-    font-weight:600;
-    cursor:pointer;
-    user-select:none;
-    display:flex;
-    align-items:center;
-    transition:0.3s;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size:1rem;         /* blocca differenze tra pagine */
-    line-height:1;
-    margin:0;               /* lo spazio lo dà “gap”, non i margin */
-    border:0;
-  }
-  
-  .pill-nav a:hover,
-  .pill-nav a.active,
-  .pill-nav .dropbtn:hover{
-    background-color:gold;
-    color:#111;
-  }
-  
-  /* Dropdown come nella index */
-  .dropdown{ position:relative; }
-  .dropdown-content{
-    display:none;
-    position:absolute;
-    top:100%;
-    left:0;
-    background-color:#333;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,0.5);
-    flex-direction:column;
-    z-index:10;
-    min-width:180px;
-    overflow:hidden;
-  }
-  .dropdown-content a{
-    padding:10px 20px;
-    color:#fff;
-    text-decoration:none;
-    white-space:nowrap;
-    background:#333;
-    margin:0;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  }
-  .dropdown-content a:hover{ background:gold; color:#111; }
-  
-  /* Hover su desktop, identico alla index */
-  @media (hover:hover) and (pointer:fine){
-    .dropdown:hover .dropdown-content{ display:flex; }
-  }
-  
-  /* ——— Anti-conflitto con vecchi CSS presenti nelle altre pagine ——— */
-  .pill-nav a{
-    background:#333 !important;
-    color:#fff !important;
-    border-radius:25px !important;
-    padding:0.7rem 1.2rem !important;
-    display:flex !important;
-    font-size:1rem !important;
-    font-weight:600 !important;
-    margin:0 !important;
-    text-decoration:none !important;
-  }
-  .pill-nav{ padding:15px !important; gap:10px !important; } /* blinda spazi e padding */
-  </style>
-  
