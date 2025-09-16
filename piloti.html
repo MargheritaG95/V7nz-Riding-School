@@ -232,21 +232,17 @@
 <body>
 
   <!-- ✅ Navbar identica alla index, con dropdown Corsi -->
-  <nav class="pill-nav" role="navigation" aria-label="Menu principale">
+  <nav class="pill-nav">
     <a href="index.html">Home</a>
-
-    <div class="dropdown" id="navDropdown">
-      <button class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="menu-corsi" onclick="toggleDropdown(event)">
-        Corsi ▾
-      </button>
-      <div class="dropdown-content" id="menu-corsi" role="menu">
-        <a href="principiante.html" role="menuitem">Principianti</a>
-        <a href="amatore.html" role="menuitem">Amatori</a>
-        <a href="pilota.html" role="menuitem">Piloti</a>
+    <div class="dropdown"></div>
+    <a href="corsi.html" class="dropbtn">Corsi ▾</a>
+      <div class="dropdown-content">
+        <a href="principiante.html">Principianti</a>
+        <a href="amatore.html">Amatori</a>
+        <a href="pilota.html">Piloti</a>
       </div>
     </div>
-
-    <a href="teamv2.html">Team</a>
+    <a href="team.html">Team</a>
     <a href="piloti.html" class="active">Piloti</a>
     <a href="risultati.html">Risultati</a>
     <a href="galleria.html">Galleria</a>
