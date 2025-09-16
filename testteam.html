@@ -11,476 +11,479 @@
   </script>
 
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>V7NZ Riding School - Team</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>V7NZ Coaching - Contattaci</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
-    *{box-sizing:border-box;margin:0;padding:0}
-    html,body{height:100%;font-family:'Poppins',sans-serif;background:#121212;color:#fff;overflow-x:hidden}
+    /* ========== BASE ========== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow-x: hidden; }
+    body { background: #121212; color: #fff; font-family: 'Poppins', sans-serif; }
 
-    /* ===== NAVBAR (identica a index/team) ===== */
-    .pill-nav{
-      display:flex;justify-content:center;align-items:center;flex-wrap:wrap;
-      gap:36px 52px;               /* spacing come screenshot */
-      padding:18px 12px;
-      background:#222;position:relative;z-index:2;
+    /* === FONT RULES ===
+       - Impact: navbar, h1, h2
+       - Poppins: tutto il resto
+    */
+    .pill-nav a,
+    .pill-nav .dropbtn,
+    header h1,
+    h2 {
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
     }
-    .pill-nav a, .pill-nav .dropbtn{
-      color:#fff;text-decoration:none;
-      padding:16px 28px;           /* pillole grandi */
-      background:#3a3a3a;border-radius:9999px;
-      font-weight:900;letter-spacing:.2px;
-      font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;
-      font-size:28px;              /* grande come screenshot */
-      line-height:1.1;min-width:180px;
-      display:flex;align-items:center;justify-content:center;
-      box-shadow:0 2px 10px rgba(0,0,0,.35);
-      transition:.25s;white-space:nowrap;
-    }
-    .pill-nav a:hover, .pill-nav .dropbtn:hover{background:gold;color:#111}
-    .pill-nav a.active{background:gold;color:#111}
-
-    .dropdown{position:relative}
-    .dropdown-content{
-      display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);
-      background:#333;border-radius:16px;box-shadow:0 12px 28px rgba(0,0,0,.5);
-      padding:8px 0;min-width:220px;z-index:30;overflow:hidden;
-    }
-    .dropdown-content a{padding:12px 18px;white-space:nowrap;display:block;font-size:20px}
-    .dropdown-content a:hover{background:gold;color:#111}
-    @media (hover:hover) and (pointer:fine){ .dropdown:hover .dropdown-content{display:block} }
-
-    /* Mobile: 4 pillole per riga → max 2 righe */
-    @media (max-width:600px){
-      .pill-nav > a,
-      .pill-nav > .dropdown{
-        flex:0 0 calc(25% - 52px);
-        max-width:calc(25% - 52px);
-        display:flex;justify-content:center;
-      }
-      .pill-nav a, .pill-nav .dropbtn{
-        padding:14px 12px;font-size:22px;min-width:auto;
-      }
-      .dropdown.open .dropdown-content{display:block} /* tap su mobile */
+    /* Tutto il resto in Poppins */
+    p, li, ul, ol, .card h2, .btn-package, .cta-button, .dropdown-content a,
+    .phone-numbers a, .social-icon, .packages-container *:not(h1):not(h2) {
+      font-family: 'Poppins', sans-serif;
     }
 
-    /* ===== HEADER ===== */
-    header{text-align:center;padding:0 1rem 1.5rem;max-width:1500px;margin:0 auto 2rem}
-    header h1{
-      font-size:2.5rem;font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;
-      color:gold;border-bottom:4px solid #ffdd00;display:inline-block;padding:.5rem 0 .3rem;
+    /* ========== NAVBAR (identica a index/team) ========== */
+    .pill-nav {
+      display: flex;
+      justify-content: center;
+      background-color: #222;
+      padding: 15px;
+      flex-wrap: wrap;   /* 2 righe su mobile */
+      gap: 10px;
+      z-index: 2;
+      position: relative;
     }
-    header h2{
-      font-size:2rem;color:#fff;margin:.5rem 0 0;
-      font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;
+    .pill-nav a,
+    .pill-nav .dropbtn {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.7rem 1.2rem;
+      border-radius: 25px;
+      background-color: #333;
+      font-weight: 600;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      transition: 0.3s;
     }
-    header p{margin-top:1rem;font-size:1.1rem;color:#eee;line-height:1.6}
+    .pill-nav a:hover,
+    .pill-nav a.active,
+    .pill-nav .dropbtn:hover {
+      background-color: gold;
+      color: #111;
+    }
+    .dropdown { position: relative; }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%; left: 0;
+      background-color: #333;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      flex-direction: column;
+      z-index: 10;
+      min-width: 180px;
+      overflow: hidden;
+    }
+    .dropdown-content a {
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .dropdown-content a:hover { background-color: gold; color: black; }
 
-    /* ===== GALLERY ===== */
-    .gallery-wrapper{position:relative;max-width:1500px;margin:0 auto 3rem;overflow:hidden}
-    .gallery{display:flex;gap:1rem;overflow-x:auto;scroll-behavior:smooth;padding:1rem 0;scrollbar-width:none}
-    .gallery::-webkit-scrollbar{display:none}
-    .gallery img{
-      flex:0 0 auto;width:300px;height:300px;border-radius:12px;border:3px solid #ffdd00;
-      object-fit:cover;cursor:pointer;transition:transform .3s, box-shadow .3s;
+    /* Apertura su hover (come index/team) */
+    @media (hover: hover) and (pointer: fine) {
+      .dropdown:hover .dropdown-content { display: flex; }
     }
-    .gallery img:hover{transform:scale(1.05);box-shadow:0 0 25px #ffdd00cc}
-    .gallery-btn{position:absolute;top:50%;transform:translateY(-50%);background:#ffdd00;color:#121212;border:none;padding:.6rem 1rem;font-size:2rem;cursor:pointer;border-radius:50%;z-index:10;opacity:.9}
-    .gallery-btn.left{left:.5rem}.gallery-btn.right{right:.5rem}
 
-    /* Lightbox */
-    .lightbox{
-      position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;z-index:1000;
+    /* Compattezza su schermi molto piccoli */
+    @media (max-width: 480px){
+      .pill-nav a, .pill-nav .dropbtn { padding: 0.6rem 1rem; font-size: 0.95rem; }
     }
-    .lightbox.active{display:flex}
-    .lightbox img{
-      max-width:90vw;max-height:85vh;border-radius:10px;box-shadow:0 0 40px rgba(255,221,0,.5);
-    }
-    .lightbox .close{
-      position:absolute;top:18px;right:22px;font-size:40px;color:#ffdd00;cursor:pointer;font-weight:900;line-height:1;
-    }
-    .lightbox .nav{
-      position:absolute;top:50%;transform:translateY(-50%);font-size:44px;color:#ffdd00;cursor:pointer;font-weight:900;user-select:none;padding:.3rem .6rem;
-    }
-    .lightbox .prev{left:24px}
-    .lightbox .next{right:24px}
 
-    /* ===== PACCHETTI ===== */
-    .packages-container{display:grid;grid-template-columns:1fr;gap:2rem;max-width:1500px;margin:auto;padding:2rem 1rem 3rem}
-    @media (min-width:900px){.packages-container{grid-template-columns:repeat(4,1fr)}}
-    .card{
-      background:#121212;color:#fff;border-radius:20px;border:3px solid #ffdd00;padding:2rem 1.5rem;
-      display:flex;flex-direction:column;align-items:center;box-shadow:0 0 20px #ffdd0044;
-      transition:transform .3s, box-shadow .3s;min-height:400px;position:relative;
-    }
-    .card:hover{transform:translateY(-10px) scale(1.05);box-shadow:0 0 45px #ffdd00cc}
-    .card h2{
-      font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;font-size:2rem;color:#ffdd00;
-      margin:0 0 .5rem;border-bottom:2px solid #ffdd00;padding-bottom:.3rem;text-align:center;width:100%;
-    }
-    .card p{font-size:1rem;line-height:1.6;margin-top:.5rem;text-align:left}
-    .card ul{margin:.6rem 0 0 1.1rem;line-height:1.6}
-    .badge{
-      position:absolute;top:-.7rem;left:1rem;background:#ffdd00;color:#121212;font-weight:700;
-      padding:.4rem .9rem;border-radius:999px;font-size:.75rem;display:flex;align-items:center;gap:.4rem;box-shadow:0 2px 8px rgba(0,0,0,.3)
-    }
-    .btn-package{
-      background:#ffdd00;border:none;border-radius:25px;padding:.7rem 1.8rem;font-weight:700;cursor:pointer;color:#121212;
-      transition:all .3s ease;margin-top:1rem;text-align:center;display:inline-block
-    }
-    .btn-package:hover{background:#fff;color:#ffdd00;box-shadow:0 0 10px #ffdd00aa}
+    /* ========== CONTENUTO ========== */
+    .content-wrap { padding: 0 1rem 3rem; max-width: 1200px; margin: 0 auto; }
 
-    /* ===== MODAL COMPARATIVA ===== */
-    #openModal{background:#ffdd00;color:#121212;font-weight:700;padding:.8rem 1.5rem;border:none;border-radius:999px;font-size:1rem;cursor:pointer;margin:1.2rem auto 2rem;display:block;box-shadow:0 2px 10px #ffdd0070}
-    #comparisonModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;overflow-y:auto;padding:2rem 1rem}
-    #comparisonModal .modal-content{background:#1e1e1e;border:2px solid #ffdd00;border-radius:15px;padding:2rem;max-width:1000px;margin:auto;color:#fff;position:relative}
-    #closeModal{position:absolute;top:1rem;right:1.5rem;background:none;border:none;font-size:2rem;color:#ffdd00;cursor:pointer;font-weight:bold}
-    #comparisonModal h2{color:#ffdd00;margin-top:0;font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif}
-    table{width:100%;border-collapse:collapse;font-size:.95rem;text-align:left;margin-top:1.5rem}
-    table th,table td{padding:.8rem}
-    thead{background:#2a2a2a;color:#ffdd00}
-    tbody tr:nth-child(even){background:#1c1c1c}
-    .note{margin-top:1.5rem;font-style:italic;font-size:.9rem;color:#ccc}
-
-    /* ===== DEFINIZIONI ===== */
-    .defs{max-width:1450px;margin:0 auto 3rem;padding:2rem;background:#1e1e1e;border:2px solid #ffdd00;border-radius:15px;color:#fff}
-    .defs h3{
-      margin:0 0 .6rem;color:#ffdd00;
-      font-family:Impact,Haettenschweiler,'Arial Narrow Bold',sans-serif;
-      font-size:2.2rem; /* ingrandito */
-      letter-spacing:.3px;
+    header { text-align: center; padding: 0 1rem 1.5rem; margin: 0 auto 2rem; max-width: 900px; }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+      color: gold;
+      border-bottom: 4px solid #ffdd00;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      font-weight: 700;
     }
-    .defs ul{padding-left:1.2rem;line-height:1.6;margin-top:.8rem}
-    .defs li+li{margin-top:.4rem}
+    header p {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+      color: #eee;
+      line-height: 1.5;
+    }
 
-    /* Footer */
-    footer{text-align:center;color:#aaa;padding:2rem 1rem}
-    footer a{color:#ffdd00;text-decoration:none;margin:0 .3rem}
-    footer a:hover{text-decoration:underline}
+    .packages-container {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      max-width: 1000px;
+      margin: auto;
+      padding-bottom: 2rem;
+    }
+    @media (min-width: 700px) {
+      .packages-container { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .card {
+      background: #fff;
+      color: #121212;
+      border-radius: 20px;
+      border: 3px solid #ffdd00;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 0 20px #ffdd0044;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      min-height: 300px;
+      cursor: default;
+    }
+    .card:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 0 45px #ffdd00cc; }
+    .card h2 {
+      font-size: 1.7rem;
+      margin: 0.5rem 0 1rem 0;
+      border-bottom: 2px solid #ffdd00;
+      padding-bottom: 0.3rem;
+      text-align: center;
+      width: 100%;
+    }
+    .card p {
+      font-size: 1rem;
+      line-height: 1.5;
+      text-align: center;
+      flex-grow: 1;
+      padding: 0 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .card img {
+      width: 100%; height: 180px; object-fit: cover; border-radius: 10px; border: 3px solid #ffdd00; margin-bottom: 1.2rem;
+    }
+
+    .btn-package {
+      background: #ffdd00;
+      border: none;
+      border-radius: 25px;
+      padding: 0.7rem 1.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: #121212;
+      transition: all 0.3s ease;
+      width: 100%;
+      max-width: 220px;
+      text-align: center;
+    }
+    .btn-package:hover { background: #fff; color: #ffdd00; box-shadow: 0 0 10px #ffdd00aa; }
+
+    /* Titolo sezione social in Impact */
+    h2 {
+      text-align: center;
+      margin-top: 3rem;
+      color: black
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    /* ========== DONA (bottone giallo come index) ========== */
+    .donate-section {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0 2.5rem;
+    }
+    .cta-button {
+      padding: 12px 24px;
+      background-color: gold;
+      color: black;
+      font-weight: bold;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 0 10px gold;
+      border: 2px solid black;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cta-button:hover { background-color: white; color: gold; box-shadow: 0 0 15px gold; }
+
+    /* ========== SOCIAL ICONS ========== */
+    .social-icons {
+      margin: 1rem auto 1rem;
+      max-width: 240px;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .social-icon {
+      width: 52px; height: 52px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      color: white; font-size: 26px; text-decoration: none;
+      box-shadow: 3px 3px 8px rgba(0,0,0,0.3),
+                  inset 2px 2px 5px rgba(255,255,255,0.2),
+                  inset -2px -2px 5px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer; background-clip: padding-box;
+    }
+    .social-icon.instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
+    .social-icon.facebook {
+      background: linear-gradient(145deg, #1877f2, #145dbf);
+    }
+    .social-icon:hover {
+      transform: translateY(-4px);
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4),
+                  inset 3px 3px 6px rgba(255, 255, 255, 0.3),
+                  inset -3px -3px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ========== POPUP DONAZIONI (con X in alto a destra) ========== */
+    .donate-popup {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.8);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 16px;
+    }
+    .donate-popup.active { display: flex; }
+    .donate-content {
+      background-color: #111;
+      padding: 28px 24px 22px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 0 20px gold;
+      max-width: 420px;
+      width: 92%;
+      position: relative;
+    }
+    .donate-close {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid #ffdd00;
+      color: #ffdd00;
+      background: transparent;
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .donate-content h2 {
+      color: gold;
+      margin: 6px 0 12px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 1.8rem;
+    }
+    .popup-btn {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+    }
+    #ibanInfo {
+      display: none;
+      margin-top: 12px;
+      color: white;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      text-align: left;
+    }
+    #ibanInfo p { margin: 6px 0; }
+    .copy-iban {
+      font-size: 0.9rem;
+      text-decoration: underline;
+      cursor: pointer;
+      color: white;
+    }
+
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      color: #555;
+      font-size: 0.9rem;
+      padding-bottom: 2rem;
+    }
+    footer a { color: #ffdd00; text-decoration: none; margin: 0 .3rem; }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="pill-nav" role="navigation" aria-label="Menu principale">
+  <!-- NAVBAR (uguale a index/team) -->
+  <nav class="pill-nav">
     <a href="index.html">Home</a>
-
-    <div class="dropdown" id="navDropdown">
-      <a href="corsi.html" class="dropbtn" aria-haspopup="true" aria-expanded="false" aria-controls="menu-corsi">Corsi ▾</a>
-      <div class="dropdown-content" id="menu-corsi" role="menu">
-        <a href="principiante.html" role="menuitem">Principianti</a>
-        <a href="amatore.html" role="menuitem">Amatori</a>
-        <a href="pilota.html" role="menuitem">Piloti</a>
+    <div class="dropdown">
+      <a href="corsi.html" class="dropbtn">Corsi ▾</a>
+      <div class="dropdown-content">
+        <a href="principiante.html">Principianti</a>
+        <a href="amatore.html">Amatori</a>
+        <a href="pilota.html">Piloti</a>
       </div>
     </div>
-
-    <a href="team.html" class="active">Team</a>
+    <a href="team.html">Team</a>
     <a href="piloti.html">Piloti</a>
     <a href="risultati.html">Risultati</a>
     <a href="galleria.html">Galleria</a>
-    <a href="contatti.html">Contattaci</a>
+    <a href="contatti.html" class="active">Contattaci</a>
   </nav>
 
-  <!-- HEADER -->
-  <header>
-    <h1>The Big Dreamers</h1>
-    <p>
-      Dalla passione di <strong style="color:gold;">Vincenzo Butera</strong> istruttore esperto, e 
-      <strong style="color:gold;">Giuseppe Toscano</strong>, genitore appasionato delle due ruote, nasce il Team
-      <strong style="color:gold;">"The Big Dreamers" ASD</strong>: un’associazione sportiva dedicata a rendere il motociclismo accessibile a tutti, adulti e bambini. Il team nasce da un sogno condiviso: quello di avvicinare chiunque al mondo delle due ruote, superando barriere e limiti. L’obiettivo è semplice ma ambizioso: offrire esperienze di qualità, formazione e divertimento a costi sostenibili, creando un ambiente inclusivo dove ogni appassionato possa crescere, imparare e vivere la magia del motociclismo. Con dedizione e spirito di squadra, The Big Dreamers vuole diventare un punto di riferimento per tutti coloro che desiderano trasformare un sogno in realtà, salire in sella e condividere emozioni indimenticabili.
-    </p>
-  </header>
+  <div class="content-wrap">
+    <header>
+      <h1>Contattaci</h1>
+      <p>Che si tratti di una curiosità, di una proposta o del desiderio di far parte della nostra famiglia, contattaci su WhatsApp e raccontaci tutto!</p>
+    </header>
 
-  <!-- GALLERY -->
-  <div class="gallery-wrapper">
-    <button class="gallery-btn left" aria-label="Scorri a sinistra">&#10094;</button>
-    <section class="gallery" id="gallery" aria-label="Galleria immagini team">
-      <img src="team logo.jpg" alt="Logo del Team" />
-      <img src="peppe vinz abbraccio.jpg" alt="Vincenzo e Giuseppe, abbraccio" />
-      <img src="abbraccio team.jpg" alt="Abbraccio team in pista" />
-      <img src="Rocco griglia.jpg" alt="Rocco in griglia di partenza" />
-      <img src="3 coppe.jpg" alt="Tre coppe vinte" />
-      <img src="domenico e motorejpg.jpg" alt="Domenico al lavoro sul motore" />
-      <img src="Cena Gabri.jpg" alt="Cena del team" />
-      <img src="compleanno.jpg" alt="Compleanno in team" />
-      <img src="box lato .jpg" alt="Box del team" />
-      <img src="famiglia toscano.jpg" alt="Famiglia Toscano" />
-    </section>
-    <button class="gallery-btn right" aria-label="Scorri a destra">&#10095;</button>
-  </div>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <span class="close" id="lbClose" aria-label="Chiudi">&times;</span>
-    <span class="nav prev" id="lbPrev" aria-label="Precedente">&#10094;</span>
-    <img id="lbImg" alt="">
-    <span class="nav next" id="lbNext" aria-label="Successiva">&#10095;</span>
-  </div>
-
-  <!-- PACCHETTI -->
-  <header>
-    <h2><u>Come funzionano i nostri pacchetti?</u></h2>
-    <p>I pacchetti combinano servizi tecnici, supporto in pista e logistica. Sono tutti <strong>personalizzabili</strong>.</p>
-    <button id="openModal">Compara i pacchetti</button>
-  </header>
-
-  <section class="packages-container" aria-label="Elenco pacchetti">
-
-    <!-- LIGHT -->
-    <div class="card">
-      <div class="badge"><img src="https://cdn-icons-png.flaticon.com/512/709/709496.png" alt="" style="width:14px;height:14px">Personalizzabile</div>
-      <h2>PACCHETTO LIGHT</h2>
-      <p> Per chi desidera vivere la gara con supporto essenziale e un ambiente ben organizzato.</p>
-      <p style="font-weight:700;margin-top:1rem;color:#ffdd00">INCLUDE:</p>
-      <ul>
-        <li>Analisi Dati e Coaching</li>
-        <li>Briefing e De-briefing</li>
-        <li>Iscrizione come Socio al Team</li>
-        <li>Accesso area Team e Box</li>
-      </ul>
-      <p style="font-weight:700;margin-top:1rem;color:#ffdd00">NON INCLUDE:</p>
-      <ul>
-        <li>Iscrizione gara e prove libere</li>
-        <li>Tessera Licenza ASI</li>
-        <li>Manutenzione moto (pre gara)</li>
-        <li>Assistenza meccanica base durante le giornate in pista</li>
-        <li>Materiale di consumo per gara</li>
-        <li>Servizio trasporto e logistica estesa</li>
-      </ul>
-      <p style="font-size:2rem;font-weight:700;color:#ffdd00;margin-top:1rem">75€ al giorno</p>
-      <a class="btn-package" href="https://wa.me/393397083300" target="_blank" rel="noopener">Contattaci su WhatsApp</a>
-    </div>
-
-    <!-- BASE -->
-    <div class="card">
-      <div class="badge"><img src="https://cdn-icons-png.flaticon.com/512/709/709496.png" alt="" style="width:14px;height:14px">Personalizzabile</div>
-      <h2>PACCHETTO BASE</h2>
-      <p> Per chi cerca l’equilibrio ideale tra assistenza tecnica e autonomia in pista.</p>
-      <p style="font-weight:700;margin-top:1rem;color:#ffdd00">INCLUDE:</p>
-      <ul>
-        <li>Tutti i servizi del <strong>Pacchetto LIGHT</strong></li>
-        <li>Manutenzione moto (pre gara)</li>
-        <li>Assistenza meccanica base durante le giornate in pista</li>
-      </ul>
-      <p style="font-weight:700;margin-top:1rem;color:#ffdd00">NON INCLUDE:</p>
-      <ul>
-        <li>Materiali di consumo</li>
-        <li>Servizio trasporto e logistica estesa</li>
-        <li>Iscrizione gara e prove libere</li>
-      </ul>
-      <p style="font-size:2rem;font-weight:700;color:#ffdd00;margin-top:1rem">160€ al giorno</p>
-      <a class="btn-package" href="https://wa.me/393397083300" target="_blank" rel="noopener">Contattaci su WhatsApp</a>
-    </div>
-
-    <!-- PRO -->
-    <div class="card">
-      <div class="badge"><img src="https://cdn-icons-png.flaticon.com/512/709/709496.png" alt="" style="width:14px;height:14px">Personalizzabile</div>
-      <h2>PACCHETTO PRO</h2>
-      <p> Per chi vuole arrivare in pista con la moto pronta e concentrarsi solo sulla guida.</p>
-      <p style="font-weight:700;margin-top:1rem;color:#ffdd00">INCLUDE:</p>
-      <ul>
-        <li>Tutti i servizi del <strong>Pacchetto BASE</strong></li>
-        <li>Materiali di consumo</li>
-      </ul>
-      <p style="font-weight:700;margin-top:1rem;color:#ffdd00">NON INCLUDE:</p>
-      <ul>
-        <li>Servizio trasporto e logistica estesa</li>
-        <li>Iscrizione gara e prove libere</li>
-      </ul>
-      <p style="font-size:2rem;font-weight:700;color:#ffdd00;margin-top:1rem">205€ al giorno</p>
-      <a class="btn-package" href="https://wa.me/393397083300" target="_blank" rel="noopener">Contattaci su WhatsApp</a>
-    </div>
-
-    <!-- FULL -->
-    <div class="card">
-      <div class="badge"><img src="https://cdn-icons-png.flaticon.com/512/709/709496.png" alt="" style="width:14px;height:14px">Personalizzabile</div>
-      <h2>PACCHETTO FULL</h2>
-      <p> Per un’esperienza completa, senza pensieri, con tutto gestito dal team.</p>
-      <p style="font-weight:700;margin-top:1rem;color:#ffdd00">INCLUDE:</p>
-      <ul>
-        <li>Analisi Dati e Coaching</li>
-        <li>Briefing e De-briefing</li>
-        <li>Iscrizione come Socio al Team</li>
-        <li>Manutenzione moto (pre gara)</li>
-        <li>Materiale di consumo per gara</li>
-        <li>Tessera Licenza ASI</li>
-        <li>Assistenza meccanica base durante le giornate in pista</li>
-        <li>Accesso area Team e Box</li>
-        <li>Logistica e trasporto completi</li>
-        <li>Iscrizione gara e prove libere</li>
-      </ul>
-      <p style="font-size:2rem;font-weight:700;color:#ffdd00;margin-top:1rem">300€ al giorno</p>
-      <a class="btn-package" href="https://wa.me/393397083300" target="_blank" rel="noopener">Contattaci su WhatsApp</a>
-    </div>
-
-  </section>
-
-  <!-- MODAL CONFRONTO -->
-  <div id="comparisonModal" role="dialog" aria-modal="true" aria-labelledby="compareTitle">
-    <div class="modal-content">
-      <button id="closeModal" aria-label="Chiudi">&times;</button>
-      <h2 id="compareTitle">📦 Confronto pacchetti</h2>
-      <p style="line-height:1.6">
-        Ogni pacchetto include diversi servizi legati alla preparazione, assistenza e logistica in pista.
-        La tabella seguente ti aiuta a confrontare cosa è incluso e cosa no.
-        Tutti i pacchetti sono <strong style="color:#ffdd00;">personalizzabili</strong>!
-      </p>
-      <div style="overflow-x:auto">
-        <table>
-          <thead>
-            <tr><th>Servizio</th><th>Light</th><th>Base</th><th>Pro</th><th>Full</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>Analisi dati &amp; Coaching</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Briefing &amp; De-briefing</td><td>✅</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Manutenzione pre-gara</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Assistenza meccanica in pista</td><td>❌</td><td>✅</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Materiali di consumo</td><td>❌</td><td>❌</td><td>✅</td><td>✅</td></tr>
-            <tr><td>Gestione logistica completa</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
-            <tr><td>Iscrizione gara e prove libere</td><td>❌</td><td>❌</td><td>❌</td><td>✅</td></tr>
-          </tbody>
-        </table>
+    <section class="packages-container" aria-label="Contact Options">
+      <div class="card">
+        <img src="mini rocco e nico.jpg" alt="Corsi" style="object-position: center 15%;" />
+        <h2>Scegli il corso giusto per te</h2>
+        <p>Hai dubbi su quale corso fa per te? Contattaci su WhatsApp per ricevere una consulenza personalizzata e iniziare il tuo percorso.</p>
+        <button class="btn-package" onclick="window.open('https://wa.me/393288862136?text=Ciao%20Vincenzo%2C%20vorrei%20informazioni%20sui%20corsi%20disponibili.', '_blank')">Contattaci su WhatsApp</button>
       </div>
-      <p class="note">🔧 Alcuni servizi sono opzionali o variabili. Contattaci per adattare il pacchetto alle tue esigenze specifiche!</p>
+
+      <div class="card">
+        <img src="entrata pista.jpg" alt="Team" />
+        <h2>Team per gara</h2>
+        <p>Vuoi partecipare a una gara con il nostro team? Scrivici su WhatsApp raccontandoci la tua esperienza e ti risponderemo al più presto.</p>
+        <button class="btn-package" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20sono%20interessato%20a%20correre%20con%20il%20vostro%20team', '_blank')">Contattaci su WhatsApp</button>
+      </div>
+
+      <div class="card">
+        <img src="domy e vinz coppa jpg.jpg" alt="Sponsor" style="object-position: center 20%;" />
+        <h2>Diventa Sponsor</h2>
+        <p>Supporta i nostri piloti e ottieni visibilità. Scrivici su WhatsApp per scoprire come tu o il tuo brand può crescere con noi.</p>
+        <button class="btn-package" onclick="window.open('https://wa.me/393397083300?text=Ciao%20Big%20Dreamers%2C%20vorrei%20diventare%20uno%20sponsor%20del%20vostro%20progetto', '_blank')">Contattaci su WhatsApp</button>
+      </div>
+    </section>
+
+    <!-- Bottone DONA (giallo come index) -->
+    <div class="donate-section">
+      <button class="cta-button" onclick="openDonatePopup()">Dona</button>
+    </div>
+
+    <!-- Social -->
+    <h2><span style="color: gold;"> <u> Chiamaci o Seguici sui social</u></span></style></u></h2>
+    <section class="social-icons" aria-label="Social Media Links">
+      <a href="https://www.instagram.com/v7nz_coach/" target="_blank" aria-label="Instagram" class="social-icon instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/share/1GQrr64sHW/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" class="social-icon facebook">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+    </section>
+
+    <!-- Numeri di telefono -->
+    <section class="phone-numbers" style="max-width: 300px; margin: 1rem auto; display: flex; flex-direction: column; gap: 0.5rem;">
+      <div style="display: flex; justify-content: center; gap: 0.5rem; align-items: center; white-space: nowrap;">
+        <span style="color: #ffdd00; font-weight: 700;">Giuseppe Toscano</span>
+        <a href="tel:+393397083300" style="color: #fff; font-size: 1.1rem; text-decoration: none;">+39 339 708 3300</a>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 0.5rem; align-items: center; white-space: nowrap;">
+        <span style="color: #ffdd00; font-weight: 700;">Vincenzo Butera</span>
+        <a href="tel:+393288862136" style="color: #fff; font-size: 1.1rem; text-decoration: none;">+39 328 886 2136</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- POPUP DONAZIONE (X in alto a destra) -->
+  <div id="donatePopup" class="donate-popup" aria-hidden="true" role="dialog" aria-label="Sostienici">
+    <div class="donate-content">
+      <button class="donate-close" aria-label="Chiudi" onclick="closeDonatePopup()">×</button>
+      <h2>Sostienici</h2>
+      <p style="font-size: 0.95rem; margin-bottom: 12px;">Ogni contributo è un aiuto per far crescere lo sport e la passione dei nostri ragazzi.</p>
+
+      <!-- PayPal e IBAN: pulsanti identici che non escono dal popup -->
+      <a href="https://www.paypal.com/donate" target="_blank" rel="noopener" class="cta-button popup-btn">Dona con PayPal</a>
+      <button class="cta-button popup-btn" onclick="toggleIBAN()">Mostra IBAN</button>
+
+      <div id="ibanInfo">
+        <p><strong>IBAN:</strong> <span id="ibanCode">IT00A0000000000000000000000</span></p>
+        <p><strong>Intestatario:</strong> The Big Dreamers V7NZ</p>
+        <p><strong>Banca:</strong> Nome della Banca</p>
+        <p><span class="copy-iban" onclick="copyIBAN()" title="Clicca per copiare">Copia IBAN</span></p>
+      </div>
     </div>
   </div>
 
-  <!-- DEFINIZIONI -->
-  <section class="defs" aria-label="Definizioni dei servizi inclusi">
-    <h3>Definizioni dei servizi inclusi</h3>
-    <ul>
-      <li><strong>Analisi Dati e Coaching:</strong> acquisizione e analisi dei dati telemetrici per ottimizzare lo stile di guida e il set-up. <em>(50€ al giorno includendo analisi dati e coaching)</em></li>
-      <li><strong>Briefing / De-briefing:</strong> incontri con il coach per preparazione, feedback e miglioramento delle prestazioni.</li>
-      <li><strong>Iscrizione come Socio al Team:</strong> iscrizione obbligatoria al team come socio (<strong>25€ annuali</strong>).</li>
-      <li><strong>Manutenzione Moto (pre gara):</strong> cambio olio e filtro il giorno prima della gara; controllo generale della moto; preparazione per la verifica tecnica pre-gara.<br>
-        <u>Importi:</u> Tagliando moto <strong>40,00€</strong> (olio e filtro compresi). Smontaggio, pulizia e rimontaggio trasmissione, parti soggette a usura e pulizia pinze freni <strong>25,00€</strong> (<u>ricambi non forniti</u>). Preparazione e legature per verifica tecnica <strong>30,00€</strong>.
-      </li>
-      <li><strong>Materiale di Consumo:</strong> fornitura e gestione pneumatici PMT necessari (1 treno) e carburante per tutte le sessioni in pista.<br>
-        <u>Importi:</u> 1 Treno gomme mescola “S” <strong>175,00€</strong> (montaggio ed equilibratura inclusi). Benzina 100 ottani per 2 giorni <strong>30,00€</strong>.
-      </li>
-      <li><strong>Logistica e Trasporto:</strong> attrezzature del team (gazebi, tavoli, sedie, PC, attrezzi) da e per il circuito; allestimento box (gazebo, banchi da lavoro, illuminazione).<br>
-        <u>Importo:</u> <strong>200,00€</strong>.
-      </li>
-      <li><strong>Tessera Licenza ASI:</strong> obbligatoria per partecipare alle gare. <u>Importo:</u> <strong>70,00€</strong>.</li>
-      <li><strong>Iscrizione gare/prove libere:</strong> il team può effettuare l’iscrizione per te. <u>Importi (variabili):</u> Gara: <strong>160,00€</strong> — Prove Libere: <strong>60,00€</strong> (prezzo variabile in base al circuito e alla gara).</li>
-    </ul>
-    <p style="margin-top:1rem;font-style:italic">
-      Tutti i pacchetti sono <strong style="color:#ffdd00;">personalizzabili</strong> e possono essere adattati previo accordo con il team.
-    </p>
-  </section>
-
-  <!-- FOOTER -->
   <footer>
-    &copy; 2025 The Big Dreamers V7NZ — Created by Margherita Giannotti ·
+    &copy; 2025 The Big Dreamers V7NZ — Created by Margherita Giannotti
     <a href="cookie.html">Cookie Policy</a> ·
     <a href="privacy.html">Privacy</a> ·
     <a href="note-legali.html">Note Legali</a>
   </footer>
 
-  <!-- SCRIPTS -->
   <script>
-    // --- Navbar dropdown tap-friendly (Corsi) ---
+    // Dropdown mobile: tap per aprire/chiudere (non cambia lo stile)
     (function(){
-      const dd = document.getElementById('navDropdown');
+      const dd = document.querySelector('.dropdown');
       if(!dd) return;
       const btn = dd.querySelector('.dropbtn');
       btn.addEventListener('click', function(e){
-        // su mobile impedisco la navigazione e apro il menu
         if (window.matchMedia('(max-width: 600px)').matches){
           e.preventDefault();
-          const isOpen = dd.classList.toggle('open');
-          btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          const content = dd.querySelector('.dropdown-content');
+          const open = content.style.display === 'flex';
+          content.style.display = open ? 'none' : 'flex';
         }
       });
-      document.addEventListener('click', function(ev){
-        if(!dd.contains(ev.target)){
-          dd.classList.remove('open');
-          btn && btn.setAttribute('aria-expanded','false');
-        }
-      });
-    })();
-
-    // --- Gallery arrows scroll ---
-    (function(){
-      const gallery = document.getElementById("gallery");
-      const leftBtn = document.querySelector(".gallery-btn.left");
-      const rightBtn = document.querySelector(".gallery-btn.right");
-      if(gallery && leftBtn && rightBtn){
-        leftBtn.addEventListener("click", () => gallery.scrollBy({ left: -300, behavior: "smooth" }));
-        rightBtn.addEventListener("click", () => gallery.scrollBy({ left: 300, behavior: "smooth" }));
-      }
-    })();
-
-    // --- Lightbox (click img -> open, X/outside -> close, arrows/keys navigate) ---
-    (function(){
-      const images = Array.from(document.querySelectorAll('#gallery img'));
-      const lightbox = document.getElementById('lightbox');
-      const lbImg = document.getElementById('lbImg');
-      const lbClose = document.getElementById('lbClose');
-      const lbPrev = document.getElementById('lbPrev');
-      const lbNext = document.getElementById('lbNext');
-      let current = 0;
-
-      function openLB(index){
-        current = index;
-        lbImg.src = images[current].src;
-        lbImg.alt = images[current].alt || '';
-        lightbox.classList.add('active');
-        lightbox.setAttribute('aria-hidden','false');
-      }
-      function closeLB(){
-        lightbox.classList.remove('active');
-        lightbox.setAttribute('aria-hidden','true');
-        lbImg.src = '';
-      }
-      function show(delta){
-        current = (current + delta + images.length) % images.length;
-        lbImg.src = images[current].src;
-        lbImg.alt = images[current].alt || '';
-      }
-
-      images.forEach((img, idx) => {
-        img.addEventListener('click', () => openLB(idx));
-      });
-
-      lbClose.addEventListener('click', closeLB);
-      lightbox.addEventListener('click', (e) => {
-        if(e.target === lightbox) closeLB();
-      });
-      lbPrev.addEventListener('click', () => show(-1));
-      lbNext.addEventListener('click', () => show(1));
-      document.addEventListener('keydown', (e) => {
-        if(!lightbox.classList.contains('active')) return;
-        if(e.key === 'Escape') closeLB();
-        if(e.key === 'ArrowLeft') show(-1);
-        if(e.key === 'ArrowRight') show(1);
-      });
-    })();
-
-    // --- Modal confronto ---
-    (function(){
-      const openModal = document.getElementById("openModal");
-      const closeModal = document.getElementById("closeModal");
-      const modal = document.getElementById("comparisonModal");
-
-      openModal.addEventListener("click", () => {
-        modal.style.display = "block";
-        document.body.style.overflow = "hidden";
-      });
-
-      closeModal.addEventListener("click", () => {
-        modal.style.display = "none";
-        document.body.style.overflow = "auto";
-      });
-
-      window.addEventListener("click", (e) => {
-        if (e.target === modal) {
-          modal.style.display = "none";
-          document.body.style.overflow = "auto";
+      document.addEventListener('click', (e)=>{
+        const content = dd.querySelector('.dropdown-content');
+        if (!dd.contains(e.target) && window.matchMedia('(max-width: 600px)').matches) {
+          content.style.display = 'none';
         }
       });
     })();
+
+    // Popup DONA
+    function openDonatePopup() {
+      const el = document.getElementById("donatePopup");
+      el.classList.add("active");
+      el.setAttribute("aria-hidden", "false");
+    }
+    function closeDonatePopup() {
+      const el = document.getElementById("donatePopup");
+      el.classList.remove("active");
+      el.setAttribute("aria-hidden", "true");
+      document.getElementById("ibanInfo").style.display = "none";
+    }
+    function toggleIBAN() {
+      const iban = document.getElementById("ibanInfo");
+      iban.style.display = (iban.style.display === "none" || !iban.style.display) ? "block" : "none";
+    }
+    function copyIBAN() {
+      const ibanText = document.getElementById("ibanCode").textContent.trim();
+      navigator.clipboard.writeText(ibanText).then(
+        () => alert("IBAN copiato negli appunti!"),
+        () => alert("Errore nella copia dell'IBAN")
+      );
+    }
+    // Chiudi popup cliccando sfondo
+    document.addEventListener('click', (e) => {
+      const pop = document.getElementById('donatePopup');
+      const box = pop?.querySelector('.donate-content');
+      if (pop?.classList.contains('active') && box && !box.contains(e.target) && pop === e.target) {
+        closeDonatePopup();
+      }
+    });
+    // Chiudi con ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeDonatePopup();
+    });
   </script>
 </body>
 </html>
