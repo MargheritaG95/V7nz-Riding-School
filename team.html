@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
+  <!-- Includi Font Awesome nell'head -->
+<link rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" 
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G6C1RVPC86"></script>
 <script>
@@ -314,6 +319,40 @@
       color: #ffdd00;
       box-shadow: 0 0 10px #ffdd00aa;
     }
+
+    /* ========== SOCIAL ICONS ========== */
+    .social-icons {
+      margin: 1rem auto 1rem;
+      max-width: 240px;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .social-icon {
+      width: 52px; height: 52px; border-radius: 50%;
+      display: inline-flex; align-items: center; justify-content: center;
+      color: white; font-size: 26px; text-decoration: none;
+      box-shadow: 3px 3px 8px rgba(0,0,0,0.3),
+                  inset 2px 2px 5px rgba(255,255,255,0.2),
+                  inset -2px -2px 5px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer; background-clip: padding-box;
+    }
+    .social-icon.instagram {
+      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    }
+    .social-icon.facebook {
+      background: linear-gradient(145deg, #1877f2, #145dbf);
+    }
+    .social-icon:hover {
+      transform: translateY(-4px);
+      box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.4),
+                  inset 3px 3px 6px rgba(255, 255, 255, 0.3),
+                  inset -3px -3px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    /* CHANGE 1: forza il titolo social al centro */
+    .social-title { text-align: center; }
   </style>
 </head>
 <body>
@@ -329,12 +368,12 @@
   </nav>
 
     <header>
-    <h1>The Big Dreamers</h1>
-    <p> Dalla passione di <strong style="color:gold;"> Vincenzo Butera </strong>, istruttore esperto, e <strong style="color:gold;"> Giuseppe Toscano </strong>, genitore e appassionato delle due ruote, nasce il Team <strong style="color:gold;"> "The Big Dreamers" ASD </strong>: un’associazione sportiva dedicata a rendere il motociclismo accessibile a tutti, adulti e bambini.
+    <h1>Team The Big Dreamers ASD</h1>
+    <p> Dalla passione di <strong style="color:gold;"> Vincenzo Butera </strong>, istruttore esperto, e <strong style="color:gold;"> Giuseppe Toscano </strong>, genitore e appassionato delle due ruote, nasce il <strong style="color:gold;"> "Team The Big Dreamers" ASD </strong>: un’associazione sportiva dedicata a rendere il motociclismo accessibile a tutti, adulti e bambini.
 
       Il team nasce da un sogno condiviso: quello di avvicinare chiunque al mondo delle due ruote, superando barriere e limiti. L’obiettivo è semplice ma ambizioso: offrire esperienze di qualità, formazione e divertimento a costi sostenibili, creando un ambiente inclusivo dove ogni appassionato possa crescere, imparare e vivere la magia del motociclismo.
-      
-      Con dedizione e spirito di squadra, The Big Dreamers vuole diventare un punto di riferimento per tutti coloro che desiderano trasformare un sogno in realtà, salire in sella e condividere emozioni indimenticabili.
+
+      Con dedizione e spirito di squadra, il Team The Big Dreamers ASD vuole diventare un punto di riferimento per tutti coloro che desiderano trasformare un sogno in realtà, salire in sella e condividere emozioni indimenticabili.
     </p>
   </header>
 
@@ -417,7 +456,7 @@
       <ul>
         <li>Analisi Dati e Coaching</li>
         <li>Briefing e de-briefing</li>
-        <li>Iscrizione come Socio al Team</li>
+        <li>Iscrizione come Socio all'ASD</li>
         <li>Accesso area Team e Box</li>
       </ul>
   
@@ -430,9 +469,9 @@
         <li>Materiale di consumo per gara </li>
         <li>Servizio trasporto e logistica estesa</li>
       </ul>
-  
-      <p style="font-size:2rem; font-weight:700; color:#ffdd00; margin-top:1rem;">75€ al giorno</p>
-      <a class="btn-package" href="https://wa.me/393397083300" target="_blank"> Contattaci su WhatsApp</a>
+
+
+      <a class="btn-package"  style="margin-top: 1.5rem; display:inline-block;" href="https://wa.me/393397083300" target="_blank"> Contattaci su WhatsApp</a>
     </div>
   
     <!-- PACCHETTO BASE -->
@@ -474,8 +513,8 @@
         <li>Iscrizione gara e prove libere</li>
       </ul>
   
-      <p style="font-size:2rem; font-weight:700; color:#ffdd00; margin-top:1rem;">160€ al giorno</p>
-      <a class="btn-package" href="https://wa.me/393397083300" target="_blank">Contattaci su WhatsApp</a>
+     
+      <a class="btn-package"  style="margin-top: 1.5rem; display:inline-block;" href="https://wa.me/393397083300" target="_blank">Contattaci su WhatsApp</a>
     </div>
   
     <!-- PACCHETTO PRO -->
@@ -514,9 +553,9 @@
         <li>Servizio trasporto e logistica estesa </li>
         <li>Iscrizione gara e prove libere</li>
       </ul>
-  
-      <p style="font-size:2rem; font-weight:700; color:#ffdd00; margin-top:1rem;">205€ al giorno</p>
-      <a class="btn-package" href="https://wa.me/393397083300" target="_blank">Contattaci su WhatsApp</a>
+
+
+      <a class="btn-package"  style="margin-top: 1.5rem; display:inline-block;" href="https://wa.me/393397083300" target="_blank">Contattaci su WhatsApp</a>
     </div>
   
     <!-- PACCHETTO FULL -->
@@ -548,7 +587,7 @@
       <ul>
         <li>Analisi Dati e Coaching</li>
         <li>Briefing e de-briefing</li>
-        <li>Iscrizione come Socio al Team</li>
+        <li>Iscrizione come Socio all'ASD</li>
         <li>Manutenzione moto (pre gara)</li>
         <li>Materiale di consumo per gara </li>
         <li>Tessera Licenza ASI</li>
@@ -557,9 +596,8 @@
         <li>Logistica e trasporto completi</li>
         <li>Iscrizione gara e prove libere</li>
       </ul>
-  
-      <p style="font-size:2rem; font-weight:700; color:#ffdd00; margin-top:1rem;">300€ al giorno</p>
-      <a class="btn-package" href="https://wa.me/393397083300" target="_blank">Contattaci su WhatsApp</a>
+
+      <a class="btn-package"  style="margin-top: 1.5rem; display:inline-block;" href="https://wa.me/393397083300" target="_blank">Contattaci su WhatsApp</a>
     </div>
   
   </section>
@@ -751,27 +789,49 @@
     <h3 style="margin-top: 1.5rem; color: #ffdd00;">Definizioni dei servizi inclusi:</h3>
     <ul style="padding-left: 1.2rem; line-height: 1.6;">
       <li><strong>Analisi Dati e Coaching:</strong> acquisizione e analisi dei dati telemetrici per ottimizzare lo stile di guida e il set-up.</li>
-      <li><strong>Briefing / De-briefing:</strong> con il coach per migliorare le prestazioni. (50€ al giorno includendo analisi dati e coaching) </li>
-      <li><strong>Iscrizione come Socio al Team:</strong> iscrizione obbligatoria al team come socio (25€ annuali).</li>
-      <li><strong>Manutenzione Moto (pre gara):</strong> comprende cambio olio e filtro il giorno prima della gara. Controllo generale della moto e preparazione per la verifica tecnica pre-gara.</li>
-       <u>Importi:</u> Tagliando moto 40,00€ (olio e filtro olio compreso nel prezzo). Smontaggio, pulizia e rimontaggio trasmissione , parti da controllare soggette a usura e pulizia pinze freni 25,00€ (<u>non sono forniti ricambi</u>). Preparazione e legature per verifica tecnica 30,00 €. </li>
-      <li><strong>Materiale di Consumo:</strong> Fornitura e gestione dei pneumatici PMT necessari per le prove e le gare (1Treno). Carburante per tutte le sessioni in pista.</li>
-        <u>Importi:</u> Numero 1 Treno di Gomme in mescola “S” 175,00 € (montaggio ed equilibratura). Benzina 100 Ottani per i 2 giorni 30,00 €
-        </li>
-      <li><strong>Logistica e Trasporto:</strong> attrezzature del team gazebi, tavoli, sedie, PC, attrezzi, da e per il circuito. Allestimento del box (gazebo, banchi da lavoro, illuminazione).</li>
-       <u>Importo: </u> 200,00 €
-        </li>
-         </li> 
-         <li> <strong> Tessera Licenza ASI </strong>: obbligatoria per partecipare alle gare, il team può richiederla per te.</li>
-         <u>Importo: </u> 70,00 €
-         <li> <strong> Iscrizione gare/prove libere </strong>: obbligatoria per partecipare alle gare/prove libere, il team può fare domanda d'iscrizione per te.</li>
-         <u>Import (variabili): </u> Gara: 160,00 € Prove Libere: 60,00 € (prezzo variabile in base al circuito e alla gara)</li>
-    </ul>
+      <li><strong>Briefing / De-briefing:</strong> con il coach per migliorare le prestazioni. </li>
+      <li><strong>Iscrizione come Socio all'ASD:</strong> iscrizione obbligatoria all' ASD come socio.</li>
+       <li><strong>Iscrizione al Team The Big Dreamers:</strong> iscrizione al team per supporto durante la partecipazione alle gare.</li>
+      <li><strong>Manutenzione Moto (pre gara):</strong> in conformità agli accordi presi con l'ASD. (Può comprendere, ad esempio: cambio olio e filtro il giorno prima della gara, controllo generale della moto, preparazione per la verifica tecnica pre-gara, ecc.)</li>
+      <li><strong>Materiale di Consumo:</strong> in conformità agli accordi presi con l'ASD. (Può comprendere, ad esempio:fornitura e gestione dei pneumatici PMT necessari per le prove e le gare, carburante per tutte le sessioni in pista ecc.)</li>
+      <li><strong>Logistica e Trasporto:</strong> in conformità agli accordi presi con l'ASD. (Può comprendere, ad esempio:attrezzature dell'ASD gazebi, tavoli, sedie, PC, attrezzi, da e per il circuito, allestimento del box ecc.)</li>
+      <li> <strong>Tesseramento ASI e Licenza ASI </strong>: KM, LKM, MA. L'ASD può  aiutarti a richiederle.</li>
+      <li> <strong>Iscrizione gare/prove libere </strong>: obbligatoria per partecipare alle gare/prove libere, l'ASD può fare domanda d'iscrizione per te.</li>
+     </ul>
   
     <p style="margin-top: 1.5rem; font-style: italic;">
-      Tutti i pacchetti sono <strong style="color:#ffdd00;">personalizzabili</strong> e possono essere adattati previo accordo con il team.
+      Tutti i pacchetti sono <strong style="color:#ffdd00;">personalizzabili</strong> e possono essere adattati previo accordo con l'ASD.
     </p>
   </section>
+    <!-- Social -->
+     <div class="social"></div>
+    <!-- CHANGE 2: aggiungo classe per centratura -->
+    <h2 class="social-title" style="text-align: center;"><span style="color: gold;"> <u> Chiamaci o Seguici sui social</u></span></h2>
+    <section class="social-icons" aria-label="Social Media Links">
+      <a href="https://www.instagram.com/teamthebigdreamersasd/" target="_blank" aria-label="Instagram" class="social-icon instagram">
+        <!-- CHANGE 3: fab -> fa-brands -->
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a href="https://www.facebook.com/share/1GQrr64sHW/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" class="social-icon facebook">
+        <!-- CHANGE 3: fab -> fa-brands -->
+        <i class="fa-brands fa-facebook-f"></i>
+      </a>
+    </section>
+    </div>
+
+    <!-- Numeri di telefono -->
+    <section class="phone-numbers" style="max-width: 300px; margin: 1rem auto; display: flex; flex-direction: column; gap: 0.5rem;">
+      <div style="display: flex; justify-content: center; gap: 0.5rem; align-items: center; white-space: nowrap;">
+        <span style="color: #ffdd00; font-weight: 700;">Sede:</span>
+        <a href="https://www.google.com/maps/search/?api=1&query=Via+Liguria+n.2,+Monte+Romano+VT" style="color: #fff; font-size: 1.1rem; text-decoration: none;">Via Liguria n.2, Monte Romano VT</a>
+      </div>
+      <div style="display: flex; justify-content: center; gap: 0.5rem; align-items: center; white-space: nowrap;">
+        <span style="color: #ffdd00; font-weight: 700;">Email:</span>
+        <a href="mailto:teamthebigdreamers@libero.it" style="color: #fff; font-size: 1.1rem; text-decoration: none;">teamthebigdreamers@libero.it</a>
+      </div>
+    </section>
+  </div>
+
   <!-- Footer -->
   <footer>
     &copy; 2025 The Big Dreamers V7NZ — Created by Margherita Giannotti

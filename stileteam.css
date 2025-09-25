@@ -125,3 +125,14 @@ html, body { margin: 0 !important; padding: 0 !important; }
 /* Evita che altri selettori generici mettano margini
    su nav o sul primo elemento della pagina */
 nav.pill-nav { margin: 0 !important; }
+
+
+.social h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Fa crescere SOLO la descrizione (il 1° <p> dopo l'h2) così "INCLUDE:" parte alla stessa quota */
+.packages-container .card > p:first-of-type {
+  flex-grow: 1;
+}

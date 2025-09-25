@@ -408,14 +408,23 @@
       <p style="font-size: 0.95rem; margin-bottom: 12px;">Ogni contributo è un aiuto per far crescere lo sport e la passione dei nostri ragazzi.</p>
 
       <!-- PayPal e IBAN: pulsanti identici che non escono dal popup -->
-      <a href="https://www.paypal.com/donate" target="_blank" rel="noopener" class="cta-button popup-btn">Dona con PayPal</a>
+ 
       <button class="cta-button popup-btn" onclick="toggleIBAN()">Mostra IBAN</button>
 
       <div id="ibanInfo">
-        <p><strong>IBAN:</strong> <span id="ibanCode">IT00A0000000000000000000000</span></p>
-        <p><strong>Intestatario:</strong> The Big Dreamers V7NZ</p>
-        <p><strong>Banca:</strong> Nome della Banca</p>
-        <p><span class="copy-iban" onclick="copyIBAN()" title="Clicca per copiare">Copia IBAN</span></p>
+        <p><strong>IBAN:</strong> <span id="ibanCode">IT40F0832773300000000001849</span></p>
+        <p><strong>Intestatario:</strong> Team The Big Dreamers ASD</p>
+        <p><strong>Banca:</strong> Banca di Credito Cooperativo di Roma</p>
+        <p><strong>Causale:</strong> Donazione per la promozione delle attività sportive dell'ASD </p>
+        <p style="text-align: center;"> 
+          <span class="copy-iban" onclick="copyIBAN()" title="Clicca per copiare">Copia IBAN</span> </p>
+<style>
+  /* forza in giallo le etichette nel popup */
+  #donatePopup #ibanInfo strong {
+    color: gold !important;
+    text-align: left; /* correzione di 'align-text' */
+  }
+</style>
       </div>
     </div>
   </div>
@@ -463,7 +472,11 @@
     }
     function toggleIBAN() {
       const iban = document.getElementById("ibanInfo");
+      // Mostra l'IBAN
       iban.style.display = (iban.style.display === "none" || !iban.style.display) ? "block" : "none";
+      // Nasconde definitivamente il bottone "Mostra IBAN" dopo il primo click
+      const btn = document.querySelector('#donatePopup .popup-btn');
+      if (btn) btn.style.display = "none";
     }
     function copyIBAN() {
       const ibanText = document.getElementById("ibanCode").textContent.trim();
